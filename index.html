@@ -108,14 +108,18 @@
   .com-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
   @media(max-width:880px){.com-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:620px){.com-grid{grid-template-columns:1fr}}
-  .com{position:relative;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:.3s;overflow:hidden}
-  .com::after{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent,var(--terracotta));opacity:.85}
+  .com{position:relative;background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);transition:.3s;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit}
   .com:hover{transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(120,80,40,.4)}
-  .com .ic{font-size:1.8rem}.com h3{font-size:1.3rem;margin:12px 0 7px}.com p{color:#54473b;font-size:.96rem}
-  .badge{position:absolute;top:18px;right:18px;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--terracotta);color:#fff;padding:5px 11px;border-radius:100px}
-  .com.start{background:linear-gradient(160deg,#2a2742,#1d1b2e);color:#efe9dd;border-color:#322f4d}
-  .com.start::after{background:var(--ochre)}.com.start h3{color:#fff}.com.start p{color:#c7bfb0}
-  .com.start .link{display:inline-block;margin-top:14px;font-weight:600;color:var(--ochre);text-decoration:none}
+  .com .com-img{height:150px;width:100%;object-fit:cover;display:block;background:#e7d6bd}
+  .com .com-body{padding:18px 22px 22px;position:relative}
+  .com .com-body::before{content:"";position:absolute;left:0;top:0;height:3px;width:46px;background:var(--accent,var(--terracotta));border-radius:3px}
+  .com .ic{font-size:1.5rem}.com h3{font-size:1.22rem;margin:8px 0 6px}.com p{color:#54473b;font-size:.95rem}
+  .badge{position:absolute;top:12px;left:12px;z-index:2;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--terracotta);color:#fff;padding:5px 11px;border-radius:100px;box-shadow:0 4px 12px -4px rgba(0,0,0,.4)}
+  .com.start{background:linear-gradient(160deg,#2a2742,#1d1b2e);color:#efe9dd;border-color:#322f4d;justify-content:center}
+  .com.start .com-body{padding:30px 24px}
+  .com.start .com-body::before{background:var(--ochre)}
+  .com.start h3{color:#fff}.com.start p{color:#c7bfb0}
+  .com.start .link{display:inline-block;margin-top:14px;font-weight:700;color:var(--ochre);text-decoration:none}
 
   .vil-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:stretch;margin-top:52px}
   @media(max-width:880px){.vil-grid{grid-template-columns:1fr}}
@@ -309,17 +313,20 @@
     <div class="kicker reveal" data-i18n="com.kicker">Le comunità</div>
     <h2 class="sec reveal" data-i18n="com.title">Ognuno ha la <em>sua</em> gente. Trova la tua.</h2>
     <p class="sec-lede reveal" data-i18n="com.lede">Una comunità affine è ciò che trasforma un paese economico in un posto dove si vive bene. Ecco alcune che stanno nascendo — e c'è spazio per la tua.</p>
+    <p class="sec-lede reveal" style="margin-top:-10px;font-size:1rem;color:#7a6c5c" data-i18n="com.examples">Dai pittori agli amanti delle moto, dai musicisti agli scrittori, dagli ornitologi agli amanti degli animali: ogni passione può diventare una comunità.</p>
     <div class="com-grid">
-      <a href="larva.html" class="com reveal d1" style="--accent:var(--terracotta);text-decoration:none">
+      <a href="larva.html" class="com reveal d1" style="--accent:var(--terracotta)">
         <span class="badge" data-i18n="com.badge">Prima comunità</span>
-        <div class="ic">🎶</div><h3 data-i18n="com.a.t">Artisti & spettacolo</h3>
-        <p data-i18n="com.a.p">Musicisti, tecnici suono/luci, road manager, artisti. In cammino verso Larva, in Andalusia. <strong style="color:var(--terra-deep)">Scopri →</strong></p>
+        <img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/10240139/pexels-photo-10240139.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Music & stage" />
+        <div class="com-body"><div class="ic">🎶</div><h3 data-i18n="com.music.t">Musica & spettacolo</h3><p data-i18n="com.music.p">Musicisti, artisti, tecnici del suono e delle luci. È la prima comunità, in cammino verso Larva. <strong style="color:var(--terra-deep)">Scopri →</strong></p></div>
       </a>
-      <div class="com reveal d2" style="--accent:var(--olive)"><div class="ic">🌿</div><h3 data-i18n="com.n.t">Natura & vita lenta</h3><p data-i18n="com.n.p">Chi sogna orti, sentieri, animali e ritmi che la città ha tolto. Il borgo come scelta, non come ripiego.</p></div>
-      <div class="com reveal d3" style="--accent:var(--teal)"><div class="ic">📚</div><h3 data-i18n="com.c.t">Cultura, libri & lingue</h3><p data-i18n="com.c.p">Lettori, ex insegnanti, viaggiatori curiosi. Circoli, scambi linguistici, una piccola biblioteca che torna a vivere.</p></div>
-      <div class="com reveal d4" style="--accent:var(--plum)"><div class="ic">🧘</div><h3 data-i18n="com.w.t">Benessere & spiritualità</h3><p data-i18n="com.w.p">Chi cerca quiete, pratica, comunità di cura. Vivere in modo semplice, sano, condiviso.</p></div>
-      <div class="com reveal d5" style="--accent:var(--ochre)"><div class="ic">🔧</div><h3 data-i18n="com.m.t">Mani & mestieri</h3><p data-i18n="com.m.p">Artigiani, autoproduttori, riparatori. Botteghe, laboratori e saperi che un paese piccolo sa accogliere.</p></div>
-      <div class="com start reveal d6"><div class="ic">✨</div><h3 data-i18n="com.s.t">La tua comunità</h3><p data-i18n="com.s.p">Hai già un gruppo di amici affini che sognano lo stesso? Avviate insieme la vostra comunità e il vostro paese.</p><a href="#unisciti" class="link" data-i18n="com.s.link">Avvia una comunità →</a></div>
+      <div class="com reveal d2" style="--accent:var(--plum)"><img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/4442044/pexels-photo-4442044.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Painters" /><div class="com-body"><div class="ic">🎨</div><h3 data-i18n="com.paint.t">Pittori & artisti visivi</h3><p data-i18n="com.paint.p">Chi dipinge, scolpisce, crea. Atelier luminosi e mostre in piazza.</p></div></div>
+      <div class="com reveal d3" style="--accent:var(--teal)"><img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Writers" /><div class="com-body"><div class="ic">✍️</div><h3 data-i18n="com.write.t">Scrittori, libri & lingue</h3><p data-i18n="com.write.p">Lettori, scrittori, ex insegnanti, viaggiatori. Circoli di lettura e scambi di lingue.</p></div></div>
+      <div class="com reveal d4" style="--accent:var(--olive)"><img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/9909229/pexels-photo-9909229.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nature & birdwatching" /><div class="com-body"><div class="ic">🐦</div><h3 data-i18n="com.nature.t">Natura & birdwatching</h3><p data-i18n="com.nature.p">Escursionisti, ornitologi, amanti dell'aria aperta. Sentieri, cieli stellati, silenzio.</p></div></div>
+      <div class="com reveal d5" style="--accent:var(--ochre)"><img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/18963046/pexels-photo-18963046.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Animal lovers" /><div class="com-body"><div class="ic">🐾</div><h3 data-i18n="com.animals.t">Amanti degli animali</h3><p data-i18n="com.animals.p">Chi vive con cani, cavalli, gatti — e sogna spazio, orto e aria buona.</p></div></div>
+      <div class="com reveal d6" style="--accent:var(--terra-deep)"><img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/12582263/pexels-photo-12582263.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Motors" /><div class="com-body"><div class="ic">🏍️</div><h3 data-i18n="com.motors.t">Motori: moto & auto d'epoca</h3><p data-i18n="com.motors.p">Appassionati di due e quattro ruote: garage condivisi, raduni, strade panoramiche.</p></div></div>
+      <div class="com reveal d1" style="--accent:var(--plum)"><img class="com-img" loading="lazy" onerror="this.style.display='none'" src="https://images.pexels.com/photos/7166997/pexels-photo-7166997.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Makers & tech" /><div class="com-body"><div class="ic">🔧</div><h3 data-i18n="com.makers.t">Makers, mani & tech</h3><p data-i18n="com.makers.p">Artigiani, riparatori, smanettoni e geek informatici: laboratori, stampa 3D, autoproduzione.</p></div></div>
+      <div class="com start reveal d2"><div class="com-body"><div class="ic">✨</div><h3 data-i18n="com.s.t">La tua comunità</h3><p data-i18n="com.s.p">Hai già un gruppo di amici affini che sognano lo stesso? Avviate insieme la vostra comunità e il vostro paese.</p><a href="registrati.html" class="link" data-i18n="com.s.link">Avvia una comunità →</a></div></div>
     </div>
   </div>
 </section>
@@ -333,10 +340,10 @@
     <div class="life-grid reveal d1">
       <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/5638815/pexels-photo-5638815.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Dinner together under the lights" /></figure>
       <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/8153907/pexels-photo-8153907.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Happy friends" /></figure>
-      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/10240139/pexels-photo-10240139.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Playing music" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/4442044/pexels-photo-4442044.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Painting in a studio" /></figure>
       <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/34803738/pexels-photo-34803738.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Olive groves" /></figure>
       <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/13790747/pexels-photo-13790747.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Village street" /></figure>
-      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/8154020/pexels-photo-8154020.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Friends laughing together" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/18963046/pexels-photo-18963046.jpeg?auto=compress&cs=tinysrgb&w=900" alt="An older man with his dog" /></figure>
     </div>
     <p class="life-credit reveal" data-i18n="life.credit">Foto: Pexels (licenza libera) — esempi, da sostituire con foto autentiche del progetto.</p>
   </div>
@@ -430,11 +437,13 @@
         <div class="field"><label data-i18n="f.com">La comunità che senti tua</label>
           <select id="f-com" required>
             <option value="" data-i18n="f.choose">Scegli…</option>
-            <option data-i18n="com.a.t">Artisti & spettacolo</option>
-            <option data-i18n="com.n.t">Natura & vita lenta</option>
-            <option data-i18n="com.c.t">Cultura, libri & lingue</option>
-            <option data-i18n="com.w.t">Benessere & spiritualità</option>
-            <option data-i18n="com.m.t">Mani & mestieri</option>
+            <option data-i18n="com.music.t">Musica & spettacolo</option>
+            <option data-i18n="com.paint.t">Pittori & artisti visivi</option>
+            <option data-i18n="com.write.t">Scrittori, libri & lingue</option>
+            <option data-i18n="com.nature.t">Natura & birdwatching</option>
+            <option data-i18n="com.animals.t">Amanti degli animali</option>
+            <option data-i18n="com.motors.t">Motori: moto & auto d'epoca</option>
+            <option data-i18n="com.makers.t">Makers, mani & tech</option>
             <option data-i18n="f.com.new">Vorrei avviarne una nuova</option>
             <option data-i18n="f.com.curious">Non so ancora, sono curioso/a</option>
           </select>
@@ -495,6 +504,14 @@
       "com.kicker":"Las comunidades","com.title":"Cada uno tiene <em>su</em> gente. Encuentra la tuya.",
       "com.lede":"Una comunidad afín es lo que convierte un pueblo barato en un lugar donde se vive bien. Estas son algunas que están naciendo — y hay sitio para la tuya.",
       "com.badge":"Primera comunidad",
+      "com.examples":"De los pintores a los amantes de las motos, de los músicos a los escritores, de los ornitólogos a los amantes de los animales: cada pasión puede ser una comunidad.",
+      "com.music.t":"Música & espectáculo","com.music.p":"Músicos, artistas, técnicos de sonido y luces. Es la primera comunidad, de camino a Larva. <strong style='color:var(--terra-deep)'>Descubre →</strong>",
+      "com.paint.t":"Pintores & artistas visuales","com.paint.p":"Quien pinta, esculpe, crea. Talleres luminosos y exposiciones en la plaza.",
+      "com.write.t":"Escritores, libros & idiomas","com.write.p":"Lectores, escritores, exdocentes, viajeros. Clubes de lectura e intercambios de idiomas.",
+      "com.nature.t":"Naturaleza & avistamiento de aves","com.nature.p":"Senderistas, ornitólogos, amantes del aire libre. Senderos, cielos estrellados, silencio.",
+      "com.animals.t":"Amantes de los animales","com.animals.p":"Quien vive con perros, caballos, gatos — y sueña con espacio, huerto y aire puro.",
+      "com.motors.t":"Motores: motos & coches clásicos","com.motors.p":"Aficionados a dos y cuatro ruedas: garajes compartidos, quedadas, carreteras con vistas.",
+      "com.makers.t":"Makers, manos & tech","com.makers.p":"Artesanos, reparadores, manitas y geeks informáticos: talleres, impresión 3D, autoproducción.",
       "com.a.t":"Artistas & espectáculo","com.a.p":"Músicos, técnicos de sonido/luces, road managers, artistas. De camino a Larva, en Andalucía. <strong style='color:var(--terra-deep)'>Descubre →</strong>",
       "com.n.t":"Naturaleza & vida lenta","com.n.p":"Quien sueña con huertos, senderos, animales y ritmos que la ciudad ha quitado. El pueblo como elección, no como refugio.",
       "com.c.t":"Cultura, libros & idiomas","com.c.p":"Lectores, exdocentes, viajeros curiosos. Clubes, intercambios de idiomas, una pequeña biblioteca que vuelve a vivir.",
@@ -564,6 +581,14 @@
       "com.kicker":"The communities","com.title":"Everyone has <em>their</em> people. Find yours.",
       "com.lede":"A community of kindred spirits is what turns a cheap village into a place where life is good. Here are some taking shape — and there's room for yours.",
       "com.badge":"First community",
+      "com.examples":"From painters to bikers, from musicians to writers, from birdwatchers to animal lovers: any passion can become a community.",
+      "com.music.t":"Music & stage","com.music.p":"Musicians, artists, sound and light technicians. It's the first community, on its way to Larva. <strong style='color:var(--terra-deep)'>Discover →</strong>",
+      "com.paint.t":"Painters & visual artists","com.paint.p":"Those who paint, sculpt, create. Bright studios and shows in the square.",
+      "com.write.t":"Writers, books & languages","com.write.p":"Readers, writers, former teachers, travellers. Book clubs and language exchanges.",
+      "com.nature.t":"Nature & birdwatching","com.nature.p":"Hikers, birdwatchers, lovers of the outdoors. Trails, starry skies, silence.",
+      "com.animals.t":"Animal lovers","com.animals.p":"Those who live with dogs, horses, cats — and dream of space, a garden and clean air.",
+      "com.motors.t":"Motors: bikes & classic cars","com.motors.p":"Two- and four-wheel enthusiasts: shared garages, meet-ups, scenic roads.",
+      "com.makers.t":"Makers, hands & tech","com.makers.p":"Artisans, fixers, tinkerers and computer geeks: workshops, 3D printing, DIY.",
       "com.a.t":"Artists & live performance","com.a.p":"Musicians, sound/light techs, road managers, artists. On their way to Larva, in Andalusia. <strong style='color:var(--terra-deep)'>Discover →</strong>",
       "com.n.t":"Nature & slow living","com.n.p":"For those who dream of gardens, trails, animals and rhythms the city took away. The village as a choice, not a fallback.",
       "com.c.t":"Culture, books & languages","com.c.p":"Readers, former teachers, curious travellers. Clubs, language exchanges, a small library coming back to life.",
@@ -633,6 +658,14 @@
       "com.kicker":"Die Gemeinschaften","com.title":"Jeder hat <em>seine</em> Leute. Finde deine.",
       "com.lede":"Eine Gemeinschaft Gleichgesinnter macht aus einem günstigen Dorf einen Ort, an dem man gut lebt. Hier einige, die gerade entstehen — und für deine ist Platz.",
       "com.badge":"Erste Gemeinschaft",
+      "com.examples":"Von Malern bis Motorrad-Fans, von Musikern bis Schriftstellern, von Ornithologen bis Tierfreunden: Jede Leidenschaft kann eine Gemeinschaft werden.",
+      "com.music.t":"Musik & Bühne","com.music.p":"Musiker, Künstler, Ton- und Lichttechniker. Die erste Gemeinschaft, auf dem Weg nach Larva. <strong style='color:var(--terra-deep)'>Entdecken →</strong>",
+      "com.paint.t":"Maler & bildende Künstler","com.paint.p":"Wer malt, bildhauert, erschafft. Helle Ateliers und Ausstellungen auf dem Platz.",
+      "com.write.t":"Schriftsteller, Bücher & Sprachen","com.write.p":"Leser, Schriftsteller, ehemalige Lehrer, Reisende. Lesekreise und Sprachtandems.",
+      "com.nature.t":"Natur & Vogelbeobachtung","com.nature.p":"Wanderer, Ornithologen, Naturliebhaber. Wege, Sternenhimmel, Stille.",
+      "com.animals.t":"Tierfreunde","com.animals.p":"Wer mit Hunden, Pferden, Katzen lebt — und von Platz, Garten und guter Luft träumt.",
+      "com.motors.t":"Motoren: Bikes & Oldtimer","com.motors.p":"Zwei- und Vierrad-Fans: gemeinsame Garagen, Treffen, Panoramastraßen.",
+      "com.makers.t":"Makers, Hände & Tech","com.makers.p":"Handwerker, Bastler, Tüftler und Computer-Geeks: Werkstätten, 3D-Druck, Selbermachen.",
       "com.a.t":"Künstler & Bühne","com.a.p":"Musiker, Ton-/Lichttechniker, Roadmanager, Künstler. Auf dem Weg nach Larva in Andalusien. <strong style='color:var(--terra-deep)'>Entdecken →</strong>",
       "com.n.t":"Natur & langsames Leben","com.n.p":"Für alle, die von Gärten, Wanderwegen, Tieren und Rhythmen träumen, die die Stadt genommen hat. Das Dorf als Wahl, nicht als Notlösung.",
       "com.c.t":"Kultur, Bücher & Sprachen","com.c.p":"Leser, ehemalige Lehrer, neugierige Reisende. Clubs, Sprachtandems, eine kleine Bibliothek, die wieder auflebt.",
