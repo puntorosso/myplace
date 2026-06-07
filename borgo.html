@@ -19,10 +19,10 @@
   .head-in{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
   .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:1.3rem;text-decoration:none;color:var(--ink)}
   .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--terracotta)}
-  .hr{display:flex;align-items:center;gap:16px}
-  .home{font-size:.88rem;font-weight:600;color:var(--terracotta);text-decoration:none;white-space:nowrap}
+  .hr{display:flex;align-items:center;gap:14px}
+  .home{font-size:.86rem;font-weight:600;color:var(--terracotta);text-decoration:none;white-space:nowrap}
   .lang{display:flex;border:1px solid var(--line);border-radius:100px;overflow:hidden;background:rgba(255,255,255,.5)}
-  .lang button{border:none;background:transparent;font-family:inherit;font-size:.74rem;font-weight:700;padding:7px 10px;cursor:pointer;color:var(--dust)}
+  .lang button{border:none;background:transparent;font-family:inherit;font-size:.72rem;font-weight:700;padding:7px 9px;cursor:pointer;color:var(--dust)}
   .lang button.on{background:var(--terracotta);color:#fff}
   .hero{position:relative;height:340px;overflow:hidden}
   .hero img{width:100%;height:100%;object-fit:cover;display:block}
@@ -63,9 +63,9 @@
 <header><div class="wrap head-in">
   <a class="brand" href="index.html"><span class="dot"></span>MyPlace</a>
   <div class="hr">
-    <a class="home" href="index.html">← Home</a>
-    <a class="home" href="index.html#paesi" style="color:var(--dust)">← Villages</a>
-    <div class="lang" id="lang"><button data-lang="en" class="on">EN</button><button data-lang="it">IT</button><button data-lang="es">ES</button></div>
+    <a class="home" href="index.html">&#8592; Home</a>
+    <a class="home" href="index.html#paesi" style="color:var(--dust)">&#8592; Villages</a>
+    <div class="lang" id="lang"><button data-lang="en" class="on">EN</button><button data-lang="it">IT</button><button data-lang="es">ES</button><button data-lang="de">DE</button></div>
   </div>
 </div></header>
 
@@ -83,25 +83,31 @@ var L = {
  en:{back:'← Home',backv:'← The villages',soon:'Coming soon',inc:'Housing aid',open:'Council on board',
   pop:'Inhabitants',hosp:'Nearest hospital',net:'Internet',house:'Homes from',
   hServ:'Everyday services',hInc:'Housing & incentives',hSuits:'Good for these communities',hSources:'Sources',
-  cta:'Register your interest in %s →',allv:'← All villages',note:'Candidate village — figures to be confirmed with the town hall before any official communication.',nf:'Village not found.',fsite:'the site',fvil:'the villages'},
+  cta:'Register your interest in %s →',allv:'← All villages',note:'Candidate village — figures to be confirmed with the town hall before any official communication.',nf:'Village not found.',fsite:'the site',fvil:'the villages',hb:'← Home'},
  it:{back:'← Home',backv:'← I paesi',soon:'In arrivo',inc:'Aiuto casa',open:'Comune favorevole',
   pop:'Abitanti',hosp:'Ospedale più vicino',net:'Internet',house:'Case da',
   hServ:'Servizi essenziali',hInc:'Casa e incentivi',hSuits:'Adatto a queste comunità',hSources:'Fonti',
-  cta:'Registra il tuo interesse per %s →',allv:'← Tutti i paesi',note:'Borgo candidato — dati da confermare con il Comune prima di ogni comunicazione ufficiale.',nf:'Borgo non trovato.',fsite:'il sito',fvil:'i paesi'},
+  cta:'Registra il tuo interesse per %s →',allv:'← Tutti i paesi',note:'Borgo candidato — dati da confermare con il Comune prima di ogni comunicazione ufficiale.',nf:'Borgo non trovato.',fsite:'il sito',fvil:'i paesi',hb:'← Home'},
  es:{back:'← Inicio',backv:'← Los pueblos',soon:'Próximamente',inc:'Ayuda vivienda',open:'Ayuntamiento a favor',
   pop:'Habitantes',hosp:'Hospital más cercano',net:'Internet',house:'Casas desde',
   hServ:'Servicios esenciales',hInc:'Vivienda e incentivos',hSuits:'Ideal para estas comunidades',hSources:'Fuentes',
-  cta:'Registra tu interés en %s →',allv:'← Todos los pueblos',note:'Pueblo candidato — datos por confirmar con el Ayuntamiento antes de cualquier comunicación oficial.',nf:'Pueblo no encontrado.',fsite:'el sitio',fvil:'los pueblos'}
+  cta:'Registra tu interés en %s →',allv:'← Todos los pueblos',note:'Pueblo candidato — datos por confirmar con el Ayuntamiento antes de cualquier comunicación oficial.',nf:'Pueblo no encontrado.',fsite:'el sitio',fvil:'los pueblos',hb:'← Inicio'},
+ de:{back:'← Home',backv:'← Die Dörfer',soon:'Demnächst',inc:'Wohnhilfe',open:'Gemeinde an Bord',
+  pop:'Einwohner',hosp:'Nächstes Krankenhaus',net:'Internet',house:'Häuser ab',
+  hServ:'Grundversorgung',hInc:'Wohnen & Förderung',hSuits:'Ideal für diese Gemeinschaften',hSources:'Quellen',
+  cta:'Dein Interesse an %s bekunden →',allv:'← Alle Dörfer',note:'Kandidaten-Dorf — Angaben vor jeder offiziellen Kommunikation mit der Gemeinde zu bestätigen.',nf:'Dorf nicht gefunden.',fsite:'die Website',fvil:'die Dörfer',hb:'← Home'}
 };
+var HOUSE_TBC={en:'to be confirmed',it:'da confermare',es:'por confirmar',de:'zu bestätigen'};
 function qs(k){return new URLSearchParams(location.search).get(k)||''}
 var id=(qs('id')||'').toLowerCase();
 var lang='en';
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function tr(o){return (o&&(o[lang]||o.en))||''}
 function render(){
- var t=L[lang]; var v=V[id];
+ var t=L[lang]||L.en; var v=V[id];
  document.documentElement.lang=lang;
  document.querySelectorAll('#lang button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===lang)});
- document.querySelectorAll('.home')[0].textContent=t.back;
+ document.querySelectorAll('.home')[0].textContent=t.hb;
  document.querySelectorAll('.home')[1].textContent=t.backv;
  document.getElementById('f1').textContent=t.fsite; document.getElementById('f2').textContent=t.fvil;
  if(!v){document.getElementById('hero').style.display='none';document.getElementById('main').innerHTML='<p style="margin:40px 0">'+t.nf+' <a href="index.html#paesi">'+t.allv+'</a></p>';return;}
@@ -113,7 +119,7 @@ function render(){
  if(v.inc) bd+=' <span class="badge b-inc">💶 '+t.inc+'</span>';
  if(v.openCouncil) bd+=' <span class="badge b-open">🤝 '+t.open+'</span>';
  document.getElementById('vbadges').innerHTML=bd;
- var house=(v.house==='da confermare'||v.house==='da confermare (economico)')?{en:'to be confirmed',it:'da confermare',es:'por confirmar'}[lang]:v.house;
+ var house=(v.house==='da confermare'||v.house==='da confermare (economico)')?HOUSE_TBC[lang]:v.house;
  var html='';
  html+='<div class="data">'+
    '<div class="d"><div class="k">👥 '+t.pop+'</div><div class="v">'+esc(v.pop)+'</div></div>'+
@@ -121,9 +127,9 @@ function render(){
    '<div class="d"><div class="k">📶 '+t.net+'</div><div class="v">'+esc(v.net)+'</div></div>'+
    '<div class="d"><div class="k">🏠 '+t.house+'</div><div class="v">'+esc(house)+'</div></div>'+
  '</div>';
- html+='<p class="lead">'+esc(v.highlight[lang])+'</p>';
- html+='<div class="cols"><div class="box"><h3>'+t.hServ+'</h3><p>'+esc(v.services[lang])+'</p></div>'+
-   '<div class="box"><h3>'+t.hInc+'</h3><p>'+esc(v.incentives[lang])+'</p></div></div>';
+ html+='<p class="lead">'+esc(tr(v.highlight))+'</p>';
+ html+='<div class="cols"><div class="box"><h3>'+t.hServ+'</h3><p>'+esc(tr(v.services))+'</p></div>'+
+   '<div class="box"><h3>'+t.hInc+'</h3><p>'+esc(tr(v.incentives))+'</p></div></div>';
  html+='<div class="box"><div class="kick">'+t.hSuits+'</div><div class="suits">'+v.tags.join(' ')+'</div></div>';
  var reg='registrati.html?borgo='+id;
  html+='<div class="cta"><a class="btn btn-p" href="'+reg+'">'+t.cta.replace('%s',v.name)+'</a><a class="btn btn-g" href="index.html#paesi">'+t.allv+'</a></div>';
