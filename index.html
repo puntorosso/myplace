@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MyPlace — Trova il tuo posto. Con la tua gente.</title>
-<meta name="description" content="Una piattaforma che aiuta chi si avvicina alla pensione a vivere bene in borghi accessibili, dentro una comunità internazionale di persone affini." />
+<title>MyPlace — Find your place. With your people.</title>
+<meta name="description" content="A platform that helps people approaching retirement live well in affordable villages, within an international community of like-minded people." />
 <meta name="theme-color" content="#c2562f" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c2562f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23fbf7ee' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E" />
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="MyPlace — Trova il tuo posto. Con la tua gente." />
-<meta property="og:description" content="Vivere bene la pensione in un borgo accessibile, dentro una comunità internazionale di persone affini. Casa, logistica e attività: pensiamo a tutto noi." />
+<meta property="og:title" content="MyPlace — Find your place. With your people." />
+<meta property="og:description" content="Live retirement well in an affordable village, within an international community of like-minded people. Home, logistics and activities: we handle it all." />
 <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Larva%2C_en_Ja%C3%A9n_%28Espa%C3%B1a%29.jpg?width=1200" />
 <meta property="og:url" content="https://puntorosso.github.io/myplace/" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -212,9 +212,9 @@
         <a href="#paesi" data-i18n="nav.vil">I paesi</a>
       </div>
       <div class="lang" id="lang">
-        <button data-lang="it" class="on">IT</button>
+        <button data-lang="en" class="on">EN</button>
+        <button data-lang="it">IT</button>
         <button data-lang="es">ES</button>
-        <button data-lang="en">EN</button>
         <button data-lang="de">DE</button>
       </div>
       <a href="registrati.html" class="nav-cta" data-i18n="nav.join">Unisciti</a>
@@ -437,7 +437,6 @@
       <a href="#comunita" data-i18n="nav.com">Le comunità</a>
       <a href="#paesi" data-i18n="nav.vil">I paesi</a>
       <a href="registrati.html" data-i18n="nav.join">Unisciti</a>
-      <a href="registrati.html">Registrati</a>
       <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
     </div>
     <div style="width:100%;margin-top:8px;font-size:.8rem;opacity:.7" data-i18n="foot.tag">Borghi accessibili · Comunità internazionali per affinità · Entroterra spagnolo · prototipo · foto: Wikimedia Commons</div>
@@ -664,8 +663,8 @@
     document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.lang===l));
   }
   document.querySelectorAll('#lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-  (function(){let saved='it';try{saved=localStorage.getItem('mp_lang')||(navigator.language||'it').slice(0,2);}catch(e){}
-    if(!I18N[saved])saved='it';setLang(saved);})();
+  (function(){let saved='en';try{saved=localStorage.getItem('mp_lang')||'en';}catch(e){}
+    if(!I18N[saved])saved='en';setLang(saved);})();
 
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.animationPlayState='running';io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>{if(el.closest('.hero'))return;el.style.animationPlayState='paused';io.observe(el)});

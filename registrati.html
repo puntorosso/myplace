@@ -1,82 +1,66 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>MyPlace — Registrati</title>
-<meta name="description" content="Lascia i tuoi dati: ti aiutiamo a trasferirti in un borgo accogliente, accanto a persone con le tue stesse passioni. Bastano 2 minuti." />
+<title>MyPlace — Join</title>
+<meta name="description" content="Leave your details: we help you move to a welcoming village, next to people who share your passions. It takes 2 minutes." />
 <meta name="robots" content="noindex" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c2562f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23fbf7ee' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --paper:#f6efe3;--cream:#fbf7ee;--ink:#2a211b;--terracotta:#c2562f;--terra-deep:#9c3d1d;
-    --olive:#6b7148;--line:#e2d6c2;--dust:#8a7c6a;--ok:#3f7d4f;--radius:16px;
-  }
+  :root{--paper:#f6efe3;--cream:#fbf7ee;--ink:#2a211b;--terracotta:#c2562f;--terra-deep:#9c3d1d;
+    --olive:#6b7148;--line:#e2d6c2;--dust:#8a7c6a;--ok:#3f7d4f;--radius:16px;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);
-    line-height:1.6;font-size:19px;-webkit-font-smoothing:antialiased}
+  body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:19px;-webkit-font-smoothing:antialiased}
   h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
   .wrap{max-width:640px;margin:0 auto;padding:0 22px}
-
   header{background:rgba(246,239,227,.9);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
   .head-in{display:flex;align-items:center;justify-content:space-between;height:62px}
   .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:1.3rem;text-decoration:none;color:var(--ink)}
   .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--terracotta)}
-  .lang{font-size:.8rem;color:var(--dust)}
-  .lang b{color:var(--terracotta)}
-
+  .lang{display:flex;border:1px solid var(--line);border-radius:100px;overflow:hidden;background:rgba(255,255,255,.5)}
+  .lang button{border:none;background:transparent;font-family:inherit;font-size:.76rem;font-weight:700;letter-spacing:.05em;padding:7px 11px;cursor:pointer;color:var(--dust)}
+  .lang button.on{background:var(--terracotta);color:#fff}
   main{padding:30px 0 80px}
   .progress{font-size:.9rem;font-weight:700;letter-spacing:.04em;color:var(--terracotta);margin-bottom:10px;text-transform:uppercase}
   .pbar{height:8px;background:#eaded0;border-radius:99px;overflow:hidden;margin-bottom:30px}
-  .pbar > i{display:block;height:100%;background:var(--terracotta);width:20%;transition:width .35s ease}
-
+  .pbar > i{display:block;height:100%;background:var(--terracotta);width:25%;transition:width .35s ease}
   h1{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:10px}
   .sub{font-size:1.05rem;color:#5a4d40;margin-bottom:26px}
   .help{font-size:.98rem;color:var(--dust);margin:-4px 0 18px}
-
   .step{display:none;animation:fade .4s ease}
   .step.on{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-  /* big choice cards */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 8px}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0}
   @media(max-width:520px){.cards{grid-template-columns:1fr}}
-  .card{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--cream);border:2px solid var(--line);
-    border-radius:var(--radius);padding:18px 18px;cursor:pointer;font:inherit;color:inherit;transition:.18s;position:relative}
+  .card{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--cream);border:2px solid var(--line);border-radius:var(--radius);padding:18px;cursor:pointer;font:inherit;color:inherit;transition:.18s;position:relative}
   .card:hover{border-color:var(--terracotta);transform:translateY(-2px)}
   .card.sel{border-color:var(--terracotta);background:#fbeee4;box-shadow:0 0 0 3px rgba(194,86,47,.15)}
   .card .t{font-family:"Fraunces",serif;font-size:1.2rem}
   .card .d{font-size:.9rem;color:var(--dust)}
   .card .emoji{font-size:1.5rem}
   .card.soon{opacity:.7}
-  .tag{position:absolute;top:12px;right:12px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    background:var(--olive);color:#fff;padding:4px 9px;border-radius:99px}
-
+  .tag{position:absolute;top:12px;right:12px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--olive);color:#fff;padding:4px 9px;border-radius:99px}
   label{display:block;font-weight:600;margin:18px 0 6px;font-size:1.02rem}
-  input[type=text],input[type=tel],input[type=email],textarea{width:100%;padding:15px 16px;border-radius:12px;
-    border:2px solid var(--line);background:#fff;font:inherit;color:var(--ink);transition:.15s}
+  input[type=text],input[type=tel],input[type=email],textarea{width:100%;padding:15px 16px;border-radius:12px;border:2px solid var(--line);background:#fff;font:inherit;color:var(--ink);transition:.15s}
   input:focus,textarea:focus{outline:none;border-color:var(--terracotta)}
   textarea{min-height:96px;resize:vertical}
   .opt{font-weight:400;color:var(--dust);font-size:.9rem}
-
   .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
   .pill{background:var(--cream);border:2px solid var(--line);border-radius:99px;padding:10px 16px;cursor:pointer;font:inherit;transition:.15s}
   .pill:hover{border-color:var(--terracotta)}
   .pill.sel{border-color:var(--terracotta);background:#fbeee4}
-
   details.adv{margin-top:22px;border:1px dashed var(--line);border-radius:12px;padding:4px 16px;background:#fcf7ee}
   details.adv summary{cursor:pointer;padding:14px 0;font-weight:600;color:var(--terra-deep)}
-
   .consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:16px}
   .consent input{margin-top:5px;width:22px;height:22px;flex:0 0 auto;accent-color:var(--terracotta)}
   .consent label{margin:0;font-weight:500;font-size:.98rem}
   .privacy{font-size:.86rem;color:var(--dust);margin-top:12px}
   .privacy a{color:var(--terracotta)}
-
   .nav{display:flex;gap:12px;margin-top:30px;align-items:center;flex-wrap:wrap}
   .btn{font:inherit;font-weight:700;border:none;border-radius:99px;padding:16px 30px;cursor:pointer;transition:.2s}
   .btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 10px 26px -10px rgba(194,86,47,.6)}
@@ -88,13 +72,11 @@
   .err.on{display:block}
   .badge-ok{display:none;background:#e8f3ea;color:var(--ok);border:1px solid #bcdcc4;border-radius:10px;padding:10px 14px;margin:10px 0;font-weight:600}
   .badge-ok.on{display:block}
-
   .done{display:none;text-align:center;padding:30px 0}
   .done.on{display:block}
   .done .big{font-family:"Fraunces",serif;font-size:2rem;margin-bottom:10px}
   .done .chips{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
   .chip{background:var(--cream);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.92rem}
-
   footer{border-top:1px solid var(--line);padding:24px 0;color:var(--dust);font-size:.85rem;text-align:center}
   footer a{color:var(--terracotta);text-decoration:none}
 </style>
@@ -102,291 +84,366 @@
 <body>
 <header><div class="wrap head-in">
   <a class="brand" href="index.html"><span class="dot"></span>MyPlace</a>
-  <span class="lang"><b>IT</b> · ES · EN</span>
+  <div class="lang" id="lang">
+    <button data-lang="en" class="on">EN</button>
+    <button data-lang="it">IT</button>
+    <button data-lang="es">ES</button>
+  </div>
 </div></header>
 
 <main class="wrap">
-  <!-- progress -->
   <div id="progressWrap">
-    <div class="progress" id="progressTxt">Passo 1 di 4</div>
+    <div class="progress" id="progressTxt"></div>
     <div class="pbar"><i id="pbar"></i></div>
   </div>
 
-  <!-- STEP 1: borgo + comunità -->
+  <!-- STEP 1 -->
   <section class="step on" id="s1">
-    <h1>Vivere in un borgo, insieme a persone come te.</h1>
-    <p class="sub">Ti aiutiamo a trasferirti in un paese tranquillo, accanto a persone che hanno le tue stesse passioni. Lascia i tuoi dati: <strong>ti chiamiamo noi</strong>. Bastano 2 minuti.</p>
-
-    <div id="okInvite" class="badge-ok">✓ Invito riconosciuto: avrai priorità.</div>
-
-    <label>Dove ti piacerebbe andare?</label>
-    <p class="help">Scegli un posto. Potrai cambiare idea quando ti chiamiamo.</p>
+    <h1 data-i18n="s1_title"></h1>
+    <p class="sub" data-i18n="s1_sub"></p>
+    <div id="okInvite" class="badge-ok" data-i18n="ok_invite"></div>
+    <label data-i18n="lbl_borgo"></label>
+    <p class="help" data-i18n="help_borgo"></p>
     <div class="cards" id="borghi"></div>
-
     <div id="comWrap" style="display:none">
-      <label>Con che tipo di persone?</label>
-      <p class="help">La comunità è il gruppo di persone con interessi simili ai tuoi. Non sei sicuro? Scegli quella più vicina.</p>
+      <label data-i18n="lbl_com"></label>
+      <p class="help" data-i18n="help_com"></p>
       <div class="cards" id="comunita"></div>
     </div>
-
-    <div class="err" id="err1">Scegli un posto e una comunità per continuare.</div>
-    <div class="nav">
-      <button class="btn btn-primary" onclick="next(1)">Continua →</button>
-    </div>
+    <div class="err" id="err1" data-i18n="err1"></div>
+    <div class="nav"><button class="btn btn-primary" data-i18n="btn_continue" onclick="next(1)"></button></div>
   </section>
 
-  <!-- STEP 2: contatti -->
+  <!-- STEP 2 -->
   <section class="step" id="s2">
-    <h1>Come ti chiami e dove ti chiamiamo?</h1>
-    <label for="nome">Il tuo nome</label>
-    <input type="text" id="nome" placeholder="Es. Maria" autocomplete="name" />
-    <label for="tel">Il tuo numero di telefono</label>
-    <input type="tel" id="tel" placeholder="Es. +39 333 1234567" autocomplete="tel" />
-    <p class="help">Ti chiamiamo noi, quando ti fa comodo. Va bene anche WhatsApp.</p>
-    <label for="email">La tua email <span class="opt">(se ce l'hai)</span></label>
-    <input type="email" id="email" placeholder="la-tua@email.it" autocomplete="email" />
-    <p class="help">Non è obbligatoria. Se ce l'hai, ti mandiamo una conferma.</p>
-    <div class="err" id="err2">Ci serve almeno il nome e un numero per richiamarti.</div>
+    <h1 data-i18n="s2_title"></h1>
+    <label for="nome" data-i18n="lbl_name"></label>
+    <input type="text" id="nome" data-i18n-ph="ph_name" autocomplete="name" />
+    <label for="tel" data-i18n="lbl_tel"></label>
+    <input type="tel" id="tel" data-i18n-ph="ph_tel" autocomplete="tel" />
+    <p class="help" data-i18n="help_tel"></p>
+    <label for="email" data-i18n="lbl_email"></label>
+    <input type="email" id="email" placeholder="you@email.com" autocomplete="email" />
+    <p class="help" data-i18n="help_email"></p>
+    <div class="err" id="err2" data-i18n="err2"></div>
     <div class="nav">
-      <button class="btn btn-ghost" onclick="prev(2)">← Indietro</button>
-      <button class="btn btn-primary" onclick="next(2)">Continua →</button>
+      <button class="btn btn-ghost" data-i18n="btn_back" onclick="prev(2)"></button>
+      <button class="btn btn-primary" data-i18n="btn_continue" onclick="next(2)"></button>
     </div>
   </section>
 
-  <!-- STEP 3: opzionale -->
+  <!-- STEP 3 -->
   <section class="step" id="s3">
-    <h1>Vuoi dirci due parole su di te?</h1>
-    <p class="sub">Non è obbligatorio. Bastano due righe, come ti viene.</p>
-    <label for="motiv">Raccontati <span class="opt">(facoltativo)</span></label>
-    <textarea id="motiv" placeholder="Es. Faccio la pittrice, cerco un posto tranquillo dove vivere e dipingere."></textarea>
-
-    <label>Quanti anni hai, più o meno? <span class="opt">(facoltativo)</span></label>
+    <h1 data-i18n="s3_title"></h1>
+    <p class="sub" data-i18n="s3_sub"></p>
+    <label for="motiv" data-i18n="lbl_motiv"></label>
+    <textarea id="motiv" data-i18n-ph="ph_motiv"></textarea>
+    <label data-i18n="lbl_eta"></label>
     <div class="pills" id="eta"></div>
-
     <details class="adv">
-      <summary>Aiutaci già a trovarti casa (facoltativo)</summary>
-      <label>Quando potresti trasferirti?</label>
-      <div class="pills" id="quando"></div>
-      <label>Cerchi affitto o acquisto?</label>
-      <div class="pills" id="tipocasa"></div>
-      <label>Ti trasferiresti…</label>
-      <div class="pills" id="nucleo"></div>
+      <summary data-i18n="adv_summary"></summary>
+      <label data-i18n="lbl_quando"></label><div class="pills" id="quando"></div>
+      <label data-i18n="lbl_tipocasa"></label><div class="pills" id="tipocasa"></div>
+      <label data-i18n="lbl_nucleo"></label><div class="pills" id="nucleo"></div>
     </details>
-
     <div class="nav">
-      <button class="btn btn-ghost" onclick="prev(3)">← Indietro</button>
-      <button class="btn btn-primary" onclick="next(3)">Continua →</button>
-      <button class="btn-link" onclick="next(3)">Salta, lo racconto dopo</button>
+      <button class="btn btn-ghost" data-i18n="btn_back" onclick="prev(3)"></button>
+      <button class="btn btn-primary" data-i18n="btn_continue" onclick="next(3)"></button>
+      <button class="btn-link" data-i18n="btn_skip" onclick="next(3)"></button>
     </div>
   </section>
 
-  <!-- STEP 4: privacy + invio -->
+  <!-- STEP 4 -->
   <section class="step" id="s4">
-    <h1>Ultimo passo.</h1>
-    <p class="sub">Controlla e invia. Al resto pensiamo noi.</p>
-    <div class="consent">
-      <input type="checkbox" id="consenso" />
-      <label for="consenso">Sì, potete chiamarmi o scrivermi per parlare di questo progetto. Ho letto l'informativa privacy. <strong>(obbligatorio)</strong></label>
-    </div>
-    <div class="consent">
-      <input type="checkbox" id="news" />
-      <label for="news">Sì, tenetemi aggiornato sul progetto.</label>
-    </div>
-    <p class="privacy">Usiamo i tuoi dati solo per ricontattarti su MyPlace. Niente pubblicità, niente spam. Puoi chiedere la cancellazione in ogni momento. <a href="privacy.html" target="_blank">Come trattiamo i tuoi dati</a>.</p>
+    <h1 data-i18n="s4_title"></h1>
+    <p class="sub" data-i18n="s4_sub"></p>
+    <div class="consent"><input type="checkbox" id="consenso" /><label for="consenso" data-i18n="consent_req"></label></div>
+    <div class="consent"><input type="checkbox" id="news" /><label for="news" data-i18n="consent_news"></label></div>
+    <p class="privacy"><span data-i18n="privacy_short"></span> <a href="privacy.html" target="_blank" data-i18n="privacy_link"></a></p>
     <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
-    <div class="err" id="err4">Spunta la prima casella così possiamo ricontattarti.</div>
+    <div class="err" id="err4" data-i18n="err4"></div>
     <div class="nav">
-      <button class="btn btn-ghost" onclick="prev(4)">← Indietro</button>
-      <button id="btnInvia" class="btn btn-primary" onclick="invia()">Invia la mia richiesta</button>
+      <button class="btn btn-ghost" data-i18n="btn_back" onclick="prev(4)"></button>
+      <button id="btnInvia" class="btn btn-primary" data-i18n="btn_send" onclick="invia()"></button>
     </div>
-    <p class="privacy" style="margin-top:16px">Preferisci scrivere un'email? <a id="mailfallback" href="#">Scrivici qui</a>.</p>
+    <p class="privacy" style="margin-top:16px"><span data-i18n="fallback_q"></span> <a id="mailfallback" href="#" data-i18n="fallback_link"></a></p>
   </section>
 
   <!-- CONFIRM -->
   <section class="done" id="done">
-    <div class="big">Fatto! 🎉</div>
+    <div class="big" data-i18n="done_big"></div>
     <p id="doneMsg" class="sub"></p>
     <div class="chips" id="doneChips"></div>
-    <p class="help">Non devi fare altro. Se preferisci, puoi anche scriverci a <a href="mailto:webmaster.puntorosso@gmail.com">webmaster.puntorosso@gmail.com</a>.</p>
-    <div class="nav" style="justify-content:center">
-      <a class="btn btn-ghost" href="index.html">Torna al sito</a>
-    </div>
+    <p class="help"><span data-i18n="done_help"></span> <a href="mailto:webmaster.puntorosso@gmail.com">webmaster.puntorosso@gmail.com</a>.</p>
+    <div class="nav" style="justify-content:center"><a class="btn btn-ghost" href="index.html" data-i18n="back_site"></a></div>
   </section>
 </main>
 
 <footer><div class="wrap">
-  MyPlace · <a href="index.html">il sito</a> · <a href="privacy.html">privacy</a> · prototipo
+  MyPlace · <a href="index.html" data-i18n="foot_site"></a> · <a href="privacy.html" data-i18n="foot_privacy"></a> · <span data-i18n="foot_proto"></span>
 </div></footer>
 
 <script>
-/* ---------- CONFIG: borghi e comunità (modifica qui per aggiungere paesi) ---------- */
-var COMS = {
-  arte:        {emoji:'🎶', t:'Artisti & spettacolo', d:'musicisti, artisti, tecnici, creativi'},
-  natura:      {emoji:'🌿', t:'Natura & vita lenta',  d:'orti, sentieri, ritmi sereni'},
-  cultura:     {emoji:'📚', t:'Cultura, libri & lingue', d:'lettori, insegnanti, viaggiatori'},
-  benessere:   {emoji:'🧘', t:'Benessere & spiritualità', d:'quiete, pratica, cura'},
-  mestieri:    {emoji:'🔧', t:'Mani & mestieri', d:'artigiani, autoproduttori'}
+/* ---------- traduzioni (EN default) ---------- */
+var T = {
+  en:{
+    step_of:'Step {n} of 4',
+    s1_title:'Live in a village, among people like you.',
+    s1_sub:'We help you move to a peaceful village, next to people who share your passions. Leave your details: <strong>we’ll call you</strong>. It takes 2 minutes.',
+    ok_invite:'✓ Invitation recognised: you’ll have priority.',
+    lbl_borgo:'Where would you like to go?',
+    help_borgo:'Pick a place. You can change your mind when we call you.',
+    lbl_com:'What kind of people?',
+    help_com:'A community is the group of people with interests like yours. Not sure? Pick the closest one.',
+    err1:'Choose a place and a community to continue.',
+    btn_continue:'Continue →', btn_back:'← Back', btn_skip:'Skip, I’ll tell you later',
+    s2_title:'What’s your name and where do we call you?',
+    lbl_name:'Your name', ph_name:'E.g. Maria',
+    lbl_tel:'Your phone number', ph_tel:'E.g. +39 333 1234567',
+    help_tel:'We’ll call you, whenever suits you. WhatsApp is fine too.',
+    lbl_email:'Your email (if you have one)', help_email:'Not required. If you have one, we’ll send a confirmation.',
+    err2:'We need at least a name and a number to call you back.',
+    s3_title:'Want to tell us a bit about yourself?',
+    s3_sub:'Not required. A couple of lines, however it comes.',
+    lbl_motiv:'Tell us about you (optional)', ph_motiv:'E.g. I’m a painter, looking for a quiet place to live and paint.',
+    lbl_eta:'How old are you, roughly? (optional)',
+    adv_summary:'Help us already find your home (optional)',
+    lbl_quando:'When could you move?', lbl_tipocasa:'Renting or buying?', lbl_nucleo:'You would move…',
+    s4_title:'Last step.', s4_sub:'Check and send. We’ll take care of the rest.',
+    consent_req:'Yes, you may call or write to me about this project. I have read the privacy notice. (required)',
+    consent_news:'Yes, keep me updated about the project.',
+    privacy_short:'We use your data only to get back to you about MyPlace. No ads, no spam. You can ask for deletion any time.',
+    privacy_link:'How we handle your data.',
+    err4:'Tick the first box so we can get back to you.',
+    btn_send:'Send my request', fallback_q:'Prefer to write an email?', fallback_link:'Write to us here.',
+    done_big:'Done! 🎉', done_help:'You don’t need to do anything else. If you prefer, you can also write to us at',
+    back_site:'Back to the site', foot_site:'the site', foot_privacy:'privacy', foot_proto:'prototype',
+    soon:'Soon',
+    done_active:'Thank you {n}: we’ll call you in the coming days to tell you everything calmly.',
+    done_wait:'Thank you {n}! You’re on the waiting list for {b}. Communities start in small groups: we’ll let you know as soon as a spot opens.',
+    borgo_else:'Somewhere else / not sure', area_all:'Show me everything',
+    coms:{arte:['🎶','Artists & performers','musicians, artists, technicians'],natura:['🌿','Nature & slow living','gardens, trails, calm'],cultura:['📚','Culture, books & languages','readers, teachers, travellers'],benessere:['🧘','Wellbeing & spirituality','quiet, practice, care'],mestieri:['🔧','Hands & crafts','artisans, makers']},
+    eta:['under 55','55–65','66–75','over 75'],
+    quando:['Right away','Within a year','Later, just looking'],
+    tipocasa:['Rent','Buy','Either'],
+    nucleo:['On my own','As a couple','With family','With friends']
+  },
+  it:{
+    step_of:'Passo {n} di 4',
+    s1_title:'Vivere in un borgo, insieme a persone come te.',
+    s1_sub:'Ti aiutiamo a trasferirti in un paese tranquillo, accanto a persone che hanno le tue stesse passioni. Lascia i tuoi dati: <strong>ti chiamiamo noi</strong>. Bastano 2 minuti.',
+    ok_invite:'✓ Invito riconosciuto: avrai priorità.',
+    lbl_borgo:'Dove ti piacerebbe andare?', help_borgo:'Scegli un posto. Potrai cambiare idea quando ti chiamiamo.',
+    lbl_com:'Con che tipo di persone?', help_com:'La comunità è il gruppo di persone con interessi simili ai tuoi. Non sei sicuro? Scegli quella più vicina.',
+    err1:'Scegli un posto e una comunità per continuare.',
+    btn_continue:'Continua →', btn_back:'← Indietro', btn_skip:'Salta, lo racconto dopo',
+    s2_title:'Come ti chiami e dove ti chiamiamo?',
+    lbl_name:'Il tuo nome', ph_name:'Es. Maria',
+    lbl_tel:'Il tuo numero di telefono', ph_tel:'Es. +39 333 1234567',
+    help_tel:'Ti chiamiamo noi, quando ti fa comodo. Va bene anche WhatsApp.',
+    lbl_email:'La tua email (se ce l’hai)', help_email:'Non è obbligatoria. Se ce l’hai, ti mandiamo una conferma.',
+    err2:'Ci serve almeno il nome e un numero per richiamarti.',
+    s3_title:'Vuoi dirci due parole su di te?', s3_sub:'Non è obbligatorio. Bastano due righe, come ti viene.',
+    lbl_motiv:'Raccontati (facoltativo)', ph_motiv:'Es. Faccio la pittrice, cerco un posto tranquillo dove vivere e dipingere.',
+    lbl_eta:'Quanti anni hai, più o meno? (facoltativo)',
+    adv_summary:'Aiutaci già a trovarti casa (facoltativo)',
+    lbl_quando:'Quando potresti trasferirti?', lbl_tipocasa:'Cerchi affitto o acquisto?', lbl_nucleo:'Ti trasferiresti…',
+    s4_title:'Ultimo passo.', s4_sub:'Controlla e invia. Al resto pensiamo noi.',
+    consent_req:'Sì, potete chiamarmi o scrivermi per parlare di questo progetto. Ho letto l’informativa privacy. (obbligatorio)',
+    consent_news:'Sì, tenetemi aggiornato sul progetto.',
+    privacy_short:'Usiamo i tuoi dati solo per ricontattarti su MyPlace. Niente pubblicità, niente spam. Puoi chiedere la cancellazione in ogni momento.',
+    privacy_link:'Come trattiamo i tuoi dati.',
+    err4:'Spunta la prima casella così possiamo ricontattarti.',
+    btn_send:'Invia la mia richiesta', fallback_q:'Preferisci scrivere un’email?', fallback_link:'Scrivici qui.',
+    done_big:'Fatto! 🎉', done_help:'Non devi fare altro. Se preferisci, puoi anche scriverci a',
+    back_site:'Torna al sito', foot_site:'il sito', foot_privacy:'privacy', foot_proto:'prototipo',
+    soon:'Presto',
+    done_active:'Grazie {n}: ti chiamiamo noi nei prossimi giorni per raccontarti tutto con calma.',
+    done_wait:'Grazie {n}! Sei in lista d’attesa per {b}. Le comunità partono a piccoli gruppi: ti avvisiamo appena si apre un posto.',
+    borgo_else:'Un altro posto / non so', area_all:'Mostrami tutto',
+    coms:{arte:['🎶','Artisti & spettacolo','musicisti, artisti, tecnici'],natura:['🌿','Natura & vita lenta','orti, sentieri, quiete'],cultura:['📚','Cultura, libri & lingue','lettori, insegnanti, viaggiatori'],benessere:['🧘','Benessere & spiritualità','quiete, pratica, cura'],mestieri:['🔧','Mani & mestieri','artigiani, autoproduttori']},
+    eta:['sotto i 55','55–65','66–75','oltre 75'],
+    quando:['Anche subito','Entro un anno','Più avanti, sto guardando'],
+    tipocasa:['Affitto','Acquisto','Indifferente'],
+    nucleo:['Da solo/a','In coppia','Con la famiglia','Con amici']
+  },
+  es:{
+    step_of:'Paso {n} de 4',
+    s1_title:'Vivir en un pueblo, junto a personas como tú.',
+    s1_sub:'Te ayudamos a mudarte a un pueblo tranquilo, junto a personas que comparten tus pasiones. Deja tus datos: <strong>te llamamos nosotros</strong>. Solo 2 minutos.',
+    ok_invite:'✓ Invitación reconocida: tendrás prioridad.',
+    lbl_borgo:'¿Adónde te gustaría ir?', help_borgo:'Elige un lugar. Podrás cambiar de idea cuando te llamemos.',
+    lbl_com:'¿Con qué tipo de personas?', help_com:'La comunidad es el grupo de personas con intereses como los tuyos. ¿No lo tienes claro? Elige la más cercana.',
+    err1:'Elige un lugar y una comunidad para continuar.',
+    btn_continue:'Continuar →', btn_back:'← Atrás', btn_skip:'Saltar, lo cuento después',
+    s2_title:'¿Cómo te llamas y dónde te llamamos?',
+    lbl_name:'Tu nombre', ph_name:'Ej. María',
+    lbl_tel:'Tu número de teléfono', ph_tel:'Ej. +34 600 123456',
+    help_tel:'Te llamamos nosotros, cuando te venga bien. WhatsApp también vale.',
+    lbl_email:'Tu correo (si tienes)', help_email:'No es obligatorio. Si tienes, te enviamos una confirmación.',
+    err2:'Necesitamos al menos un nombre y un número para llamarte.',
+    s3_title:'¿Quieres contarnos algo de ti?', s3_sub:'No es obligatorio. Un par de líneas, como te salga.',
+    lbl_motiv:'Cuéntanos (opcional)', ph_motiv:'Ej. Soy pintora, busco un lugar tranquilo donde vivir y pintar.',
+    lbl_eta:'¿Cuántos años tienes, más o menos? (opcional)',
+    adv_summary:'Ayúdanos ya a encontrarte casa (opcional)',
+    lbl_quando:'¿Cuándo podrías mudarte?', lbl_tipocasa:'¿Alquiler o compra?', lbl_nucleo:'Te mudarías…',
+    s4_title:'Último paso.', s4_sub:'Revisa y envía. Del resto nos ocupamos nosotros.',
+    consent_req:'Sí, podéis llamarme o escribirme sobre este proyecto. He leído la política de privacidad. (obligatorio)',
+    consent_news:'Sí, mantenedme al día sobre el proyecto.',
+    privacy_short:'Usamos tus datos solo para volver a contactarte sobre MyPlace. Sin publicidad, sin spam. Puedes pedir la eliminación cuando quieras.',
+    privacy_link:'Cómo tratamos tus datos.',
+    err4:'Marca la primera casilla para que podamos contactarte.',
+    btn_send:'Enviar mi solicitud', fallback_q:'¿Prefieres escribir un correo?', fallback_link:'Escríbenos aquí.',
+    done_big:'¡Hecho! 🎉', done_help:'No tienes que hacer nada más. Si prefieres, también puedes escribirnos a',
+    back_site:'Volver al sitio', foot_site:'el sitio', foot_privacy:'privacidad', foot_proto:'prototipo',
+    soon:'Pronto',
+    done_active:'¡Gracias {n}! Te llamamos nosotros en los próximos días para contártelo todo con calma.',
+    done_wait:'¡Gracias {n}! Estás en lista de espera para {b}. Las comunidades empiezan en grupos pequeños: te avisamos en cuanto se abra una plaza.',
+    borgo_else:'Otro lugar / no lo sé', area_all:'Muéstrame todo',
+    coms:{arte:['🎶','Artistas & espectáculo','músicos, artistas, técnicos'],natura:['🌿','Naturaleza & vida lenta','huertos, senderos, calma'],cultura:['📚','Cultura, libros & idiomas','lectores, docentes, viajeros'],benessere:['🧘','Bienestar & espiritualidad','calma, práctica, cuidado'],mestieri:['🔧','Manos & oficios','artesanos, autoproductores']},
+    eta:['menos de 55','55–65','66–75','más de 75'],
+    quando:['Ahora mismo','En un año','Más adelante, mirando'],
+    tipocasa:['Alquiler','Compra','Indiferente'],
+    nucleo:['Solo/a','En pareja','Con la familia','Con amigos']
+  }
 };
+
+/* ---------- borghi (modifica qui per aggiungere paesi) ---------- */
 var BORGHI = [
-  {slug:'larva',  name:'Larva',                  area:'Sierra Mágina · Jaén',   status:'attivo', com:['arte','natura','mestieri']},
-  {slug:'cabra',  name:'Cabra del Santo Cristo', area:'Sierra Mágina · Jaén',   status:'presto', com:['arte','cultura','natura']},
-  {slug:'belmez', name:'Bélmez de la Moraleda',  area:'Sierra Mágina · Jaén',   status:'presto', com:['arte','cultura','natura']},
-  {slug:'segura', name:'Segura de la Sierra',    area:'Sierra de Segura · Jaén',status:'presto', com:['arte','cultura','natura','mestieri']},
-  {slug:'galera', name:'Galera',                 area:'Altiplano · Granada',    status:'presto', com:['arte','cultura','natura','benessere']},
-  {slug:'altro',  name:'Un altro posto / non so',area:'Mostrami tutto',         status:'attivo', com:['arte','natura','cultura','benessere','mestieri']}
+  {slug:'larva',  name:'Larva',                  area:'Sierra Mágina · Jaén',    status:'attivo', com:['arte','natura','mestieri']},
+  {slug:'cabra',  name:'Cabra del Santo Cristo', area:'Sierra Mágina · Jaén',    status:'presto', com:['arte','cultura','natura']},
+  {slug:'belmez', name:'Bélmez de la Moraleda',  area:'Sierra Mágina · Jaén', status:'presto', com:['arte','cultura','natura']},
+  {slug:'segura', name:'Segura de la Sierra',    area:'Sierra de Segura · Jaén', status:'presto', com:['arte','cultura','natura','mestieri']},
+  {slug:'galera', name:'Galera',                 area:'Altiplano · Granada',     status:'presto', com:['arte','cultura','natura','benessere']},
+  {slug:'altro',  name:'__ELSE__',               area:'__ALL__',                     status:'attivo', com:['arte','natura','cultura','benessere','mestieri']}
 ];
 
-/* ---------- stato ---------- */
-var st = {borgo:'',borgoName:'',comunita:'',comunitaName:'',eta:'',quando:'',tipocasa:'',nucleo:'',invito:'',waitlist:false};
+var lang='en';
+var st={borgo:'',borgoName:'',comunita:'',eta:'',quando:'',tipocasa:'',nucleo:'',invito:'',waitlist:false,
+        etaI:-1,quandoI:-1,tipocasaI:-1,nucleoI:-1};
 
-/* ---------- render borghi ---------- */
+function tr(k){return (T[lang][k]!=null?T[lang][k]:T.en[k])}
+
+/* ---------- applica lingua ---------- */
+function applyLang(l){
+  lang=(T[l]?l:'en');
+  try{localStorage.setItem('mp_lang',lang)}catch(e){}
+  document.documentElement.lang=lang;
+  document.querySelectorAll('#lang button').forEach(function(b){b.classList.toggle('on',b.dataset.lang===lang)});
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(T[lang][k]!=null)el.innerHTML=T[lang][k]});
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(T[lang][k]!=null)el.setAttribute('placeholder',T[lang][k])});
+  updateProgress();
+  renderBorghi(); renderComunita();
+  renderPills('eta','eta'); renderPills('quando','quando'); renderPills('tipocasa','tipocasa'); renderPills('nucleo','nucleo');
+}
+document.querySelectorAll('#lang button').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang)})});
+
+/* ---------- borghi ---------- */
+function borgoLabel(b){return b.name==='__ELSE__'?tr('borgo_else'):b.name}
+function borgoArea(b){return b.area==='__ALL__'?tr('area_all'):b.area}
 function renderBorghi(){
   var c=document.getElementById('borghi'); c.innerHTML='';
   BORGHI.forEach(function(b){
-    var el=document.createElement('button'); el.className='card'+(b.status==='presto'?' soon':'');
-    el.innerHTML='<span class="t">'+b.name+'</span><span class="d">'+b.area+'</span>'+
-      (b.status==='presto'?'<span class="tag">Presto</span>':'');
-    el.onclick=function(){selBorgo(b,el)};
+    var el=document.createElement('button'); el.className='card'+(b.status==='presto'?' soon':'')+(st.borgo===b.slug?' sel':'');
+    el.innerHTML='<span class="t">'+borgoLabel(b)+'</span><span class="d">'+borgoArea(b)+'</span>'+(b.status==='presto'?'<span class="tag">'+tr('soon')+'</span>':'');
+    el.onclick=function(){selBorgo(b)};
     c.appendChild(el);
   });
 }
-function selBorgo(b,el){
-  st.borgo=b.slug; st.borgoName=b.name; st.waitlist=(b.status==='presto');
-  st.comunita=''; st.comunitaName='';
-  [].forEach.call(document.querySelectorAll('#borghi .card'),function(x){x.classList.remove('sel')});
-  el.classList.add('sel');
-  var cw=document.getElementById('comWrap'); cw.style.display='block';
-  var cc=document.getElementById('comunita'); cc.innerHTML='';
+function selBorgo(b){
+  st.borgo=b.slug; st.borgoName=borgoLabel(b); st.waitlist=(b.status==='presto'); st.comunita='';
+  renderBorghi();
+  document.getElementById('comWrap').style.display='block';
+  renderComunita();
+  document.getElementById('comWrap').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function renderComunita(){
+  var cc=document.getElementById('comunita'); if(!cc)return; cc.innerHTML='';
+  var b=BORGHI.filter(function(x){return x.slug===st.borgo})[0]; if(!b)return;
   b.com.forEach(function(k){
-    var d=COMS[k]; var e=document.createElement('button'); e.className='card';
-    e.innerHTML='<span class="emoji">'+d.emoji+'</span><span class="t">'+d.t+'</span><span class="d">'+d.d+'</span>';
-    e.onclick=function(){
-      st.comunita=k; st.comunitaName=d.t;
-      [].forEach.call(document.querySelectorAll('#comunita .card'),function(x){x.classList.remove('sel')});
-      e.classList.add('sel');
-    };
+    var d=T[lang].coms[k]; var e=document.createElement('button'); e.className='card'+(st.comunita===k?' sel':'');
+    e.innerHTML='<span class="emoji">'+d[0]+'</span><span class="t">'+d[1]+'</span><span class="d">'+d[2]+'</span>';
+    e.onclick=function(){st.comunita=k; renderComunita()};
     cc.appendChild(e);
   });
-  cw.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
 /* ---------- pills ---------- */
-function pills(id,opts,key){
-  var c=document.getElementById(id);
-  opts.forEach(function(o){
-    var b=document.createElement('button'); b.className='pill'; b.textContent=o;
-    b.onclick=function(){st[key]=o;[].forEach.call(c.children,function(x){x.classList.remove('sel')});b.classList.add('sel')};
+function renderPills(id,key){
+  var c=document.getElementById(id); if(!c)return; c.innerHTML='';
+  T[lang][key].forEach(function(opt,i){
+    var b=document.createElement('button'); b.className='pill'+(st[key+'I']===i?' sel':''); b.textContent=opt;
+    b.onclick=function(){st[key+'I']=i; st[key]=T.en[key][i]; renderPills(id,key)};
     c.appendChild(b);
   });
 }
-pills('eta',['sotto i 55','55–65','66–75','oltre 75'],'eta');
-pills('quando',['Anche subito','Entro un anno','Più avanti, sto guardando'],'quando');
-pills('tipocasa',['Affitto','Acquisto','Indifferente'],'tipocasa');
-pills('nucleo',['Da solo/a','In coppia','Con la famiglia','Con amici'],'nucleo');
 
-/* ---------- navigazione step ---------- */
-var step=1, TOT=4;
-function show(n){
-  for(var i=1;i<=4;i++){document.getElementById('s'+i).classList.toggle('on',i===n)}
-  document.getElementById('progressTxt').textContent='Passo '+n+' di '+TOT;
-  document.getElementById('pbar').style.width=(n/TOT*100)+'%';
-  step=n; window.scrollTo({top:0,behavior:'smooth'});
-}
+/* ---------- step ---------- */
+var TOT=4;
+function updateProgress(){var n=curStep();document.getElementById('progressTxt').textContent=tr('step_of').replace('{n}',n);document.getElementById('pbar').style.width=(n/TOT*100)+'%'}
+function curStep(){for(var i=1;i<=4;i++){if(document.getElementById('s'+i).classList.contains('on'))return i}return 1}
+function show(n){for(var i=1;i<=4;i++){document.getElementById('s'+i).classList.toggle('on',i===n)}updateProgress();window.scrollTo({top:0,behavior:'smooth'})}
 function prev(n){show(n-1)}
 function next(n){
-  if(n===1){
-    if(!st.borgo||!st.comunita){return showErr('err1')}
-  }
-  if(n===2){
-    var nome=val('nome'), tel=val('tel');
-    if(!nome||!tel){return showErr('err2')}
-  }
+  if(n===1){if(!st.borgo||!st.comunita)return showErr('err1')}
+  if(n===2){if(!val('nome')||!val('tel'))return showErr('err2')}
   hideErrs(); show(n+1);
 }
 function showErr(id){document.getElementById(id).classList.add('on')}
-function hideErrs(){[].forEach.call(document.querySelectorAll('.err'),function(e){e.classList.remove('on')})}
+function hideErrs(){document.querySelectorAll('.err').forEach(function(e){e.classList.remove('on')})}
 function val(id){return (document.getElementById(id).value||'').trim()}
 
-/* ---------- invito da URL (?invito=LARVA-ART o ?borgo=larva) ---------- */
-(function(){
+/* ---------- invito da URL ---------- */
+function initInvite(){
   var p=new URLSearchParams(location.search);
   var inv=(p.get('invito')||'').toUpperCase();
-  var borgoParam=(p.get('borgo')||'').toLowerCase();
-  renderBorghi();
-  if(inv){ st.invito=inv; document.getElementById('okInvite').classList.add('on');
-    var bslug=inv.split('-')[0].toLowerCase();
-    var found=BORGHI.filter(function(b){return b.slug===bslug})[0];
-    if(found){ autoSel(found); }
-  } else if(borgoParam){
-    var f2=BORGHI.filter(function(b){return b.slug===borgoParam})[0];
-    if(f2) autoSel(f2);
-  }
-})();
-function autoSel(b){
-  var idx=BORGHI.indexOf(b);
-  var el=document.querySelectorAll('#borghi .card')[idx];
-  if(el) selBorgo(b,el);
+  var bp=(p.get('borgo')||'').toLowerCase();
+  if(inv){st.invito=inv;document.getElementById('okInvite').classList.add('on');
+    var bs=inv.split('-')[0].toLowerCase();
+    var f=BORGHI.filter(function(b){return b.slug===bs})[0]; if(f)selBorgo(f);
+  } else if(bp){var f2=BORGHI.filter(function(b){return b.slug===bp})[0]; if(f2)selBorgo(f2);}
 }
 
-/* ---------- invio ---------- */
-function buildBody(){
-  return 'Nome: '+val('nome')+
-    '\nTelefono: '+val('tel')+
-    '\nEmail: '+(val('email')||'(non fornita)')+
-    '\nBorgo: '+st.borgoName+(st.waitlist?' (lista d\'attesa)':'')+
-    '\nComunità: '+st.comunitaName+
-    '\nMotivazione: '+(val('motiv')||'-')+
-    '\nEtà: '+(st.eta||'-')+
-    '\nQuando: '+(st.quando||'-')+
-    '\nCasa: '+(st.tipocasa||'-')+'  Con chi: '+(st.nucleo||'-')+
-    '\nCodice invito: '+(st.invito||'-')+
-    '\nNewsletter: '+(document.getElementById('news').checked?'sì':'no')+
-    '\nLingua: it'+
-    '\n\n(Inviato dal modulo di registrazione MyPlace)';
-}
-function mailtoLink(){
-  return 'mailto:webmaster.puntorosso@gmail.com?subject='+
-    encodeURIComponent('MyPlace registrazione — '+val('nome')+' — '+st.borgoName)+
-    '&body='+encodeURIComponent(buildBody());
-}
-document.getElementById('mailfallback').addEventListener('click',function(e){
-  e.preventDefault(); this.href=mailtoLink(); window.location.href=this.href;
-});
-/* Raccolta iscrizioni: FormSubmit.co (nessun account da creare; alla PRIMA iscrizione
-   arriva a webmaster.puntorosso@gmail.com un'email di attivazione da cliccare UNA volta).
-   Per passare in futuro a Formspree/Getform o a un foglio Google: cambiare solo ENDPOINT. */
+/* ---------- invio (FormSubmit) ---------- */
 var ENDPOINT='https://formsubmit.co/ajax/webmaster.puntorosso@gmail.com';
+function comName(){var d=T.en.coms[st.comunita]; return d?d[1]:st.comunita}
+function buildBody(){
+  return 'Name: '+val('nome')+'\nPhone: '+val('tel')+'\nEmail: '+(val('email')||'(not given)')+
+    '\nVillage: '+st.borgoName+(st.waitlist?' (waiting list)':'')+'\nCommunity: '+comName()+
+    '\nAbout: '+(val('motiv')||'-')+'\nAge: '+(st.eta||'-')+'\nWhen: '+(st.quando||'-')+
+    '\nHome: '+(st.tipocasa||'-')+'  With: '+(st.nucleo||'-')+'\nInvite code: '+(st.invito||'-')+
+    '\nNewsletter: '+(document.getElementById('news').checked?'yes':'no')+'\nForm language: '+lang+
+    '\n\n(Sent from the MyPlace registration form)';
+}
+function mailtoLink(){return 'mailto:webmaster.puntorosso@gmail.com?subject='+encodeURIComponent('MyPlace registration — '+val('nome')+' — '+st.borgoName)+'&body='+encodeURIComponent(buildBody())}
+document.getElementById('mailfallback').addEventListener('click',function(e){e.preventDefault();window.location.href=mailtoLink()});
 function invia(){
-  if(!document.getElementById('consenso').checked){return showErr('err4')}
-  var hp=document.getElementById('_honey'); if(hp && hp.value){return} /* anti-spam */
+  if(!document.getElementById('consenso').checked)return showErr('err4');
+  var hp=document.getElementById('_honey'); if(hp&&hp.value)return;
   hideErrs();
-  var payload={
-    Nome:val('nome'), Telefono:val('tel'), Email:(val('email')||'(non fornita)'),
-    Borgo:st.borgoName+(st.waitlist?" (lista d'attesa)":''), Comunita:st.comunitaName,
-    Motivazione:(val('motiv')||'-'), Eta:(st.eta||'-'), Quando:(st.quando||'-'),
-    Casa:(st.tipocasa||'-'), ConChi:(st.nucleo||'-'), CodiceInvito:(st.invito||'-'),
-    Newsletter:(document.getElementById('news').checked?'si':'no'), Lingua:'it',
-    _subject:'MyPlace registrazione — '+val('nome')+' — '+st.borgoName,
-    _template:'table', _captcha:'false'
-  };
-  var b=document.getElementById('btnInvia'); if(b){b.disabled=true; b.textContent='Invio…';}
+  var payload={Name:val('nome'),Phone:val('tel'),Email:(val('email')||'(not given)'),
+    Village:st.borgoName+(st.waitlist?' (waiting list)':''),Community:comName(),
+    About:(val('motiv')||'-'),Age:(st.eta||'-'),When:(st.quando||'-'),Home:(st.tipocasa||'-'),With:(st.nucleo||'-'),
+    InviteCode:(st.invito||'-'),Newsletter:(document.getElementById('news').checked?'yes':'no'),FormLanguage:lang,
+    _subject:'MyPlace registration — '+val('nome')+' — '+st.borgoName,_template:'table',_captcha:'false'};
+  var b=document.getElementById('btnInvia'); if(b){b.disabled=true;b.textContent='…'}
   fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
-    .then(function(r){return r.json()})
-    .then(function(){ showDone(); })
-    .catch(function(){ try{window.location.href=mailtoLink();}catch(e){} showDone(); });
+    .then(function(r){return r.json()}).then(function(){showDone()})
+    .catch(function(){try{window.location.href=mailtoLink()}catch(e){}showDone()});
 }
 function showDone(){
   document.getElementById('progressWrap').style.display='none';
   for(var i=1;i<=4;i++){document.getElementById('s'+i).classList.remove('on')}
   var nome=val('nome');
-  var msg = st.waitlist
-    ? 'Grazie '+nome+'! Sei in lista d\'attesa per '+st.borgoName+'. Le comunità partono a piccoli gruppi: ti avvisiamo appena si apre un posto.'
-    : 'Grazie '+nome+': ti chiamiamo noi nei prossimi giorni per raccontarti tutto con calma.';
+  var msg=(st.waitlist?tr('done_wait'):tr('done_active')).replace('{n}',nome).replace('{b}',st.borgoName);
   document.getElementById('doneMsg').textContent=msg;
-  document.getElementById('doneChips').innerHTML='<span class="chip">📍 '+st.borgoName+'</span><span class="chip">👥 '+st.comunitaName+'</span>';
+  document.getElementById('doneChips').innerHTML='<span class="chip">📍 '+st.borgoName+'</span><span class="chip">👥 '+comName()+'</span>';
   document.getElementById('done').classList.add('on');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+/* ---------- start ---------- */
+(function(){var s='en';try{s=localStorage.getItem('mp_lang')||'en'}catch(e){} if(!T[s])s='en'; applyLang(s); initInvite();})();
 </script>
 </body>
 </html>
