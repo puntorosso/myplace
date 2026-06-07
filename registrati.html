@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MyPlace — Registrati</title>
+<meta name="description" content="Lascia i tuoi dati: ti aiutiamo a trasferirti in un borgo accogliente, accanto a persone con le tue stesse passioni. Bastano 2 minuti." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c2562f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23fbf7ee' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f6efe3;--cream:#fbf7ee;--ink:#2a211b;--terracotta:#c2562f;--terra-deep:#9c3d1d;
+    --olive:#6b7148;--line:#e2d6c2;--dust:#8a7c6a;--ok:#3f7d4f;--radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);
+    line-height:1.6;font-size:19px;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
+  .wrap{max-width:640px;margin:0 auto;padding:0 22px}
+
+  header{background:rgba(246,239,227,.9);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
+  .head-in{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:1.3rem;text-decoration:none;color:var(--ink)}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--terracotta)}
+  .lang{font-size:.8rem;color:var(--dust)}
+  .lang b{color:var(--terracotta)}
+
+  main{padding:30px 0 80px}
+  .progress{font-size:.9rem;font-weight:700;letter-spacing:.04em;color:var(--terracotta);margin-bottom:10px;text-transform:uppercase}
+  .pbar{height:8px;background:#eaded0;border-radius:99px;overflow:hidden;margin-bottom:30px}
+  .pbar > i{display:block;height:100%;background:var(--terracotta);width:20%;transition:width .35s ease}
+
+  h1{font-size:clamp(1.7rem,5vw,2.4rem);margin-bottom:10px}
+  .sub{font-size:1.05rem;color:#5a4d40;margin-bottom:26px}
+  .help{font-size:.98rem;color:var(--dust);margin:-4px 0 18px}
+
+  .step{display:none;animation:fade .4s ease}
+  .step.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* big choice cards */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 8px}
+  @media(max-width:520px){.cards{grid-template-columns:1fr}}
+  .card{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--cream);border:2px solid var(--line);
+    border-radius:var(--radius);padding:18px 18px;cursor:pointer;font:inherit;color:inherit;transition:.18s;position:relative}
+  .card:hover{border-color:var(--terracotta);transform:translateY(-2px)}
+  .card.sel{border-color:var(--terracotta);background:#fbeee4;box-shadow:0 0 0 3px rgba(194,86,47,.15)}
+  .card .t{font-family:"Fraunces",serif;font-size:1.2rem}
+  .card .d{font-size:.9rem;color:var(--dust)}
+  .card .emoji{font-size:1.5rem}
+  .card.soon{opacity:.7}
+  .tag{position:absolute;top:12px;right:12px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--olive);color:#fff;padding:4px 9px;border-radius:99px}
+
+  label{display:block;font-weight:600;margin:18px 0 6px;font-size:1.02rem}
+  input[type=text],input[type=tel],input[type=email],textarea{width:100%;padding:15px 16px;border-radius:12px;
+    border:2px solid var(--line);background:#fff;font:inherit;color:var(--ink);transition:.15s}
+  input:focus,textarea:focus{outline:none;border-color:var(--terracotta)}
+  textarea{min-height:96px;resize:vertical}
+  .opt{font-weight:400;color:var(--dust);font-size:.9rem}
+
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .pill{background:var(--cream);border:2px solid var(--line);border-radius:99px;padding:10px 16px;cursor:pointer;font:inherit;transition:.15s}
+  .pill:hover{border-color:var(--terracotta)}
+  .pill.sel{border-color:var(--terracotta);background:#fbeee4}
+
+  details.adv{margin-top:22px;border:1px dashed var(--line);border-radius:12px;padding:4px 16px;background:#fcf7ee}
+  details.adv summary{cursor:pointer;padding:14px 0;font-weight:600;color:var(--terra-deep)}
+
+  .consent{display:flex;gap:12px;align-items:flex-start;margin-top:18px;background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .consent input{margin-top:5px;width:22px;height:22px;flex:0 0 auto;accent-color:var(--terracotta)}
+  .consent label{margin:0;font-weight:500;font-size:.98rem}
+  .privacy{font-size:.86rem;color:var(--dust);margin-top:12px}
+  .privacy a{color:var(--terracotta)}
+
+  .nav{display:flex;gap:12px;margin-top:30px;align-items:center;flex-wrap:wrap}
+  .btn{font:inherit;font-weight:700;border:none;border-radius:99px;padding:16px 30px;cursor:pointer;transition:.2s}
+  .btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 10px 26px -10px rgba(194,86,47,.6)}
+  .btn-primary:hover{background:var(--terra-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream)}
+  .btn-link{background:none;border:none;color:var(--dust);text-decoration:underline;cursor:pointer;font:inherit;padding:8px}
+  .err{color:var(--terra-deep);font-size:.92rem;margin-top:8px;font-weight:600;display:none}
+  .err.on{display:block}
+  .badge-ok{display:none;background:#e8f3ea;color:var(--ok);border:1px solid #bcdcc4;border-radius:10px;padding:10px 14px;margin:10px 0;font-weight:600}
+  .badge-ok.on{display:block}
+
+  .done{display:none;text-align:center;padding:30px 0}
+  .done.on{display:block}
+  .done .big{font-family:"Fraunces",serif;font-size:2rem;margin-bottom:10px}
+  .done .chips{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+  .chip{background:var(--cream);border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:.92rem}
+
+  footer{border-top:1px solid var(--line);padding:24px 0;color:var(--dust);font-size:.85rem;text-align:center}
+  footer a{color:var(--terracotta);text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap head-in">
+  <a class="brand" href="index.html"><span class="dot"></span>MyPlace</a>
+  <span class="lang"><b>IT</b> · ES · EN</span>
+</div></header>
+
+<main class="wrap">
+  <!-- progress -->
+  <div id="progressWrap">
+    <div class="progress" id="progressTxt">Passo 1 di 4</div>
+    <div class="pbar"><i id="pbar"></i></div>
+  </div>
+
+  <!-- STEP 1: borgo + comunità -->
+  <section class="step on" id="s1">
+    <h1>Vivere in un borgo, insieme a persone come te.</h1>
+    <p class="sub">Ti aiutiamo a trasferirti in un paese tranquillo, accanto a persone che hanno le tue stesse passioni. Lascia i tuoi dati: <strong>ti chiamiamo noi</strong>. Bastano 2 minuti.</p>
+
+    <div id="okInvite" class="badge-ok">✓ Invito riconosciuto: avrai priorità.</div>
+
+    <label>Dove ti piacerebbe andare?</label>
+    <p class="help">Scegli un posto. Potrai cambiare idea quando ti chiamiamo.</p>
+    <div class="cards" id="borghi"></div>
+
+    <div id="comWrap" style="display:none">
+      <label>Con che tipo di persone?</label>
+      <p class="help">La comunità è il gruppo di persone con interessi simili ai tuoi. Non sei sicuro? Scegli quella più vicina.</p>
+      <div class="cards" id="comunita"></div>
+    </div>
+
+    <div class="err" id="err1">Scegli un posto e una comunità per continuare.</div>
+    <div class="nav">
+      <button class="btn btn-primary" onclick="next(1)">Continua →</button>
+    </div>
+  </section>
+
+  <!-- STEP 2: contatti -->
+  <section class="step" id="s2">
+    <h1>Come ti chiami e dove ti chiamiamo?</h1>
+    <label for="nome">Il tuo nome</label>
+    <input type="text" id="nome" placeholder="Es. Maria" autocomplete="name" />
+    <label for="tel">Il tuo numero di telefono</label>
+    <input type="tel" id="tel" placeholder="Es. +39 333 1234567" autocomplete="tel" />
+    <p class="help">Ti chiamiamo noi, quando ti fa comodo. Va bene anche WhatsApp.</p>
+    <label for="email">La tua email <span class="opt">(se ce l'hai)</span></label>
+    <input type="email" id="email" placeholder="la-tua@email.it" autocomplete="email" />
+    <p class="help">Non è obbligatoria. Se ce l'hai, ti mandiamo una conferma.</p>
+    <div class="err" id="err2">Ci serve almeno il nome e un numero per richiamarti.</div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="prev(2)">← Indietro</button>
+      <button class="btn btn-primary" onclick="next(2)">Continua →</button>
+    </div>
+  </section>
+
+  <!-- STEP 3: opzionale -->
+  <section class="step" id="s3">
+    <h1>Vuoi dirci due parole su di te?</h1>
+    <p class="sub">Non è obbligatorio. Bastano due righe, come ti viene.</p>
+    <label for="motiv">Raccontati <span class="opt">(facoltativo)</span></label>
+    <textarea id="motiv" placeholder="Es. Faccio la pittrice, cerco un posto tranquillo dove vivere e dipingere."></textarea>
+
+    <label>Quanti anni hai, più o meno? <span class="opt">(facoltativo)</span></label>
+    <div class="pills" id="eta"></div>
+
+    <details class="adv">
+      <summary>Aiutaci già a trovarti casa (facoltativo)</summary>
+      <label>Quando potresti trasferirti?</label>
+      <div class="pills" id="quando"></div>
+      <label>Cerchi affitto o acquisto?</label>
+      <div class="pills" id="tipocasa"></div>
+      <label>Ti trasferiresti…</label>
+      <div class="pills" id="nucleo"></div>
+    </details>
+
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="prev(3)">← Indietro</button>
+      <button class="btn btn-primary" onclick="next(3)">Continua →</button>
+      <button class="btn-link" onclick="next(3)">Salta, lo racconto dopo</button>
+    </div>
+  </section>
+
+  <!-- STEP 4: privacy + invio -->
+  <section class="step" id="s4">
+    <h1>Ultimo passo.</h1>
+    <p class="sub">Controlla e invia. Al resto pensiamo noi.</p>
+    <div class="consent">
+      <input type="checkbox" id="consenso" />
+      <label for="consenso">Sì, potete chiamarmi o scrivermi per parlare di questo progetto. Ho letto l'informativa privacy. <strong>(obbligatorio)</strong></label>
+    </div>
+    <div class="consent">
+      <input type="checkbox" id="news" />
+      <label for="news">Sì, tenetemi aggiornato sul progetto.</label>
+    </div>
+    <p class="privacy">Usiamo i tuoi dati solo per ricontattarti su MyPlace. Niente pubblicità, niente spam. Puoi chiedere la cancellazione in ogni momento. <a href="privacy.html" target="_blank">Come trattiamo i tuoi dati</a>.</p>
+    <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+    <div class="err" id="err4">Spunta la prima casella così possiamo ricontattarti.</div>
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="prev(4)">← Indietro</button>
+      <button id="btnInvia" class="btn btn-primary" onclick="invia()">Invia la mia richiesta</button>
+    </div>
+    <p class="privacy" style="margin-top:16px">Preferisci scrivere un'email? <a id="mailfallback" href="#">Scrivici qui</a>.</p>
+  </section>
+
+  <!-- CONFIRM -->
+  <section class="done" id="done">
+    <div class="big">Fatto! 🎉</div>
+    <p id="doneMsg" class="sub"></p>
+    <div class="chips" id="doneChips"></div>
+    <p class="help">Non devi fare altro. Se preferisci, puoi anche scriverci a <a href="mailto:webmaster.puntorosso@gmail.com">webmaster.puntorosso@gmail.com</a>.</p>
+    <div class="nav" style="justify-content:center">
+      <a class="btn btn-ghost" href="index.html">Torna al sito</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  MyPlace · <a href="index.html">il sito</a> · <a href="privacy.html">privacy</a> · prototipo
+</div></footer>
+
+<script>
+/* ---------- CONFIG: borghi e comunità (modifica qui per aggiungere paesi) ---------- */
+var COMS = {
+  arte:        {emoji:'🎶', t:'Artisti & spettacolo', d:'musicisti, artisti, tecnici, creativi'},
+  natura:      {emoji:'🌿', t:'Natura & vita lenta',  d:'orti, sentieri, ritmi sereni'},
+  cultura:     {emoji:'📚', t:'Cultura, libri & lingue', d:'lettori, insegnanti, viaggiatori'},
+  benessere:   {emoji:'🧘', t:'Benessere & spiritualità', d:'quiete, pratica, cura'},
+  mestieri:    {emoji:'🔧', t:'Mani & mestieri', d:'artigiani, autoproduttori'}
+};
+var BORGHI = [
+  {slug:'larva',  name:'Larva',                  area:'Sierra Mágina · Jaén',   status:'attivo', com:['arte','natura','mestieri']},
+  {slug:'cabra',  name:'Cabra del Santo Cristo', area:'Sierra Mágina · Jaén',   status:'presto', com:['arte','cultura','natura']},
+  {slug:'belmez', name:'Bélmez de la Moraleda',  area:'Sierra Mágina · Jaén',   status:'presto', com:['arte','cultura','natura']},
+  {slug:'segura', name:'Segura de la Sierra',    area:'Sierra de Segura · Jaén',status:'presto', com:['arte','cultura','natura','mestieri']},
+  {slug:'galera', name:'Galera',                 area:'Altiplano · Granada',    status:'presto', com:['arte','cultura','natura','benessere']},
+  {slug:'altro',  name:'Un altro posto / non so',area:'Mostrami tutto',         status:'attivo', com:['arte','natura','cultura','benessere','mestieri']}
+];
+
+/* ---------- stato ---------- */
+var st = {borgo:'',borgoName:'',comunita:'',comunitaName:'',eta:'',quando:'',tipocasa:'',nucleo:'',invito:'',waitlist:false};
+
+/* ---------- render borghi ---------- */
+function renderBorghi(){
+  var c=document.getElementById('borghi'); c.innerHTML='';
+  BORGHI.forEach(function(b){
+    var el=document.createElement('button'); el.className='card'+(b.status==='presto'?' soon':'');
+    el.innerHTML='<span class="t">'+b.name+'</span><span class="d">'+b.area+'</span>'+
+      (b.status==='presto'?'<span class="tag">Presto</span>':'');
+    el.onclick=function(){selBorgo(b,el)};
+    c.appendChild(el);
+  });
+}
+function selBorgo(b,el){
+  st.borgo=b.slug; st.borgoName=b.name; st.waitlist=(b.status==='presto');
+  st.comunita=''; st.comunitaName='';
+  [].forEach.call(document.querySelectorAll('#borghi .card'),function(x){x.classList.remove('sel')});
+  el.classList.add('sel');
+  var cw=document.getElementById('comWrap'); cw.style.display='block';
+  var cc=document.getElementById('comunita'); cc.innerHTML='';
+  b.com.forEach(function(k){
+    var d=COMS[k]; var e=document.createElement('button'); e.className='card';
+    e.innerHTML='<span class="emoji">'+d.emoji+'</span><span class="t">'+d.t+'</span><span class="d">'+d.d+'</span>';
+    e.onclick=function(){
+      st.comunita=k; st.comunitaName=d.t;
+      [].forEach.call(document.querySelectorAll('#comunita .card'),function(x){x.classList.remove('sel')});
+      e.classList.add('sel');
+    };
+    cc.appendChild(e);
+  });
+  cw.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ---------- pills ---------- */
+function pills(id,opts,key){
+  var c=document.getElementById(id);
+  opts.forEach(function(o){
+    var b=document.createElement('button'); b.className='pill'; b.textContent=o;
+    b.onclick=function(){st[key]=o;[].forEach.call(c.children,function(x){x.classList.remove('sel')});b.classList.add('sel')};
+    c.appendChild(b);
+  });
+}
+pills('eta',['sotto i 55','55–65','66–75','oltre 75'],'eta');
+pills('quando',['Anche subito','Entro un anno','Più avanti, sto guardando'],'quando');
+pills('tipocasa',['Affitto','Acquisto','Indifferente'],'tipocasa');
+pills('nucleo',['Da solo/a','In coppia','Con la famiglia','Con amici'],'nucleo');
+
+/* ---------- navigazione step ---------- */
+var step=1, TOT=4;
+function show(n){
+  for(var i=1;i<=4;i++){document.getElementById('s'+i).classList.toggle('on',i===n)}
+  document.getElementById('progressTxt').textContent='Passo '+n+' di '+TOT;
+  document.getElementById('pbar').style.width=(n/TOT*100)+'%';
+  step=n; window.scrollTo({top:0,behavior:'smooth'});
+}
+function prev(n){show(n-1)}
+function next(n){
+  if(n===1){
+    if(!st.borgo||!st.comunita){return showErr('err1')}
+  }
+  if(n===2){
+    var nome=val('nome'), tel=val('tel');
+    if(!nome||!tel){return showErr('err2')}
+  }
+  hideErrs(); show(n+1);
+}
+function showErr(id){document.getElementById(id).classList.add('on')}
+function hideErrs(){[].forEach.call(document.querySelectorAll('.err'),function(e){e.classList.remove('on')})}
+function val(id){return (document.getElementById(id).value||'').trim()}
+
+/* ---------- invito da URL (?invito=LARVA-ART o ?borgo=larva) ---------- */
+(function(){
+  var p=new URLSearchParams(location.search);
+  var inv=(p.get('invito')||'').toUpperCase();
+  var borgoParam=(p.get('borgo')||'').toLowerCase();
+  renderBorghi();
+  if(inv){ st.invito=inv; document.getElementById('okInvite').classList.add('on');
+    var bslug=inv.split('-')[0].toLowerCase();
+    var found=BORGHI.filter(function(b){return b.slug===bslug})[0];
+    if(found){ autoSel(found); }
+  } else if(borgoParam){
+    var f2=BORGHI.filter(function(b){return b.slug===borgoParam})[0];
+    if(f2) autoSel(f2);
+  }
+})();
+function autoSel(b){
+  var idx=BORGHI.indexOf(b);
+  var el=document.querySelectorAll('#borghi .card')[idx];
+  if(el) selBorgo(b,el);
+}
+
+/* ---------- invio ---------- */
+function buildBody(){
+  return 'Nome: '+val('nome')+
+    '\nTelefono: '+val('tel')+
+    '\nEmail: '+(val('email')||'(non fornita)')+
+    '\nBorgo: '+st.borgoName+(st.waitlist?' (lista d\'attesa)':'')+
+    '\nComunità: '+st.comunitaName+
+    '\nMotivazione: '+(val('motiv')||'-')+
+    '\nEtà: '+(st.eta||'-')+
+    '\nQuando: '+(st.quando||'-')+
+    '\nCasa: '+(st.tipocasa||'-')+'  Con chi: '+(st.nucleo||'-')+
+    '\nCodice invito: '+(st.invito||'-')+
+    '\nNewsletter: '+(document.getElementById('news').checked?'sì':'no')+
+    '\nLingua: it'+
+    '\n\n(Inviato dal modulo di registrazione MyPlace)';
+}
+function mailtoLink(){
+  return 'mailto:webmaster.puntorosso@gmail.com?subject='+
+    encodeURIComponent('MyPlace registrazione — '+val('nome')+' — '+st.borgoName)+
+    '&body='+encodeURIComponent(buildBody());
+}
+document.getElementById('mailfallback').addEventListener('click',function(e){
+  e.preventDefault(); this.href=mailtoLink(); window.location.href=this.href;
+});
+/* Raccolta iscrizioni: FormSubmit.co (nessun account da creare; alla PRIMA iscrizione
+   arriva a webmaster.puntorosso@gmail.com un'email di attivazione da cliccare UNA volta).
+   Per passare in futuro a Formspree/Getform o a un foglio Google: cambiare solo ENDPOINT. */
+var ENDPOINT='https://formsubmit.co/ajax/webmaster.puntorosso@gmail.com';
+function invia(){
+  if(!document.getElementById('consenso').checked){return showErr('err4')}
+  var hp=document.getElementById('_honey'); if(hp && hp.value){return} /* anti-spam */
+  hideErrs();
+  var payload={
+    Nome:val('nome'), Telefono:val('tel'), Email:(val('email')||'(non fornita)'),
+    Borgo:st.borgoName+(st.waitlist?" (lista d'attesa)":''), Comunita:st.comunitaName,
+    Motivazione:(val('motiv')||'-'), Eta:(st.eta||'-'), Quando:(st.quando||'-'),
+    Casa:(st.tipocasa||'-'), ConChi:(st.nucleo||'-'), CodiceInvito:(st.invito||'-'),
+    Newsletter:(document.getElementById('news').checked?'si':'no'), Lingua:'it',
+    _subject:'MyPlace registrazione — '+val('nome')+' — '+st.borgoName,
+    _template:'table', _captcha:'false'
+  };
+  var b=document.getElementById('btnInvia'); if(b){b.disabled=true; b.textContent='Invio…';}
+  fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
+    .then(function(r){return r.json()})
+    .then(function(){ showDone(); })
+    .catch(function(){ try{window.location.href=mailtoLink();}catch(e){} showDone(); });
+}
+function showDone(){
+  document.getElementById('progressWrap').style.display='none';
+  for(var i=1;i<=4;i++){document.getElementById('s'+i).classList.remove('on')}
+  var nome=val('nome');
+  var msg = st.waitlist
+    ? 'Grazie '+nome+'! Sei in lista d\'attesa per '+st.borgoName+'. Le comunità partono a piccoli gruppi: ti avvisiamo appena si apre un posto.'
+    : 'Grazie '+nome+': ti chiamiamo noi nei prossimi giorni per raccontarti tutto con calma.';
+  document.getElementById('doneMsg').textContent=msg;
+  document.getElementById('doneChips').innerHTML='<span class="chip">📍 '+st.borgoName+'</span><span class="chip">👥 '+st.comunitaName+'</span>';
+  document.getElementById('done').classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
