@@ -198,6 +198,16 @@
   .faq details[open] summary::after{content:"–"}
   .faq details[open] summary{color:var(--terracotta)}
   .faq .ans{padding:0 0 22px;color:#54473b;font-size:1.02rem;max-width:740px}
+  /* hero photo */
+  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(246,239,227,.74),rgba(246,239,227,.5) 42%,rgba(246,239,227,.94))}
+  /* life mosaic */
+  .life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px}
+  @media(max-width:760px){.life-grid{grid-template-columns:repeat(2,1fr)}}
+  .life-grid figure{margin:0;height:230px;position:relative;overflow:hidden;border-radius:16px;background:#e7d6bd;box-shadow:0 16px 34px -20px rgba(120,70,30,.5)}
+  .life-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .life-grid figure:hover img{transform:scale(1.06)}
+  .life-credit{margin-top:16px;font-size:.78rem;color:#9a8a76;font-style:italic}
 </style>
 </head>
 <body>
@@ -225,6 +235,8 @@
 <header class="hero">
   <div class="hero-sky"></div><div class="sun"></div>
   <div class="hills"><div class="hill h1"></div><div class="hill h2"></div><div class="hill h3"></div></div>
+  <img class="hero-photo" src="https://images.pexels.com/photos/16590375/pexels-photo-16590375.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Andalusian hill village" loading="eager" onerror="this.remove()" />
+  <div class="hero-shade"></div>
   <div class="wrap hero-in">
     <span class="eyebrow reveal d1" data-i18n="hero.eyebrow">Borghi accessibili · Comunità per affinità</span>
     <h1 class="title reveal d2" data-i18n="hero.title">Trova il tuo posto.<br><em>Con la tua gente.</em></h1>
@@ -309,6 +321,24 @@
       <div class="com reveal d5" style="--accent:var(--ochre)"><div class="ic">🔧</div><h3 data-i18n="com.m.t">Mani & mestieri</h3><p data-i18n="com.m.p">Artigiani, autoproduttori, riparatori. Botteghe, laboratori e saperi che un paese piccolo sa accogliere.</p></div>
       <div class="com start reveal d6"><div class="ic">✨</div><h3 data-i18n="com.s.t">La tua comunità</h3><p data-i18n="com.s.p">Hai già un gruppo di amici affini che sognano lo stesso? Avviate insieme la vostra comunità e il vostro paese.</p><a href="#unisciti" class="link" data-i18n="com.s.link">Avvia una comunità →</a></div>
     </div>
+  </div>
+</section>
+
+<!-- LIFE MOSAIC -->
+<section id="vita" class="pad" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="kicker reveal" data-i18n="life.kicker">Uno sguardo</div>
+    <h2 class="sec reveal" data-i18n="life.title">La vita, <em>qui.</em></h2>
+    <p class="sec-lede reveal" data-i18n="life.lede">Borghi luminosi, uliveti, e gente che torna a stare bene insieme.</p>
+    <div class="life-grid reveal d1">
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/5638815/pexels-photo-5638815.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Dinner together under the lights" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/8153907/pexels-photo-8153907.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Happy friends" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/10240139/pexels-photo-10240139.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Playing music" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/34803738/pexels-photo-34803738.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Olive groves" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/13790747/pexels-photo-13790747.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Village street" /></figure>
+      <figure><img loading="lazy" onerror="this.closest('figure').style.display='none'" src="https://images.pexels.com/photos/8154020/pexels-photo-8154020.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Friends laughing together" /></figure>
+    </div>
+    <p class="life-credit reveal" data-i18n="life.credit">Foto: Pexels (licenza libera) — esempi, da sostituire con foto autentiche del progetto.</p>
   </div>
 </section>
 
@@ -490,6 +520,7 @@
       "ok.big":"Gracias. 🌿","ok.p":"Te hemos apuntado. Te escribiremos pronto para contarte cómo funciona y presentarte tu comunidad.",
       "foot.tag":"Pueblos accesibles · Comunidades internacionales por afinidad · Interior de España · prototipo · fotos: Wikimedia Commons",
       "nav.privacy":"Privacidad",
+      "life.kicker":"Un vistazo","life.title":"La vida, <em>aquí.</em>","life.lede":"Pueblos luminosos, olivares y gente que vuelve a estar bien junta.","life.credit":"Fotos: Pexels (licencia libre) — ejemplos, a sustituir por fotos auténticas del proyecto.",
       "stat.1l":"pueblos españoles en riesgo de despoblación, listos para acoger nueva vida",
       "stat.2l":"y más: cuánto puede bajar el coste de la vida respecto a la ciudad",
       "stat.3l":"personas dejadas solas: de la casa, los trámites y la comunidad nos ocupamos nosotros",
@@ -558,6 +589,7 @@
       "ok.big":"Thank you. 🌿","ok.p":"You're on the list. We'll write soon to explain how it works and introduce you to your community.",
       "foot.tag":"Affordable villages · International communities by affinity · Inland Spain · prototype · photos: Wikimedia Commons",
       "nav.privacy":"Privacy",
+      "life.kicker":"A glimpse","life.title":"Life, <em>here.</em>","life.lede":"Bright villages, olive groves, and people enjoying each other again.","life.credit":"Photos: Pexels (free licence) — examples, to be replaced with authentic photos of the project.",
       "stat.1l":"Spanish villages at risk of depopulation, ready to welcome new life",
       "stat.2l":"and more: how much the cost of living can drop versus the city",
       "stat.3l":"people left on their own: we handle the home, paperwork and community",
@@ -626,6 +658,7 @@
       "ok.big":"Danke. 🌿","ok.p":"Du bist auf der Liste. Wir melden uns bald, um dir zu erklären, wie es funktioniert, und dich deiner Gemeinschaft vorzustellen.",
       "foot.tag":"Bezahlbare Dörfer · Internationale Gemeinschaften nach Affinität · Ländliches Spanien · Prototyp · Fotos: Wikimedia Commons",
       "nav.privacy":"Datenschutz",
+      "life.kicker":"Ein Blick","life.title":"Das Leben, <em>hier.</em>","life.lede":"Helle Dörfer, Olivenhaine und Menschen, die wieder zusammen aufblühen.","life.credit":"Fotos: Pexels (freie Lizenz) — Beispiele, später durch echte Projektfotos zu ersetzen.",
       "stat.1l":"spanische Dörfer von Entvölkerung bedroht, bereit für neues Leben",
       "stat.2l":"und mehr: so stark können die Lebenshaltungskosten gegenüber der Stadt sinken",
       "stat.3l":"Menschen, die allein gelassen werden: um Haus, Behörden und Gemeinschaft kümmern wir uns",
