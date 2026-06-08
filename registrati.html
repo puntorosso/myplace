@@ -114,6 +114,7 @@
       <label data-i18n="lbl_com"></label>
       <p class="help" data-i18n="help_com"></p>
       <div class="cards" id="comunita"></div>
+      <input id="comOther" type="text" data-i18n-ph="ph.comother" placeholder="es. fotografia, teatro, vela…" style="display:none;margin-top:12px;width:100%;max-width:440px;font-size:1rem;padding:14px 16px;border:1.5px solid var(--line,#e2d6c2);border-radius:14px" />
     </div>
     <div class="err" id="err1" data-i18n="err1"></div>
     <div class="nav"><button class="btn btn-primary" data-i18n="btn_continue" onclick="next(1)"></button></div>
@@ -227,7 +228,7 @@ var T = {
     done_active:'Thank you {n}: we’ll call you in the coming days to tell you everything calmly.',
     done_wait:'Thank you {n}! You’re on the waiting list for {b}. Communities start in small groups: we’ll let you know as soon as a spot opens.',
     borgo_else:'Somewhere else / not sure', area_all:'Show me everything',
-    coms:{arte:['🎭','Arts & stage','music, writing, painting, theatre'],natura:['🌿','Nature & animals','hiking, birds, dogs, horses'],cucina:['🥘','Kitchen & garden','cooking, wine, vegetable garden'],sport:['🚴','Sport & active life','walking, cycling, yoga, swimming'],motori:['🏍️','Motors: bikes & classic cars','two & four wheels'],makers:['🔧','Makers, hands & tech','crafts, DIY, computers']},
+    coms:{arte:['🎭','Arts & stage','music, writing, painting, theatre'],natura:['🌿','Nature & animals','hiking, birds, dogs, horses'],cucina:['🥘','Kitchen & garden','cooking, wine, vegetable garden'],sport:['🚴','Sport & active life','walking, cycling, yoga, swimming'],motori:['🏍️','Motors: bikes & classic cars','two & four wheels'],makers:['🔧','Makers, hands & tech','crafts, DIY, repair'],geek:['💻','Geek & tech','computers, retro gaming, coding'],moda:['👗','Fashion & design','sewing, design, textiles'],altra:['✨','Other / suggest yours','tell us your own community']},
     eta:['under 55','55–65','66–75','over 75'],
     quando:['Right away','Within a year','Later, just looking'],
     tipocasa:['Rent','Buy','Either'],
@@ -266,7 +267,7 @@ var T = {
     done_active:'Grazie {n}: ti chiamiamo noi nei prossimi giorni per raccontarti tutto con calma.',
     done_wait:'Grazie {n}! Sei in lista d’attesa per {b}. Le comunità partono a piccoli gruppi: ti avvisiamo appena si apre un posto.',
     borgo_else:'Un altro posto / non so', area_all:'Mostrami tutto',
-    coms:{arte:['🎭','Arte & spettacolo','musica, scrittura, pittura, teatro'],natura:['🌿','Natura & animali','escursioni, uccelli, cani, cavalli'],cucina:['🥘','Cucina & orto','cucina, vino, orto'],sport:['🚴','Sport & vita attiva','camminate, ciclismo, yoga, nuoto'],motori:['🏍️','Motori: moto & auto d\'epoca','due e quattro ruote'],makers:['🔧','Makers, mani & tech','artigianato, fai-da-te, computer']},
+    coms:{arte:['🎭','Arte & spettacolo','musica, scrittura, pittura, teatro'],natura:['🌿','Natura & animali','escursioni, uccelli, cani, cavalli'],cucina:['🥘','Cucina & orto','cucina, vino, orto'],sport:['🚴','Sport & vita attiva','camminate, ciclismo, yoga, nuoto'],motori:['🏍️','Motori: moto & auto d\'epoca','due e quattro ruote'],makers:['🔧','Makers, mani & tech','artigianato, fai-da-te, riparazioni'],geek:['💻','Geek & tech','informatica, retrogaming, coding'],moda:['👗','Moda & design','cucito, design, tessuti'],altra:['✨','Altra / la tua','suggerisci la tua comunità']},
     eta:['sotto i 55','55–65','66–75','oltre 75'],
     quando:['Anche subito','Entro un anno','Più avanti, sto guardando'],
     tipocasa:['Affitto','Acquisto','Indifferente'],
@@ -305,7 +306,7 @@ var T = {
     done_active:'¡Gracias {n}! Te llamamos nosotros en los próximos días para contártelo todo con calma.',
     done_wait:'¡Gracias {n}! Estás en lista de espera para {b}. Las comunidades empiezan en grupos pequeños: te avisamos en cuanto se abra una plaza.',
     borgo_else:'Otro lugar / no lo sé', area_all:'Muéstrame todo',
-    coms:{arte:['🎭','Arte y escena','música, escritura, pintura, teatro'],natura:['🌿','Naturaleza y animales','senderismo, aves, perros, caballos'],cucina:['🥘','Cocina y huerto','cocina, vino, huerto'],sport:['🚴','Deporte y vida activa','caminar, ciclismo, yoga, natación'],motori:['🏍️','Motores: motos & clásicos','dos y cuatro ruedas'],makers:['🔧','Makers, manos & tech','artesanía, bricolaje, informática']},
+    coms:{arte:['🎭','Arte y escena','música, escritura, pintura, teatro'],natura:['🌿','Naturaleza y animales','senderismo, aves, perros, caballos'],cucina:['🥘','Cocina y huerto','cocina, vino, huerto'],sport:['🚴','Deporte y vida activa','caminar, ciclismo, yoga, natación'],motori:['🏍️','Motores: motos & clásicos','dos y cuatro ruedas'],makers:['🔧','Makers, manos & tech','artesanía, bricolaje, reparación'],geek:['💻','Geek & tech','informática, retrogaming, código'],moda:['👗','Moda y diseño','costura, diseño, textiles'],altra:['✨','Otra / la tuya','sugiere tu comunidad']},
     eta:['menos de 55','55–65','66–75','más de 75'],
     quando:['Ahora mismo','En un año','Más adelante, mirando'],
     tipocasa:['Alquiler','Compra','Indiferente'],
@@ -344,7 +345,7 @@ var T = {
     done_active:'Danke {n}: Wir rufen dich in den nächsten Tagen an, um dir in Ruhe alles zu erzählen.',
     done_wait:'Danke {n}! Du stehst auf der Warteliste für {b}. Die Gemeinschaften starten in kleinen Gruppen: Wir melden uns, sobald ein Platz frei wird.',
     borgo_else:'Ein anderer Ort / weiß noch nicht', area_all:'Zeig mir alles',
-    coms:{arte:['🎭','Kunst & Bühne','Musik, Schreiben, Malerei, Theater'],natura:['🌿','Natur & Tiere','Wandern, Vögel, Hunde, Pferde'],cucina:['🥘','Küche & Garten','Kochen, Wein, Gemüsegarten'],sport:['🚴','Sport & aktives Leben','Spazieren, Radfahren, Yoga, Schwimmen'],motori:['🏍️','Motoren: Bikes & Oldtimer','zwei & vier Räder'],makers:['🔧','Makers, Hände & Tech','Handwerk, DIY, Computer']},
+    coms:{arte:['🎭','Kunst & Bühne','Musik, Schreiben, Malerei, Theater'],natura:['🌿','Natur & Tiere','Wandern, Vögel, Hunde, Pferde'],cucina:['🥘','Küche & Garten','Kochen, Wein, Gemüsegarten'],sport:['🚴','Sport & aktives Leben','Spazieren, Radfahren, Yoga, Schwimmen'],motori:['🏍️','Motoren: Bikes & Oldtimer','zwei & vier Räder'],makers:['🔧','Makers, Hände & Tech','Handwerk, DIY, Reparatur'],geek:['💻','Geek & Tech','Computer, Retro-Gaming, Coding'],moda:['👗','Mode & Design','Nähen, Design, Stoffe'],altra:['✨','Andere / deine','schlag deine Gemeinschaft vor']},
     eta:['unter 55','55–65','66–75','über 75'],
     quando:['Sofort','Innerhalb eines Jahres','Später, schaue nur'],
     tipocasa:['Miete','Kauf','Egal'],
@@ -353,9 +354,9 @@ var T = {
 };
 
 /* ---------- borghi (modifica qui per aggiungere paesi) ---------- */
-var ALLCOMS=['arte','natura','cucina','sport','motori','makers'];
+var ALLCOMS=['arte','natura','cucina','sport','motori','makers','geek','moda','altra'];
 var BORGHI = [
-  {slug:'larva',       name:'Larva',                  area:'Sierra Mágina · Jaén',    status:'attivo', com:['arte','makers']},
+  {slug:'larva',       name:'Larva',                  area:'Sierra Mágina · Jaén',    status:'attivo', com:['arte','makers','altra']},
   {slug:'cabra',       name:'Cabra del Santo Cristo', area:'Sierra Mágina · Jaén',    status:'presto', com:ALLCOMS},
   {slug:'belmez',      name:'Bélmez de la Moraleda',  area:'Sierra Mágina · Jaén',    status:'presto', com:ALLCOMS},
   {slug:'carcheles',   name:'Cárcheles',              area:'Sierra Mágina · Jaén',    status:'presto', com:ALLCOMS},
@@ -373,6 +374,7 @@ var BORGHI = [
   {slug:'elpinar',     name:'El Pinar (Pinos del Valle)', area:'Valle de Lecrín · Granada', status:'presto', com:ALLCOMS},
   {slug:'albunuelas',  name:'Albuñuelas',             area:'Valle de Lecrín · Granada', status:'presto', com:ALLCOMS},
   {slug:'lecrin',      name:'Lecrín',                 area:'Valle de Lecrín · Granada', status:'presto', com:ALLCOMS},
+  {slug:'zahara',      name:'Zahara de la Sierra',     area:'Sierra de Cádiz · Cádiz',   status:'presto', com:ALLCOMS},
   {slug:'altro',       name:'__ELSE__',               area:'__ALL__',                 status:'attivo', com:ALLCOMS}
 ];
 
@@ -424,6 +426,7 @@ function renderComunita(){
     e.onclick=function(){st.comunita=k; renderComunita()};
     cc.appendChild(e);
   });
+  var co=document.getElementById('comOther'); if(co){co.style.display=(st.comunita==='altra'?'block':'none');}
 }
 
 /* ---------- pills ---------- */
@@ -464,7 +467,7 @@ function initInvite(){
 
 /* ---------- invio (FormSubmit) ---------- */
 var ENDPOINT='https://formsubmit.co/ajax/webmaster.puntorosso@gmail.com';
-function comName(){var d=T.en.coms[st.comunita]; return d?d[1]:st.comunita}
+function comName(){if(st.comunita==='altra'){var co=document.getElementById('comOther');return 'Suggested: '+((co&&co.value.trim())||'(unspecified)');}var d=T.en.coms[st.comunita]; return d?d[1]:st.comunita}
 function buildBody(){
   return 'Name: '+val('nome')+'\nPhone: '+val('tel')+'\nEmail: '+(val('email')||'(not given)')+
     '\nVillage: '+st.borgoName+(st.waitlist?' (waiting list)':'')+'\nCommunity: '+comName()+
