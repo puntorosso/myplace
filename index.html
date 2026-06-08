@@ -52,7 +52,11 @@
   .lang button:hover:not(.on){color:var(--ink)}
   @media(max-width:920px){.nav-links{display:none}}
 
-  .hero{position:relative;padding:74px 0 88px;overflow:hidden}
+  .hero{position:relative;overflow:hidden}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;padding:58px 0 72px}
+.hero-media{position:relative}
+.hero-media img{display:block;width:100%;height:clamp(340px,44vw,500px);object-fit:cover;border-radius:24px;box-shadow:0 30px 64px -26px rgba(90,45,20,.5)}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:26px;padding:36px 0 46px}.hero-media img{height:230px}}
   .hero-sky{position:absolute;inset:0;z-index:0;
     background:radial-gradient(120% 90% at 78% 8%,#f6d9a3 0%,#efb878 22%,#dd8a4e 42%,transparent 62%),
       radial-gradient(90% 70% at 12% 0%,#f7ecd6 0%,transparent 55%),linear-gradient(180deg,#f7e4c4 0%,#f6efe3 58%)}
@@ -203,9 +207,7 @@
   .faq details[open] summary{color:var(--terracotta)}
   .faq .ans{padding:0 0 22px;color:#54473b;font-size:1.02rem;max-width:740px}
   /* hero photo */
-  .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(246,239,227,.74),rgba(246,239,227,.5) 42%,rgba(246,239,227,.94))}
-  /* life mosaic */
+      /* life mosaic */
   .life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px}
   @media(max-width:760px){.life-grid{grid-template-columns:repeat(2,1fr)}}
   .life-grid figure{margin:0;height:230px;position:relative;overflow:hidden;border-radius:16px;background:#e7d6bd;box-shadow:0 16px 34px -20px rgba(120,70,30,.5)}
@@ -239,15 +241,18 @@
 <header class="hero">
   <div class="hero-sky"></div><div class="sun"></div>
   <div class="hills"><div class="hill h1"></div><div class="hill h2"></div><div class="hill h3"></div></div>
-  <img class="hero-photo" src="https://images.pexels.com/photos/16590375/pexels-photo-16590375.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Andalusian hill village" loading="eager" onerror="this.remove()" />
-  <div class="hero-shade"></div>
-  <div class="wrap hero-in">
-    <span class="eyebrow reveal d1" data-i18n="hero.eyebrow">Borghi accessibili · Comunità per affinità</span>
-    <h1 class="title reveal d2" data-i18n="hero.title">Trova il tuo posto.<br><em>Con la tua gente.</em></h1>
-    <p class="lede reveal d3" data-i18n="hero.lede">Vivere bene la pensione, anche con un assegno ridotto, in un borgo dove la vita costa poco — circondato da persone che condividono i tuoi interessi e i tuoi valori. Tu porti la tua comunità. A casa, logistica e attività pensiamo noi.</p>
-    <div class="hero-actions reveal d4">
-      <a href="registrati.html" class="btn btn-primary" data-i18n="hero.cta1">Unisciti al progetto →</a>
-      <a href="#come" class="btn btn-ghost" data-i18n="hero.cta2">Come funziona</a>
+  <div class="wrap hero-grid">
+    <div class="hero-in">
+      <span class="eyebrow reveal d1" data-i18n="hero.eyebrow">Borghi accessibili · Comunità per affinità</span>
+      <h1 class="title reveal d2" data-i18n="hero.title">Trova il tuo posto.<br><em>Con la tua gente.</em></h1>
+      <p class="lede reveal d3" data-i18n="hero.lede">Vivere bene la pensione, anche con un assegno ridotto, in un borgo dove la vita costa poco — circondato da persone che condividono i tuoi interessi e i tuoi valori. Tu porti la tua comunità. A casa, logistica e attività pensiamo noi.</p>
+      <div class="hero-actions reveal d4">
+        <a href="registrati.html" class="btn btn-primary" data-i18n="hero.cta1">Unisciti al progetto →</a>
+        <a href="#come" class="btn btn-ghost" data-i18n="hero.cta2">Come funziona</a>
+      </div>
+    </div>
+    <div class="hero-media reveal d3">
+      <img src="https://images.pexels.com/photos/16590375/pexels-photo-16590375.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Andalusian hill village" loading="eager" onerror="this.closest('.hero-media').style.display='none'" />
     </div>
   </div>
 </header>
