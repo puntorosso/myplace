@@ -5,11 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MyPlace — Village</title>
 <meta name="description" content="Detailed profile of a MyPlace candidate village: services, hospital, internet, housing." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MyPlace — Candidate villages" />
+<meta property="og:description" content="Affordable Spanish villages ready to welcome new communities: services, housing, beach and airport reach." />
+<meta property="og:image" content="https://images.pexels.com/photos/17589492/pexels-photo-17589492.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c2562f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23fbf7ee' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{--paper:#f6efe3;--cream:#fbf7ee;--ink:#2a211b;--terracotta:#c2562f;--terra-deep:#9c3d1d;--olive:#6b7148;--ok:#3f7d4f;--line:#e2d6c2;--dust:#8a7c6a;--radius:18px}
+  :root{--paper:#f6efe3;--cream:#fbf7ee;--ink:#2a211b;--terracotta:#c2562f;--terra-deep:#9c3d1d;--olive:#6b7148;--ok:#3f7d4f;--line:#e2d6c2;--dust:#6f6253;--radius:18px}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:18px;-webkit-font-smoothing:antialiased}
   h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.01em}
@@ -140,7 +145,7 @@ function render(){
  document.getElementById('main').innerHTML=html;
 }
 document.querySelectorAll('#lang button').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('mp_lang',lang)}catch(e){};render()})});
-(function(){try{lang=localStorage.getItem('mp_lang')||'en'}catch(e){};if(!L[lang])lang='en';render();})();
+(function(){try{lang=localStorage.getItem('mp_lang')||''}catch(e){};if(!lang){var nl=(navigator.language||'en').slice(0,2).toLowerCase();lang={it:'it',es:'es',de:'de'}[nl]||'en';}if(!L[lang])lang='en';render();})();
 </script>
 </body>
 </html>

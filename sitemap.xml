@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://puntorosso.github.io/myplace/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://puntorosso.github.io/myplace/larva.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://puntorosso.github.io/myplace/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/larva.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/registrati.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/privacy.html</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=cabra</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=belmez</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=carcheles</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=jimena</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=bedmar</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=segura</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=benatae</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=hornos</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=torres</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=galera</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=orce</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=castillejar</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=comares</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=riogordo</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=elpinar</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=albunuelas</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=lecrin</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://puntorosso.github.io/myplace/borgo.html?id=zahara</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
