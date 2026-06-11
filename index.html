@@ -332,186 +332,184 @@ footer a:hover{color:var(--sol)}
 </style>
 <style id="theme-calma">
 /* ================================================================
-   TEMA "DUNA" — fedele a duna.com: dark-first warm-black,
-   Inter + Fragment Mono, avorio di contrasto, glow viola, pillole
+   TEMA "DUNA" — fedele a duna.com (LIGHT): cielo dipinto pastello,
+   tanto bianco, Inter sentence-case, card grigio-tenue, calma e aria
    ================================================================ */
 html[data-theme="duna"]{
-  --sol:#B2AFAE; --naranja:#45848D; --terracotta:#45848D; --terra-deep:#33646B;
-  --azulejo:#45848D; --azul-deep:#33646B; --rosa:#B2AFAE; --teal:#45848D; --plum:#1B0624; --olive:#5E7367; --ochre:#B2AFAE;
-  --negro:#0D0D0D; --ink:#EDEDE8; --blanco:#111010; --paper:#111010; --cream:#1A1816;
-  --line:rgba(255,255,255,.10); --dust:#B2AFAE;
-  --ivory:#EDEDE8; --ivory2:#F7F7F5; --inkdark:#1A1816; --carbone:#292421; --mut:#4D4846;
+  --sol:#45848D; --naranja:#45848D; --terracotta:#1B1A17; --terra-deep:#000;
+  --azulejo:#45848D; --azul-deep:#356a72; --rosa:#E9DDF2; --teal:#45848D; --plum:#9a86c4; --olive:#8aa06f; --ochre:#C9A24B;
+  --negro:#1B1A17; --ink:#1B1A17; --blanco:#FFFFFF; --paper:#FCFBF9; --cream:#F6F5F1; 
+  --line:#ECEAE3; --dust:#8A8682;
+  --soft:#F6F5F1; --softer:#FAF9F6; --mut:#6E6A64;
+  --peach:#FFE7D3; --sky:#D6E9F2; --grass:#DEECCF; --lilac:#EBE0F4;
   --bd:1px solid var(--line);
-  --hard:0 30px 70px -30px rgba(0,0,0,.7);
-  --hard-sm:0 14px 34px -20px rgba(0,0,0,.6);
+  --hard:0 26px 60px -34px rgba(40,34,28,.22);
+  --hard-sm:0 16px 36px -26px rgba(40,34,28,.20);
 }
-html[data-theme="duna"] body{font-family:"Inter",system-ui,sans-serif;background:var(--paper);color:var(--ivory);font-size:17.5px;line-height:1.65;font-weight:400}
-html[data-theme="duna"] h1,html[data-theme="duna"] h2,html[data-theme="duna"] h3,html[data-theme="duna"] h4{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:-.03em;line-height:1.05;text-transform:none}
-html[data-theme="duna"] em{font-family:"Inter",sans-serif;font-style:normal;font-weight:600}
-html[data-theme="duna"] ::selection{background:#45848D;color:#fff}
-html[data-theme="duna"] .progress{height:2px;background:#45848D}
-/* nav */
-html[data-theme="duna"] nav{background:rgba(13,13,13,.78);backdrop-filter:blur(14px);border-bottom:var(--bd)}
-html[data-theme="duna"] .brand{font-family:"Inter",sans-serif;font-weight:600;text-transform:none;letter-spacing:-.02em;color:#fff}
-html[data-theme="duna"] .brand .dot{background:#45848D;border:none;box-shadow:none;width:10px;height:10px}
-html[data-theme="duna"] .nav-links a{color:#B2AFAE;font-weight:500;border:none;padding:6px 12px;border-radius:99px;font-size:.92rem}
-html[data-theme="duna"] .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07);box-shadow:none;transform:none;border:none}
+html[data-theme="duna"] body{font-family:"Inter",system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:17.5px;line-height:1.6;font-weight:400}
+html[data-theme="duna"] h1,html[data-theme="duna"] h2,html[data-theme="duna"] h3,html[data-theme="duna"] h4{font-family:"Inter",sans-serif;font-weight:600;letter-spacing:-.025em;line-height:1.1;text-transform:none}
+html[data-theme="duna"] em{font-family:"Inter",sans-serif;font-style:normal;font-weight:600;color:var(--mut)}
+html[data-theme="duna"] ::selection{background:#1B1A17;color:#fff}
+html[data-theme="duna"] .progress{height:2px;background:#1B1A17}
+/* nav: bianco minimale */
+html[data-theme="duna"] nav{background:rgba(252,251,249,.82);backdrop-filter:blur(14px);border-bottom:var(--bd)}
+html[data-theme="duna"] .brand{font-family:"Inter",sans-serif;font-weight:600;text-transform:none;letter-spacing:-.02em;color:var(--ink)}
+html[data-theme="duna"] .brand .dot{background:var(--teal);border:none;box-shadow:none;width:10px;height:10px}
+html[data-theme="duna"] .nav-links a{color:var(--mut);font-weight:500;border:none;padding:6px 12px;border-radius:99px;font-size:.92rem}
+html[data-theme="duna"] .nav-links a:hover{color:var(--ink);background:var(--soft);box-shadow:none;transform:none;border:none}
 html[data-theme="duna"] .nav-links a::after{display:none}
-html[data-theme="duna"] .lang{border:var(--bd);border-radius:99px;background:rgba(255,255,255,.04)}
-html[data-theme="duna"] .lang button{color:#B2AFAE}
-html[data-theme="duna"] .lang button.on{background:#EDEDE8;color:#111010}
-html[data-theme="duna"] .nav-cta{background:#EDEDE8;color:#111010;border:none;border-radius:99px;box-shadow:none;text-transform:none;letter-spacing:0;font-weight:600}
-html[data-theme="duna"] .nav-cta:hover{background:#fff;transform:none;box-shadow:none}
-/* hero scuro con glow viola */
-html[data-theme="duna"] .hero{background:
-  radial-gradient(58% 50% at 78% 6%,rgba(27,6,36,.95) 0%,rgba(27,6,36,0) 65%),
-  radial-gradient(40% 38% at 12% 90%,rgba(69,132,141,.18) 0%,transparent 65%),
-  var(--paper);border-bottom:var(--bd)}
-html[data-theme="duna"] .sun{display:none}
-html[data-theme="duna"] .eyebrow{background:transparent;color:#B2AFAE;border:var(--bd);border-radius:99px;box-shadow:none;transform:none;
-  font-family:"Fragment Mono",monospace;font-weight:400;font-size:.72rem;letter-spacing:.08em}
-html[data-theme="duna"] .title{text-transform:none;font-weight:600;letter-spacing:-.035em;line-height:1.02;font-size:clamp(2.7rem,6.2vw,5rem);color:#fff}
-html[data-theme="duna"] .title em{background:transparent;border:none;box-shadow:none;padding:0;color:#B2AFAE;font-style:normal;font-weight:600}
-html[data-theme="duna"] .lede{color:#B2AFAE;font-weight:400}
+html[data-theme="duna"] .lang{border:var(--bd);border-radius:99px;background:#fff}
+html[data-theme="duna"] .lang button{color:var(--mut)}
+html[data-theme="duna"] .lang button.on{background:#1B1A17;color:#fff}
+html[data-theme="duna"] .nav-cta{background:#1B1A17;color:#fff;border:none;border-radius:99px;box-shadow:none;text-transform:none;letter-spacing:0;font-weight:500;font-size:.92rem;padding:10px 20px}
+html[data-theme="duna"] .nav-cta:hover{background:#000;transform:none;box-shadow:none}
+/* hero: cielo dipinto pastello + tanta aria, testo piccolo scuro */
+html[data-theme="duna"] .hero{border-bottom:var(--bd);background:
+  radial-gradient(120% 90% at 70% -10%,#FFE7D3 0%,#FFF0E4 22%,rgba(255,240,228,0) 55%),
+  radial-gradient(90% 70% at 10% 0%,#FBEFE2 0%,transparent 50%),
+  linear-gradient(180deg,#EAF1EC 0%,#E7EFDF 30%,#F7F6F1 62%,var(--paper) 100%)}
+html[data-theme="duna"] .sun{display:block;top:-40px;right:8%;width:230px;height:230px;border:none;box-shadow:none;
+  background:radial-gradient(circle at 50% 50%,rgba(255,221,180,.9) 0%,rgba(255,221,180,0) 70%);filter:blur(6px);animation:none;opacity:.9}
+html[data-theme="duna"] .sun::after{display:none}
+html[data-theme="duna"] .eyebrow{background:rgba(255,255,255,.7);color:var(--mut);border:var(--bd);border-radius:99px;box-shadow:none;transform:none;font-weight:500;font-size:.74rem;letter-spacing:.1em}
+html[data-theme="duna"] .title{text-transform:none;font-weight:600;letter-spacing:-.035em;line-height:1.08;font-size:clamp(2.5rem,5.4vw,4.4rem);color:var(--ink)}
+html[data-theme="duna"] .title em{background:transparent;border:none;box-shadow:none;padding:0;color:var(--mut);font-style:normal;font-weight:600}
+html[data-theme="duna"] .lede{color:var(--mut);font-weight:400;font-size:clamp(1.05rem,1.6vw,1.2rem)}
 html[data-theme="duna"] .hero-media{transform:none}
 html[data-theme="duna"] .hero-media::after{display:none}
-html[data-theme="duna"] .hero-media img{border:var(--bd);border-radius:16px;box-shadow:var(--hard);filter:saturate(.92)}
-html[data-theme="duna"] .hero-ed{background:transparent;border:none;box-shadow:none;padding:0;color:#fff;font-weight:600}
-html[data-theme="duna"] .hero-safe{color:#4D4846;color:#8e8a86}
-/* cinta */
-html[data-theme="duna"] .cinta{background:var(--paper);color:#4D4846;border-top:var(--bd);border-bottom:var(--bd);transform:none;margin:0;width:auto}
-html[data-theme="duna"] .cinta span{font-family:"Fragment Mono",monospace;font-weight:400;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;color:#8e8a86}
-html[data-theme="duna"] .cinta b{color:#45848D}
-/* bottoni pillola */
-html[data-theme="duna"] .btn{border:none;border-radius:99px;text-transform:none;letter-spacing:0;font-weight:600;font-size:.98rem}
-html[data-theme="duna"] .btn-primary{background:#EDEDE8;color:#111010;box-shadow:none}
-html[data-theme="duna"] .btn-primary:hover{background:#fff;transform:translateY(-1px);box-shadow:var(--hard-sm)}
-html[data-theme="duna"] .btn-ghost{background:transparent;color:#EDEDE8;border:1px solid rgba(255,255,255,.25);box-shadow:none}
-html[data-theme="duna"] .btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff;transform:none;box-shadow:none;border-color:rgba(255,255,255,.4)}
-/* strisce */
-html[data-theme="duna"] .intl{background:var(--carbone);color:#B2AFAE;border-bottom:var(--bd)}
-html[data-theme="duna"] .intl b{color:#fff}
-html[data-theme="duna"] .kicker{background:transparent;color:#45848D;padding:0;margin-bottom:24px;transform:none;box-shadow:none;
-  font-family:"Fragment Mono",monospace;font-weight:400;font-size:.74rem;letter-spacing:.1em}
+html[data-theme="duna"] .hero-media img{border:var(--bd);border-radius:18px;box-shadow:var(--hard);filter:saturate(.96)}
+html[data-theme="duna"] .hero-ed{background:transparent;border:none;box-shadow:none;padding:0;color:var(--ink);font-weight:600}
+html[data-theme="duna"] .hero-safe{color:var(--mut)}
+/* cinta: hairline chiaro */
+html[data-theme="duna"] .cinta{background:var(--softer);color:var(--mut);border-top:var(--bd);border-bottom:var(--bd);transform:none;margin:0;width:auto}
+html[data-theme="duna"] .cinta span{font-family:"Inter",sans-serif;font-weight:500;text-transform:none;font-size:.92rem;letter-spacing:.01em;color:var(--mut)}
+html[data-theme="duna"] .cinta b{color:var(--teal)}
+/* bottoni: dark pill + light pill */
+html[data-theme="duna"] .btn{border:none;border-radius:99px;text-transform:none;letter-spacing:0;font-weight:500;font-size:.98rem;padding:15px 28px}
+html[data-theme="duna"] .btn-primary{background:#1B1A17;color:#fff;box-shadow:none}
+html[data-theme="duna"] .btn-primary:hover{background:#000;transform:translateY(-1px);box-shadow:var(--hard-sm)}
+html[data-theme="duna"] .btn-ghost{background:#fff;color:var(--ink);border:var(--bd);box-shadow:none}
+html[data-theme="duna"] .btn-ghost:hover{background:var(--soft);color:var(--ink);transform:none;box-shadow:none;border-color:#DBD9D0}
+/* intl: banda cielo azzurro con nuvole (come duna) */
+html[data-theme="duna"] .intl{background:linear-gradient(180deg,#CFE6F2 0%,#DCEDF4 100%);color:#2C4A57;border-bottom:var(--bd);border-top:var(--bd)}
+html[data-theme="duna"] .intl b{color:#1B1A17}
+html[data-theme="duna"] .globe{filter:none}
+/* kicker/titoli: piccolo, muted, sentence */
+html[data-theme="duna"] .kicker{background:transparent;color:var(--mut);padding:0;margin-bottom:22px;transform:none;box-shadow:none;font-weight:600;font-size:.76rem;letter-spacing:.16em}
 html[data-theme="duna"] .kicker::before{display:none}
-html[data-theme="duna"] .sec{text-transform:none;font-weight:600;letter-spacing:-.035em;line-height:1.05}
-html[data-theme="duna"] .sec em{color:#B2AFAE;font-style:normal}
-html[data-theme="duna"] .sec-lede{color:#8e8a86;font-weight:400}
-/* sezioni scure di default */
+html[data-theme="duna"] .sec{text-transform:none;font-weight:600;letter-spacing:-.035em;line-height:1.08}
+html[data-theme="duna"] .sec em{color:var(--mut);font-style:normal}
+html[data-theme="duna"] .sec-lede{color:var(--mut);font-weight:400}
+/* TUTTE le sezioni chiare/bianche con alternanza tenue */
 html[data-theme="duna"] .quote-bg{background:var(--paper)}
-html[data-theme="duna"] .band-night{background:var(--inkdark);border-bottom:var(--bd)}
-html[data-theme="duna"] .band-night .kicker{background:transparent;color:#45848D}
-html[data-theme="duna"] .band-night .sec{color:#fff}
-html[data-theme="duna"] .band-night .sec em{color:#B2AFAE}
-html[data-theme="duna"] .prob{background:var(--carbone);border:var(--bd);border-radius:14px;box-shadow:none;padding:28px}
-html[data-theme="duna"] .prob:hover{transform:translateY(-2px);box-shadow:none;border-color:rgba(255,255,255,.22)}
-html[data-theme="duna"] .prob h3{text-transform:none;color:#fff}
-html[data-theme="duna"] .prob p{color:#B2AFAE}
-html[data-theme="duna"] .stats{background:var(--paper);border-bottom:var(--bd)}
-html[data-theme="duna"] .stat{border-left:var(--bd);padding-left:28px}
-html[data-theme="duna"] .stat .n{font-family:"Inter",sans-serif;font-weight:600;color:#fff;text-shadow:none;letter-spacing:-.04em}
-html[data-theme="duna"] .stat .l{color:#8e8a86}
-html[data-theme="duna"] .stats-src{color:#4D4846 !important}
-/* blocchi AVORIO di contrasto: come funziona, comunità, paesi, servizi, fiducia, faq */
-html[data-theme="duna"] #come,html[data-theme="duna"] #comunita,html[data-theme="duna"] #servizi,html[data-theme="duna"] #fiducia,html[data-theme="duna"] #faq{background:var(--ivory);color:var(--inkdark)}
-html[data-theme="duna"] #come .sec,html[data-theme="duna"] #comunita .sec,html[data-theme="duna"] #servizi .sec,html[data-theme="duna"] #fiducia .sec,html[data-theme="duna"] #faq .sec{color:var(--inkdark)}
-html[data-theme="duna"] #come .sec em,html[data-theme="duna"] #comunita .sec em,html[data-theme="duna"] #servizi .sec em,html[data-theme="duna"] #fiducia .sec em,html[data-theme="duna"] #faq .sec em{color:#4D4846}
-html[data-theme="duna"] #come .sec-lede,html[data-theme="duna"] #comunita .sec-lede,html[data-theme="duna"] #servizi .sec-lede{color:#4D4846}
-html[data-theme="duna"] #percorso{background:var(--ivory2);color:var(--inkdark)}
-html[data-theme="duna"] #percorso .sec{color:var(--inkdark)}
-html[data-theme="duna"] #percorso .sec em{color:#4D4846}
-html[data-theme="duna"] #percorso .sec-lede{color:#4D4846}
-html[data-theme="duna"] #vita{background:var(--paper) !important}
-html[data-theme="duna"] #paesi{background:var(--ivory);border-top:none;border-bottom:none;color:var(--inkdark)}
-html[data-theme="duna"] #paesi .kicker{background:transparent;color:#45848D}
-html[data-theme="duna"] #paesi .sec{color:var(--inkdark)}
-html[data-theme="duna"] #paesi .sec em{color:#4D4846}
-html[data-theme="duna"] #paesi .sec-lede,html[data-theme="duna"] .vil-note,html[data-theme="duna"] .vnet-legend{color:#4D4846}
-/* card su avorio */
-html[data-theme="duna"] .steps .step,html[data-theme="duna"] .jstep,html[data-theme="duna"] .serv,html[data-theme="duna"] .vcard,html[data-theme="duna"] .vil-side .box,html[data-theme="duna"] #fiducia .box,html[data-theme="duna"] .faq details{background:#fff;border:1px solid #E3E1DA !important;border-radius:14px !important;box-shadow:none !important;color:var(--inkdark)}
-html[data-theme="duna"] .steps .step:hover,html[data-theme="duna"] .jstep:hover,html[data-theme="duna"] .serv:hover,html[data-theme="duna"] .vcard:hover,html[data-theme="duna"] .faq details[open]{transform:translateY(-2px);box-shadow:0 18px 40px -26px rgba(26,24,22,.35) !important;border-color:#D2CFC6 !important}
-html[data-theme="duna"] .steps .step::before{background:transparent;border:none;box-shadow:none;transform:none;-webkit-text-stroke:0;color:#D2CFC6;font-family:"Fragment Mono",monospace;font-weight:400;font-size:1.1rem;top:26px;left:28px}
-html[data-theme="duna"] .steps .step{padding-top:64px}
+html[data-theme="duna"] .band-night{background:var(--soft);color:var(--ink);border-bottom:var(--bd)}
+html[data-theme="duna"] .band-night .kicker{background:transparent;color:var(--mut)}
+html[data-theme="duna"] .band-night .sec{color:var(--ink) !important}
+html[data-theme="duna"] .band-night .sec em{color:var(--mut) !important}
+html[data-theme="duna"] .prob{background:#fff;border:var(--bd);border-radius:16px;box-shadow:none;padding:30px}
+html[data-theme="duna"] .prob:hover{transform:translateY(-2px);box-shadow:var(--hard-sm);border-color:#DBD9D0}
+html[data-theme="duna"] .prob h3{text-transform:none;color:var(--ink)}
+html[data-theme="duna"] .prob p{color:var(--mut)}
+/* stats: bianco, numeri neri grandi */
+html[data-theme="duna"] .stats{background:var(--paper);color:var(--ink);border-bottom:var(--bd)}
+html[data-theme="duna"] .stat{border-left:none;padding-left:0;text-align:center}
+html[data-theme="duna"] .stat .n{font-family:"Inter",sans-serif;font-weight:600;color:var(--ink);text-shadow:none;letter-spacing:-.045em}
+html[data-theme="duna"] .stat .l{color:var(--mut);margin:14px auto 0}
+html[data-theme="duna"] .stats-src{color:var(--dust) !important}
+/* come/percorso/comunità/servizi/fiducia/faq/paesi: bianco con card morbide */
+html[data-theme="duna"] #percorso{background:var(--softer)}
+html[data-theme="duna"] #vita{background:var(--soft) !important}
+html[data-theme="duna"] .steps .step,html[data-theme="duna"] .jstep,html[data-theme="duna"] .serv,html[data-theme="duna"] .vcard,html[data-theme="duna"] .vil-side .box,html[data-theme="duna"] #fiducia .box,html[data-theme="duna"] .faq details{background:#fff;border:var(--bd) !important;border-radius:16px !important;box-shadow:none !important;color:var(--ink)}
+html[data-theme="duna"] .steps .step:hover,html[data-theme="duna"] .jstep:hover,html[data-theme="duna"] .serv:hover,html[data-theme="duna"] .vcard:hover,html[data-theme="duna"] .faq details[open]{transform:translateY(-2px);box-shadow:var(--hard-sm) !important;border-color:#DBD9D0 !important}
+html[data-theme="duna"] .steps .step::before{background:transparent;border:none;box-shadow:none;transform:none;-webkit-text-stroke:0;color:#CFCCC4;font-family:"Inter",sans-serif;font-weight:600;font-size:1.4rem;top:26px;left:28px}
+html[data-theme="duna"] .steps .step{padding-top:66px}
 html[data-theme="duna"] .steps .step h3,html[data-theme="duna"] .jstep h3,html[data-theme="duna"] .serv h3,html[data-theme="duna"] .com h3{text-transform:none}
-html[data-theme="duna"] .steps .step p,html[data-theme="duna"] .jstep p,html[data-theme="duna"] .serv p{color:#4D4846}
-html[data-theme="duna"] .jstep .num{background:var(--ivory);border:1px solid #E3E1DA;border-radius:99px;box-shadow:none;color:var(--inkdark);font-family:"Fragment Mono",monospace;font-weight:400;font-size:1rem}
-html[data-theme="duna"] .jstep .tagk{background:transparent;border:1px solid #E3E1DA;border-radius:99px;color:#4D4846;font-family:"Fragment Mono",monospace;font-weight:400;letter-spacing:.06em}
-/* comunità su avorio */
-html[data-theme="duna"] .com{background:#fff;border:1px solid #E3E1DA;border-radius:16px;box-shadow:none;overflow:hidden;color:var(--inkdark)}
-html[data-theme="duna"] .com:hover{transform:translateY(-3px);box-shadow:0 22px 48px -28px rgba(26,24,22,.4) !important;border-color:#D2CFC6}
-html[data-theme="duna"] .com-img{border-bottom:1px solid #E3E1DA;filter:saturate(.9)}
-html[data-theme="duna"] .com .ic{background:var(--ivory);border:1px solid #E3E1DA;box-shadow:none}
-html[data-theme="duna"] .com p{color:#4D4846}
+html[data-theme="duna"] .steps .step p,html[data-theme="duna"] .jstep p,html[data-theme="duna"] .serv p{color:var(--mut)}
+html[data-theme="duna"] .jstep .num{background:var(--soft);border:var(--bd);border-radius:99px;box-shadow:none;color:var(--ink);font-family:"Inter",sans-serif;font-weight:600;font-size:1.05rem}
+html[data-theme="duna"] .jstep .tagk{background:transparent;border:var(--bd);border-radius:99px;color:var(--mut);font-weight:500;letter-spacing:.04em}
+/* comunità */
+html[data-theme="duna"] .com{background:#fff;border:var(--bd);border-radius:18px;box-shadow:none;overflow:hidden;color:var(--ink)}
+html[data-theme="duna"] .com:hover{transform:translateY(-3px);box-shadow:var(--hard) !important;border-color:#DBD9D0}
+html[data-theme="duna"] .com-img{border-bottom:var(--bd);filter:saturate(.96)}
+html[data-theme="duna"] .com .ic{background:var(--soft);border:var(--bd);box-shadow:none}
+html[data-theme="duna"] .com p{color:var(--mut)}
 html[data-theme="duna"] .com h3::after{display:none}
-html[data-theme="duna"] .com .badge{background:#111010;color:#EDEDE8;border:none;box-shadow:none;transform:none;border-radius:99px;font-family:"Fragment Mono",monospace;font-weight:400;letter-spacing:.06em}
-html[data-theme="duna"] .com.start{background:var(--inkdark);border:none}
-html[data-theme="duna"] .com.start h3{color:#fff}
-html[data-theme="duna"] .com.start p{color:#B2AFAE}
-html[data-theme="duna"] .com.start .link{background:transparent;border:1px solid rgba(255,255,255,.3);color:#EDEDE8;border-radius:99px;text-transform:none;font-weight:500}
-/* vita su scuro */
-html[data-theme="duna"] #vita .sec{color:#fff}
-html[data-theme="duna"] #vita .sec em{color:#B2AFAE}
-html[data-theme="duna"] #vita .sec-lede{color:#8e8a86}
-html[data-theme="duna"] .life-grid figure{background:transparent;border:var(--bd);padding:0;box-shadow:none;border-radius:14px;overflow:hidden;transform:none !important}
-html[data-theme="duna"] .life-grid figure:hover{box-shadow:var(--hard)}
-html[data-theme="duna"] .life-grid img{filter:saturate(.9)}
-html[data-theme="duna"] .life-credit{color:#4D4846}
+html[data-theme="duna"] .com .badge{background:#1B1A17;color:#fff;border:none;box-shadow:none;transform:none;border-radius:99px;font-weight:500;letter-spacing:.04em}
+html[data-theme="duna"] .com.start{background:linear-gradient(180deg,#EBE0F4,#E7EFDF);border:var(--bd)}
+html[data-theme="duna"] .com.start h3{color:var(--ink)}
+html[data-theme="duna"] .com.start p{color:var(--mut)}
+html[data-theme="duna"] .com.start .link{background:#1B1A17;border:none;color:#fff;border-radius:99px;text-transform:none;font-weight:500}
+/* vita */
+html[data-theme="duna"] #vita .sec{color:var(--ink)}
+html[data-theme="duna"] #vita .sec em{color:var(--mut)}
+html[data-theme="duna"] #vita .sec-lede{color:var(--mut)}
+html[data-theme="duna"] .life-grid figure{background:#fff;border:var(--bd);padding:0;box-shadow:none;border-radius:16px;overflow:hidden;transform:none !important}
+html[data-theme="duna"] .life-grid figure:hover{box-shadow:var(--hard-sm)}
+html[data-theme="duna"] .life-grid img{filter:saturate(.96)}
+html[data-theme="duna"] .life-credit{color:var(--mut)}
 /* paesi */
-html[data-theme="duna"] .vil-feature{border:none;border-radius:16px;box-shadow:0 24px 56px -30px rgba(26,24,22,.5)}
+html[data-theme="duna"] #paesi{background:var(--paper);border-top:none;border-bottom:none;color:var(--ink)}
+html[data-theme="duna"] #paesi .kicker{background:transparent;color:var(--mut)}
+html[data-theme="duna"] #paesi .sec{color:var(--ink)}
+html[data-theme="duna"] #paesi .sec em{color:var(--mut)}
+html[data-theme="duna"] #paesi .sec-lede,html[data-theme="duna"] .vil-note,html[data-theme="duna"] .vnet-legend{color:var(--mut)}
+html[data-theme="duna"] .vil-feature{border:var(--bd);border-radius:18px;box-shadow:var(--hard-sm)}
 html[data-theme="duna"] .vil-feature:hover{transform:translateY(-2px)}
-html[data-theme="duna"] .vil-feature .bg{filter:saturate(.92)}
-html[data-theme="duna"] .vil-feature .shade{background:linear-gradient(195deg,rgba(13,13,13,.05) 35%,rgba(13,13,13,.88) 100%)}
-html[data-theme="duna"] .vil-feature .stamp{background:rgba(237,237,232,.94);color:#1A1816;border:none;box-shadow:none;transform:none;border-radius:99px;font-family:"Fragment Mono",monospace;font-weight:400}
-html[data-theme="duna"] .vil-feature .ftag{color:#B2AFAE;font-family:"Fragment Mono",monospace;font-weight:400;letter-spacing:.08em}
+html[data-theme="duna"] .vil-feature .bg{filter:saturate(.98)}
+html[data-theme="duna"] .vil-feature .shade{background:linear-gradient(195deg,rgba(20,18,15,.02) 35%,rgba(20,18,15,.82) 100%)}
+html[data-theme="duna"] .vil-feature .stamp{background:rgba(255,255,255,.92);color:#1B1A17;border:none;box-shadow:none;transform:none;border-radius:99px;font-weight:500}
+html[data-theme="duna"] .vil-feature .ftag{color:#E8D6BF;font-weight:500;letter-spacing:.08em}
 html[data-theme="duna"] .vil-feature h3{text-transform:none}
-html[data-theme="duna"] .vil-feature .go{background:#EDEDE8;border:none;color:#111010;border-radius:99px;box-shadow:none;text-transform:none;font-weight:600}
-html[data-theme="duna"] .vnet-cluster{color:#4D4846;font-family:"Fragment Mono",monospace;font-weight:400;letter-spacing:.08em}
-html[data-theme="duna"] .vnet-cluster::after{height:1px;background:#E3E1DA}
-html[data-theme="duna"] .vc-img{border-bottom:1px solid #E3E1DA;filter:saturate(.9)}
+html[data-theme="duna"] .vil-feature .go{background:#fff;border:none;color:#1B1A17;border-radius:99px;box-shadow:none;text-transform:none;font-weight:500}
+html[data-theme="duna"] .vnet-cluster{color:var(--mut);font-weight:600;letter-spacing:.14em}
+html[data-theme="duna"] .vnet-cluster::after{height:1px;background:var(--line)}
+html[data-theme="duna"] .vc-img{border-bottom:var(--bd);filter:saturate(.96)}
 html[data-theme="duna"] .vcard h4{font-family:"Inter",sans-serif;font-weight:600;text-transform:none}
-html[data-theme="duna"] .vreg{color:#8e8a86}
-html[data-theme="duna"] .vc-data span{background:var(--ivory);border:1px solid #E3E1DA;border-radius:99px;font-weight:500;color:#4D4846}
-html[data-theme="duna"] .vsoon{background:#111010;color:#EDEDE8;border:none;box-shadow:none;transform:none;border-radius:99px;top:10px;font-family:"Fragment Mono",monospace;font-weight:400}
+html[data-theme="duna"] .vreg{color:var(--dust)}
+html[data-theme="duna"] .vc-data span{background:var(--soft);border:var(--bd);border-radius:99px;font-weight:500;color:var(--mut)}
+html[data-theme="duna"] .vsoon{background:#1B1A17;color:#fff;border:none;box-shadow:none;transform:none;border-radius:99px;top:10px;font-weight:500}
 /* servizi */
-html[data-theme="duna"] .serv .ic{background:var(--ivory) !important;border:1px solid #E3E1DA;border-radius:12px;box-shadow:none}
+html[data-theme="duna"] .serv .ic{background:var(--soft) !important;border:var(--bd);border-radius:14px;box-shadow:none}
 /* fiducia */
-html[data-theme="duna"] #fiducia .box p{color:#4D4846}
-html[data-theme="duna"] #fiducia .box h3{color:var(--inkdark)}
+html[data-theme="duna"] #fiducia .box p{color:var(--mut)}
+html[data-theme="duna"] #fiducia .box h3{color:var(--ink)}
 /* faq */
-html[data-theme="duna"] .faq summary{font-weight:600;color:var(--inkdark)}
-html[data-theme="duna"] .faq summary::after{font-family:"Fragment Mono",monospace;font-weight:400;color:#8e8a86}
+html[data-theme="duna"] .faq summary{font-weight:600;color:var(--ink)}
+html[data-theme="duna"] .faq summary::after{font-family:"Inter",sans-serif;font-weight:400;color:var(--mut)}
 html[data-theme="duna"] .faq details[open]{transform:none}
-html[data-theme="duna"] .faq .ans{color:#4D4846}
-/* cta scuro con glow viola */
-html[data-theme="duna"] .cta{background:
-  radial-gradient(55% 60% at 85% 0%,rgba(27,6,36,.9) 0%,transparent 60%),
-  radial-gradient(40% 45% at 8% 100%,rgba(69,132,141,.16) 0%,transparent 60%),
-  var(--paper);border-top:var(--bd)}
+html[data-theme="duna"] .faq .ans{color:var(--mut)}
+/* cta: banda pastello chiara con form bianco */
+html[data-theme="duna"] .cta{border-top:var(--bd);color:var(--ink);background:
+  radial-gradient(80% 80% at 85% 0%,#FFE7D3 0%,rgba(255,231,211,0) 55%),
+  radial-gradient(70% 70% at 5% 100%,#D6E9F2 0%,transparent 55%),
+  linear-gradient(180deg,#F2EFEA,#F7F6F1)}
 html[data-theme="duna"] .cta::before,html[data-theme="duna"] .cta::after{display:none}
-html[data-theme="duna"] .cta h2{text-transform:none;font-weight:600;color:#fff}
-html[data-theme="duna"] .cta h2 em{color:#B2AFAE;font-style:normal}
-html[data-theme="duna"] .cta p{color:#8e8a86}
-html[data-theme="duna"] #mp-form{background:var(--carbone);border:var(--bd);border-radius:16px;box-shadow:none;color:#EDEDE8}
-html[data-theme="duna"] .field label{text-transform:none;letter-spacing:0;font-weight:500;color:#B2AFAE;font-family:"Fragment Mono",monospace;font-size:.74rem}
-html[data-theme="duna"] .field input,html[data-theme="duna"] .field select{border:var(--bd);border-radius:10px;background:rgba(255,255,255,.05);color:#fff}
-html[data-theme="duna"] .field input::placeholder{color:#4D4846}
-html[data-theme="duna"] .field input:focus,html[data-theme="duna"] .field select:focus{box-shadow:0 0 0 3px rgba(69,132,141,.3);border-color:#45848D}
-html[data-theme="duna"] .field select option{color:#1A1816;background:#fff}
-html[data-theme="duna"] .submit{background:#EDEDE8;color:#111010;border:none;border-radius:99px;box-shadow:none;text-transform:none;letter-spacing:0}
-html[data-theme="duna"] .submit:hover{background:#fff;transform:translateY(-1px)}
-html[data-theme="duna"] .form-note{color:#4D4846}
-html[data-theme="duna"] #mp-ok{background:var(--carbone);border:var(--bd);border-radius:16px;box-shadow:none}
-html[data-theme="duna"] #mp-ok .big{font-family:"Inter",sans-serif;font-weight:600;color:#fff}
-html[data-theme="duna"] .share-row a,html[data-theme="duna"] .share-row button{border:none !important;border-radius:99px !important}
-/* footer */
-html[data-theme="duna"] footer{background:var(--negro);border-top:var(--bd);color:#8e8a86}
-html[data-theme="duna"] footer a{font-weight:500;color:#B2AFAE}
-html[data-theme="duna"] footer a:hover{color:#fff}
-html[data-theme="duna"] .bar{height:1px;background:#E3E1DA}
-html[data-theme="duna"] .ck{color:#45848D}
+html[data-theme="duna"] .cta h2{text-transform:none;font-weight:600;color:var(--ink)}
+html[data-theme="duna"] .cta h2 em{color:var(--mut);font-style:normal}
+html[data-theme="duna"] .cta p{color:var(--mut)}
+html[data-theme="duna"] #mp-form{background:#fff;border:var(--bd);border-radius:18px;box-shadow:var(--hard-sm);color:var(--ink)}
+html[data-theme="duna"] .field label{text-transform:none;letter-spacing:0;font-weight:600;color:var(--ink);font-size:.86rem}
+html[data-theme="duna"] .field input,html[data-theme="duna"] .field select{border:var(--bd);border-radius:11px;background:#fff;color:var(--ink)}
+html[data-theme="duna"] .field input::placeholder{color:var(--dust)}
+html[data-theme="duna"] .field input:focus,html[data-theme="duna"] .field select:focus{box-shadow:0 0 0 3px rgba(69,132,141,.22);border-color:var(--teal)}
+html[data-theme="duna"] .field select option{color:#1B1A17;background:#fff}
+html[data-theme="duna"] .submit{background:#1B1A17;color:#fff;border:none;border-radius:99px;box-shadow:none;text-transform:none;letter-spacing:0}
+html[data-theme="duna"] .submit:hover{background:#000;transform:translateY(-1px)}
+html[data-theme="duna"] .form-note{color:var(--dust)}
+html[data-theme="duna"] #mp-ok{background:#fff;border:var(--bd);border-radius:18px;box-shadow:var(--hard-sm)}
+html[data-theme="duna"] #mp-ok .big{font-family:"Inter",sans-serif;font-weight:600;color:var(--ink)}
+html[data-theme="duna"] .share-row{color:var(--mut)}
+html[data-theme="duna"] .share-row a,html[data-theme="duna"] .share-row button{border:var(--bd) !important;border-radius:99px !important;color:var(--ink) !important;background:#fff !important}
+/* footer: paesaggio pastello chiaro */
+html[data-theme="duna"] footer{border-top:var(--bd);color:var(--mut);background:linear-gradient(180deg,#E8EFE0 0%,#EAF1EC 55%,#F7F6F1 100%)}
+html[data-theme="duna"] footer .brand{color:var(--ink)}
+html[data-theme="duna"] footer a{font-weight:500;color:var(--mut)}
+html[data-theme="duna"] footer a:hover{color:var(--ink)}
+html[data-theme="duna"] .bar{height:1px;background:var(--line)}
+html[data-theme="duna"] .ck{color:var(--teal)}
 /* toggle */
-html[data-theme="duna"] .theme-toggle{border-radius:99px;background:rgba(255,255,255,.06);color:#EDEDE8;border:var(--bd);font-weight:500;box-shadow:none;font-family:"Fragment Mono",monospace;font-size:.72rem}
-html[data-theme="duna"] .theme-toggle:hover{transform:none;box-shadow:none;background:rgba(255,255,255,.12)}
+html[data-theme="duna"] .theme-toggle{border-radius:99px;background:#fff;color:var(--ink);border:var(--bd);font-weight:500;box-shadow:none;font-size:.74rem}
+html[data-theme="duna"] .theme-toggle:hover{transform:none;box-shadow:none;background:var(--soft)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Tu Andalucía","url":"https://tuandalucia.com/","email":"webmaster.puntorosso@gmail.com","description":"A community project helping people approaching retirement live well in affordable Spanish villages, within international communities of like-minded people.","areaServed":"Spain","knowsLanguage":["en","it","es","de"]}
