@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tu Andalucía — Find your place. With your people.</title>
+<meta name="description" content="Retire well on a small pension in a sunlit Andalusian village, within a community of like-minded people. Eighteen hand-picked villages." />
+<meta name="theme-color" content="#0E0D0C" />
+<link rel="canonical" href="https://tuandalucia.com/immersivo.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tu Andalucía — Find your place. With your people." />
+<meta property="og:description" content="Eighteen sunlit Andalusian villages. One could be yours." />
+<meta property="og:image" content="https://tuandalucia.com/assets/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23D7491A'/%3E%3Ccircle cx='50' cy='42' r='22' fill='%23FFB527'/%3E%3Cpath d='M14 78 Q50 58 86 78 L86 100 L14 100 Z' fill='%23FFF6E8'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:opsz,wght@10..72,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400..500&display=swap" rel="stylesheet" />
+<style>
+:root{--sol:#F2A93B;--amber:#FFB527;--terra:#E8431F;--ink:#0E0D0C;--ink2:#15120F;--cream:#FCF7EE;--mut:#B9AE9C;--line:rgba(255,255,255,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip;background:var(--ink)}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--ink);color:var(--cream);line-height:1.6;font-size:18px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--sol);color:var(--ink)}
+:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
+.disp{font-family:"Big Shoulders Display",system-ui,sans-serif;font-weight:700;line-height:.92;letter-spacing:.005em;text-transform:uppercase}
+em{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:450;text-transform:none;letter-spacing:-.01em}
+.wrap{max-width:1280px;margin:0 auto;padding:0 30px}
+a{color:var(--sol)}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:200;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--amber),var(--terra))}
+@supports (animation-timeline:scroll()){.progress{animation:gw linear both;animation-timeline:scroll(root)}@keyframes gw{to{transform:scaleX(1)}}}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(14,13,12,.72);backdrop-filter:blur(14px) saturate(1.3);border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:.02em;color:#fff;text-decoration:none;text-transform:uppercase}
+.brand .dot{width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFE9A8,var(--amber) 45%,var(--terra));box-shadow:0 0 22px 3px rgba(255,181,39,.55)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:#EFE7D7;text-decoration:none;font-weight:600;font-size:.95rem;opacity:.85;transition:.2s}
+.nav-links a:hover{opacity:1;color:var(--sol)}
+@media(max-width:900px){.nav-links{display:none}}
+.lang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lang button{border:none;background:transparent;color:var(--mut);font-family:inherit;font-weight:800;font-size:.72rem;padding:8px 10px;cursor:pointer}
+.lang button.on{background:var(--cream);color:var(--ink)}
+.njoin{background:var(--terra);color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;padding:11px 20px;border-radius:99px;transition:.2s;white-space:nowrap}
+.njoin:hover{background:#ff5a2a;transform:translateY(-1px)}
+/* HERO full-bleed */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04);animation:kb 18s ease-out forwards}
+@keyframes kb{to{transform:scale(1.12)}}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,12,.62) 0%,rgba(14,13,12,.28) 26%,rgba(14,13,12,.5) 56%,rgba(14,13,12,.97) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:8vh;padding-top:120px}
+.eye{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-bottom:24px}
+.eye::before{content:"";width:30px;height:2px;background:var(--amber)}
+.hero h1{font-size:clamp(3.2rem,8.6vw,7.6rem);color:#fff;text-shadow:0 4px 40px rgba(0,0,0,.4)}
+.hero h1 .l2{display:block;color:var(--amber)}
+.hero .lede{max-width:640px;margin:28px 0 0;font-size:clamp(1.1rem,1.8vw,1.4rem);color:#EFE7D7}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:1.04rem;padding:17px 32px;border-radius:99px;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:.22s}
+.btn-p{background:var(--terra);color:#fff;box-shadow:0 18px 40px -14px rgba(232,67,31,.6)}
+.btn-p:hover{transform:translateY(-3px);background:#ff5a2a}
+.btn-g{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(6px)}
+.btn-g:hover{background:rgba(255,255,255,.18)}
+.scrolld{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:#EFE7D7;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;opacity:.8;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrolld span{width:1px;height:34px;background:linear-gradient(var(--amber),transparent);animation:sd 1.8s ease-in-out infinite}
+@keyframes sd{0%,100%{opacity:.3;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+/* CHAPTER full-bleed */
+.chapter{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden}
+.chapter .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.chapter .veil{position:absolute;inset:0}
+.ch1 .veil{background:linear-gradient(90deg,rgba(14,13,12,.94) 0%,rgba(14,13,12,.7) 45%,rgba(14,13,12,.25) 100%)}
+.ch2 .veil{background:linear-gradient(270deg,rgba(14,13,12,.94) 0%,rgba(14,13,12,.6) 50%,rgba(14,13,12,.2) 100%)}
+.chapter .wrap{position:relative;z-index:2}
+.kick{font-size:.76rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--amber);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.kick::before{content:"";width:30px;height:2px;background:var(--amber)}
+.ch-t{font-size:clamp(2.2rem,5.2vw,4.6rem);max-width:780px;color:#fff}
+.ch-p{max-width:560px;margin-top:24px;font-size:1.2rem;color:#E7DDCB}
+.ch2 .wrap{display:flex;justify-content:flex-end}
+.ch2 .inner{max-width:620px;text-align:right}
+.ch2 .ch-t,.ch2 .ch-p{margin-left:auto}
+.steps{display:flex;flex-direction:column;gap:18px;margin-top:34px;max-width:560px;margin-left:auto}
+.stp{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:18px 22px;backdrop-filter:blur(6px)}
+.stp .nn{font-family:"Big Shoulders Display",sans-serif;font-size:2rem;font-weight:700;color:var(--amber);line-height:1;flex:none}
+.stp h3{font-size:1.18rem;color:#fff;margin-bottom:3px}.stp p{font-size:.96rem;color:#C8BCA8}
+.ch2 .stp{text-align:left}
+/* VILLAGES */
+.vsec{background:var(--ink);padding:110px 0 90px}
+.vhead{max-width:760px;margin-bottom:14px}
+.vhead .v-t{font-size:clamp(2.4rem,6vw,5rem);color:#fff}
+.vhead .v-p{font-size:1.18rem;color:var(--mut);margin-top:18px;max-width:620px}
+/* LARVA feature */
+.larva{position:relative;margin:46px 0 18px;border-radius:26px;overflow:hidden;min-height:60vh;display:flex;align-items:flex-end;text-decoration:none;color:#fff;box-shadow:0 40px 90px -40px #000}
+.larva .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .9s cubic-bezier(.3,1,.4,1)}
+.larva:hover .bg{transform:scale(1.05)}
+.larva .veil{position:absolute;inset:0;background:linear-gradient(200deg,rgba(14,13,12,.05) 30%,rgba(14,13,12,.92) 100%)}
+.larva .in{position:relative;z-index:2;padding:42px}
+.larva .pilot{display:inline-block;background:var(--amber);color:var(--ink);font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:99px;margin-bottom:14px}
+.larva h3{font-family:"Big Shoulders Display",sans-serif;font-size:clamp(3rem,7vw,6rem);text-transform:uppercase;line-height:.9;color:#fff}
+.larva .reg{color:var(--amber);font-weight:700;letter-spacing:.04em;margin-top:6px}
+.larva p{max-width:600px;color:#E7DDCB;margin-top:14px;font-size:1.02rem}
+.larva .go{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:#fff;background:var(--terra);padding:13px 24px;border-radius:99px;font-weight:700}
+/* GRID of big village folders */
+.cluster{font-size:.8rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin:54px 0 22px;display:flex;align-items:center;gap:14px}
+.cluster::after{content:"";flex:1;height:1px;background:var(--line)}
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+@media(max-width:780px){.vgrid{grid-template-columns:1fr}}
+.vcard{position:relative;min-height:440px;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;color:#fff;cursor:pointer;border:1px solid var(--line);box-shadow:0 30px 70px -44px #000;transition:transform .4s cubic-bezier(.3,1,.4,1),box-shadow .4s}
+.vcard:hover{transform:translateY(-8px);box-shadow:0 50px 100px -40px #000}
+.vcard .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s cubic-bezier(.3,1,.4,1);filter:saturate(1.05)}
+.vcard:hover .bg{transform:scale(1.08)}
+.vcard .veil{position:absolute;inset:0;background:linear-gradient(195deg,rgba(14,13,12,.04) 30%,rgba(14,13,12,.55) 64%,rgba(14,13,12,.95) 100%)}
+.vcard .in{position:relative;z-index:2;padding:28px}
+.vcard .reg{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.vcard h3{font-family:"Big Shoulders Display",sans-serif;font-size:clamp(2.2rem,4vw,3.2rem);text-transform:uppercase;line-height:.9;color:#fff}
+.vcard .vt{margin-top:12px;color:#E2D8C6;font-size:.96rem;max-width:90%}
+.vcard .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.vcard .chips span{font-size:.74rem;font-weight:700;background:rgba(255,255,255,.12);border:1px solid var(--line);border-radius:99px;padding:6px 11px;backdrop-filter:blur(4px)}
+.vcard .soon{position:absolute;top:18px;right:18px;z-index:3;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(14,13,12,.6);border:1px solid var(--line);color:#EFE7D7;padding:6px 11px;border-radius:99px;backdrop-filter:blur(6px)}
+.vcard .open{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:700;color:var(--amber);font-size:.92rem}
+.vcard .arrow{transition:transform .3s}.vcard:hover .arrow{transform:translateX(6px)}
+/* COMMUNITIES strip */
+.com{background:var(--ink2);padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.com .v-t{font-size:clamp(2.2rem,5vw,4rem);color:#fff}
+.com .v-p{color:var(--mut);margin-top:14px;font-size:1.15rem}
+.compills{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.compill{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:99px;padding:13px 22px;font-weight:600;font-size:1.05rem;transition:.2s}
+.compill:hover{background:rgba(255,255,255,.12);transform:translateY(-3px)}
+.compill .e{font-size:1.4rem}
+/* CTA full-bleed */
+.cta{position:relative;min-height:80vh;display:flex;align-items:center;overflow:hidden}
+.cta .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.cta .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,12,.86),rgba(14,13,12,.7))}
+.cta .wrap{position:relative;z-index:2;text-align:center;max-width:820px}
+.cta .v-t{font-size:clamp(2.4rem,6vw,5rem);color:#fff;margin:0 auto}
+.cta .v-p{color:#E7DDCB;margin:22px auto 0;font-size:1.2rem;max-width:620px}
+.cta .btn-p{margin-top:36px;font-size:1.15rem;padding:20px 42px}
+.cta .note{margin-top:18px;color:var(--mut);font-size:.92rem;letter-spacing:.04em}
+/* FOOTER */
+footer{background:#000;color:var(--mut);padding:54px 0 60px;text-align:center}
+footer .brand{justify-content:center;margin-bottom:18px}
+.flinks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.flinks a{color:#CFC4B2;text-decoration:none;font-weight:600}.flinks a:hover{color:var(--sol)}
+.ftag{font-size:.86rem;max-width:560px;margin:0 auto;opacity:.8}
+/* reveal */
+.rv{opacity:0;transform:translateY(34px)}
+.rv.in{opacity:1;transform:none;transition:opacity 1s cubic-bezier(.2,.9,.3,1),transform 1s cubic-bezier(.2,.9,.3,1)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero .bg{animation:none}}
+@media(max-width:620px){.njoin{display:none}}
+@media(max-width:560px){.wrap{padding:0 18px}.nav-in{height:64px}.brand{font-size:1.15rem}.lang button{padding:7px 8px;font-size:.64rem}.ch2 .inner,.ch2 .steps{text-align:left;margin-left:0}.ch2 .wrap{justify-content:flex-start}.larva .in,.vcard .in{padding:24px}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<nav id="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top"><span class="dot"></span>Tu Andalucía</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#how" data-k="nav_how"></a><a href="#villages" data-k="nav_vil"></a><a href="#communities" data-k="nav_com"></a>
+    </div>
+    <div class="lang" id="lang"><button data-l="en" class="on">EN</button><button data-l="it">IT</button><button data-l="es">ES</button><button data-l="de">DE</button></div>
+    <a class="njoin" href="registrati.html" data-k="join"></a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="bg" style="background-image:url('https://images.pexels.com/photos/17589492/pexels-photo-17589492.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div><div class="veil"></div>
+  <div class="wrap">
+    <span class="eye rv" data-k="h_eye"></span>
+    <h1 class="disp rv"><span data-k="h_t1"></span> <span class="l2" data-k="h_t2"></span></h1>
+    <p class="lede rv" data-k="h_p"></p>
+    <div class="hero-actions rv"><a class="btn btn-p" href="registrati.html" data-k="h_cta1"></a><a class="btn btn-g" href="#villages" data-k="h_cta2"></a></div>
+  </div>
+  <div class="scrolld"><span></span><div data-k="scroll"></div></div>
+</header>
+
+<section class="chapter ch1" id="how0">
+  <div class="bg" style="background-image:url('https://images.pexels.com/photos/13790747/pexels-photo-13790747.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div><div class="veil"></div>
+  <div class="wrap"><div>
+    <div class="kick rv" data-k="c1_k"></div>
+    <h2 class="disp ch-t rv" data-k="c1_t"></h2>
+    <p class="ch-p rv" data-k="c1_p"></p>
+  </div></div>
+</section>
+
+<section class="chapter ch2" id="how">
+  <div class="bg" style="background-image:url('https://images.pexels.com/photos/8153907/pexels-photo-8153907.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div><div class="veil"></div>
+  <div class="wrap"><div class="inner">
+    <div class="kick rv" data-k="c2_k" style="justify-content:flex-end"></div>
+    <h2 class="disp ch-t rv" data-k="c2_t"></h2>
+    <div class="steps">
+      <div class="stp rv"><div class="nn">01</div><div><h3 data-k="s1t"></h3><p data-k="s1p"></p></div></div>
+      <div class="stp rv"><div class="nn">02</div><div><h3 data-k="s2t"></h3><p data-k="s2p"></p></div></div>
+      <div class="stp rv"><div class="nn">03</div><div><h3 data-k="s3t"></h3><p data-k="s3p"></p></div></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="vsec" id="villages">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="kick rv" data-k="v_k"></div>
+      <h2 class="disp v-t rv" data-k="v_t"></h2>
+      <p class="v-p rv" data-k="v_p"></p>
+    </div>
+    <a class="larva rv" href="larva.html">
+      <div class="bg" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Larva%2C_en_Ja%C3%A9n_%28Espa%C3%B1a%29.jpg?width=1600')"></div><div class="veil"></div>
+      <div class="in">
+        <span class="pilot" data-k="pilot"></span>
+        <h3>Larva</h3><div class="reg">Sierra Mágina · Jaén</div>
+        <p data-k="larva_p"></p>
+        <span class="go"><span data-k="scopri"></span> →</span>
+      </div>
+    </a>
+    <div id="villBox"></div>
+  </div>
+</section>
+
+<section class="com" id="communities">
+  <div class="wrap">
+    <div class="kick rv" data-k="com_k"></div>
+    <h2 class="disp v-t rv" data-k="com_t"></h2>
+    <p class="v-p rv" data-k="com_p"></p>
+    <div class="compills rv" id="compills"></div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="bg" style="background-image:url('https://images.pexels.com/photos/34803738/pexels-photo-34803738.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div><div class="veil"></div>
+  <div class="wrap">
+    <div class="kick rv" style="justify-content:center" data-k="cta_k"></div>
+    <h2 class="disp v-t rv" data-k="cta_t"></h2>
+    <p class="v-p rv" data-k="cta_p"></p>
+    <a class="btn btn-p rv" href="registrati.html" data-k="cta_b"></a>
+    <div class="note rv" data-k="cta_n"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="display:flex;align-items:center;gap:11px;font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.4rem;text-transform:uppercase;color:#fff"><span class="dot" style="width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFE9A8,#FFB527 45%,#E8431F)"></span>Tu Andalucía</div>
+    <div class="flinks">
+      <a href="#how" data-k="nav_how"></a><a href="#villages" data-k="nav_vil"></a><a href="registrati.html" data-k="join"></a>
+      <a href="famiglie.html">Families</a><a href="stampa.html">Press</a><a href="privacy.html">Privacy</a>
+      <a href="index.html">◧ Póster / Duna</a>
+    </div>
+    <div class="ftag" data-k="foot"></div>
+  </div>
+</footer>
+
+<script>
+var D={"en": {"nav_how": "How it works", "nav_vil": "The villages", "nav_com": "Communities", "join": "Join the project", "h_eye": "Affordable Andalusian villages · communities by affinity", "h_t1": "Find your place.", "h_t2": "With your people.", "h_p": "Retire well, even on a small pension, in a sunlit village where life costs little — surrounded by people who share your passions.", "h_cta1": "Join the project", "h_cta2": "See the villages", "scroll": "Scroll", "c1_k": "Our generation's dilemma", "c1_t": "Many of us will reach retirement unable to stay where we live today.", "c1_p": "Cities priced us out. Pensions are small. And the deepest fear isn't money — it's growing old alone. We answer all three at once.", "c2_k": "How it works", "c2_t": "You don't move to a village. You found one — together.", "s1t": "Find your people", "s1p": "Join, or start, a community of kindred spirits — by passion, trade or values.", "s2t": "We match the village", "s2p": "Together we choose the right village and budget, with the town hall on board.", "s3t": "We handle the rest", "s3p": "Home, paperwork, the move, and a social life built around your group.", "v_k": "The villages", "v_t": "Eighteen villages. One could be yours.", "v_p": "Hand-picked across Andalusia — real services, affordable homes, town halls that want new life. Open a folder.", "pilot": "Pilot village", "larva_p": "~435 people, a clinic open 7/7 with an ambulance, a €2 taxi to the hospital, fibre, pharmacy, school. The first home of the project — an artists' village in the making.", "scopri": "Open the village", "soon": "Soon", "ch_pop": "people", "ch_house": "homes from", "ch_beach": "beach", "ch_net": "internet", "com_k": "The communities", "com_t": "Bring your tribe.", "com_p": "Eight worlds — and room to invent your own.", "cta_k": "Take the first step", "cta_t": "Your new life starts with one message.", "cta_p": "Tell us which community feels like yours — or start one. No commitment, just a conversation.", "cta_b": "Join the project →", "cta_n": "Free · by invitation · pilot phase", "foot": "Affordable villages · International communities by affinity · Andalusia, Spain"}, "it": {"nav_how": "Come funziona", "nav_vil": "I paesi", "nav_com": "Le comunità", "join": "Unisciti al progetto", "h_eye": "Borghi andalusi accessibili · comunità per affinità", "h_t1": "Trova il tuo posto.", "h_t2": "Con la tua gente.", "h_p": "Vivi bene la pensione, anche con un assegno piccolo, in un borgo pieno di sole dove la vita costa poco — tra persone che condividono le tue passioni.", "h_cta1": "Unisciti al progetto", "h_cta2": "Vedi i paesi", "scroll": "Scorri", "c1_k": "Il nodo della nostra generazione", "c1_t": "Molti di noi arriveranno alla pensione senza poter restare dove vivono oggi.", "c1_p": "Le città sono diventate care. Le pensioni piccole. E la paura più profonda non è il denaro: è invecchiare soli. Rispondiamo a tutte e tre insieme.", "c2_k": "Come funziona", "c2_t": "Non ti trasferisci in un borgo. Lo fondi — insieme.", "s1t": "Trova la tua gente", "s1p": "Entra, o avvia, una comunità di persone affini — per passione, mestiere o valori.", "s2t": "Abbiniamo il borgo", "s2p": "Scegliamo insieme il paese e il budget giusti, con il Comune al nostro fianco.", "s3t": "Al resto pensiamo noi", "s3p": "Casa, pratiche, trasloco e una vita sociale costruita attorno al tuo gruppo.", "v_k": "I paesi", "v_t": "Diciotto borghi. Uno può essere il tuo.", "v_p": "Scelti a mano in tutta l'Andalusia — servizi veri, case accessibili, Comuni che cercano nuova vita. Apri una cartella.", "pilot": "Borgo pilota", "larva_p": "~435 abitanti, ambulatorio aperto 7/7 con ambulanza, taxi a 2€ per l'ospedale, fibra, farmacia, scuola. La prima casa del progetto — un paese di artisti che sta nascendo.", "scopri": "Apri il borgo", "soon": "Presto", "ch_pop": "abitanti", "ch_house": "case da", "ch_beach": "mare", "ch_net": "internet", "com_k": "Le comunità", "com_t": "Porta la tua tribù.", "com_p": "Otto mondi — e spazio per inventare il tuo.", "cta_k": "Fai il primo passo", "cta_t": "La tua nuova vita inizia con un messaggio.", "cta_p": "Dicci a quale comunità senti di appartenere — o avviane una. Nessun impegno, solo una conversazione.", "cta_b": "Unisciti al progetto →", "cta_n": "Gratis · su invito · fase pilota", "foot": "Borghi accessibili · Comunità internazionali per affinità · Andalusia, Spagna"}, "es": {"nav_how": "Cómo funciona", "nav_vil": "Los pueblos", "nav_com": "Las comunidades", "join": "Únete al proyecto", "h_eye": "Pueblos andaluces asequibles · comunidades por afinidad", "h_t1": "Encuentra tu lugar.", "h_t2": "Con tu gente.", "h_p": "Vive bien la jubilación, aun con una pensión pequeña, en un pueblo lleno de sol donde la vida cuesta poco — entre personas que comparten tus pasiones.", "h_cta1": "Únete al proyecto", "h_cta2": "Ver los pueblos", "scroll": "Desliza", "c1_k": "El dilema de nuestra generación", "c1_t": "Muchos llegaremos a la jubilación sin poder quedarnos donde vivimos hoy.", "c1_p": "Las ciudades se encarecieron. Las pensiones son pequeñas. Y el miedo más hondo no es el dinero: es envejecer solos. Respondemos a los tres a la vez.", "c2_k": "Cómo funciona", "c2_t": "No te mudas a un pueblo. Lo fundas — juntos.", "s1t": "Encuentra a tu gente", "s1p": "Únete, o crea, una comunidad de personas afines — por pasión, oficio o valores.", "s2t": "Buscamos el pueblo", "s2p": "Elegimos juntos el pueblo y el presupuesto, con el Ayuntamiento a favor.", "s3t": "Del resto nos ocupamos", "s3p": "Casa, trámites, mudanza y una vida social en torno a tu grupo.", "v_k": "Los pueblos", "v_t": "Dieciocho pueblos. Uno puede ser el tuyo.", "v_p": "Elegidos a mano por toda Andalucía — servicios reales, casas asequibles, ayuntamientos que quieren nueva vida. Abre una carpeta.", "pilot": "Pueblo piloto", "larva_p": "~435 habitantes, consultorio abierto 7/7 con ambulancia, taxi de 2€ al hospital, fibra, farmacia, escuela. La primera casa del proyecto — un pueblo de artistas en formación.", "scopri": "Abrir el pueblo", "soon": "Pronto", "ch_pop": "habitantes", "ch_house": "casas desde", "ch_beach": "playa", "ch_net": "internet", "com_k": "Las comunidades", "com_t": "Trae a tu tribu.", "com_p": "Ocho mundos — y sitio para inventar el tuyo.", "cta_k": "Da el primer paso", "cta_t": "Tu nueva vida empieza con un mensaje.", "cta_p": "Dinos a qué comunidad sientes que perteneces — o crea una. Sin compromiso, solo una conversación.", "cta_b": "Únete al proyecto →", "cta_n": "Gratis · por invitación · fase piloto", "foot": "Pueblos asequibles · Comunidades internacionales por afinidad · Andalucía, España"}, "de": {"nav_how": "So geht's", "nav_vil": "Die Dörfer", "nav_com": "Gemeinschaften", "join": "Mach mit", "h_eye": "Bezahlbare andalusische Dörfer · Gemeinschaften nach Wahlverwandtschaft", "h_t1": "Finde deinen Ort.", "h_t2": "Mit deinen Leuten.", "h_p": "Lebe den Ruhestand gut, auch mit kleiner Rente, in einem sonnigen Dorf, wo das Leben wenig kostet — unter Menschen, die deine Leidenschaften teilen.", "h_cta1": "Mach mit", "h_cta2": "Dörfer ansehen", "scroll": "Scrollen", "c1_k": "Das Dilemma unserer Generation", "c1_t": "Viele von uns gehen in Rente und können nicht bleiben, wo sie heute leben.", "c1_p": "Die Städte sind zu teuer. Die Renten klein. Und die tiefste Angst ist nicht das Geld — es ist, allein alt zu werden. Wir beantworten alle drei zugleich.", "c2_k": "So funktioniert's", "c2_t": "Du ziehst nicht in ein Dorf. Du gründest eins — gemeinsam.", "s1t": "Finde deine Leute", "s1p": "Tritt einer Gemeinschaft Gleichgesinnter bei oder gründe eine — nach Leidenschaft, Beruf oder Werten.", "s2t": "Wir finden das Dorf", "s2p": "Gemeinsam wählen wir Dorf und Budget — mit dem Rathaus an Bord.", "s3t": "Den Rest machen wir", "s3p": "Zuhause, Formalitäten, Umzug und ein soziales Leben rund um deine Gruppe.", "v_k": "Die Dörfer", "v_t": "Achtzehn Dörfer. Eines könnte deins sein.", "v_p": "Handverlesen in ganz Andalusien — echte Versorgung, bezahlbare Häuser, Rathäuser, die neues Leben wollen. Öffne eine Mappe.", "pilot": "Pilotdorf", "larva_p": "~435 Einwohner, Arztpraxis 7/7 mit Krankenwagen, 2-€-Taxi zum Krankenhaus, Glasfaser, Apotheke, Schule. Das erste Zuhause des Projekts — ein Künstlerdorf im Entstehen.", "scopri": "Dorf öffnen", "soon": "Bald", "ch_pop": "Einwohner", "ch_house": "Häuser ab", "ch_beach": "Strand", "ch_net": "Internet", "com_k": "Die Gemeinschaften", "com_t": "Bring deinen Stamm mit.", "com_p": "Acht Welten — und Platz, deine eigene zu erfinden.", "cta_k": "Mach den ersten Schritt", "cta_t": "Dein neues Leben beginnt mit einer Nachricht.", "cta_p": "Sag uns, welche Gemeinschaft sich nach dir anfühlt — oder gründe eine. Unverbindlich, nur ein Gespräch.", "cta_b": "Mach mit →", "cta_n": "Kostenlos · auf Einladung · Pilotphase", "foot": "Bezahlbare Dörfer · Internationale Gemeinschaften nach Wahlverwandtschaft · Andalusien, Spanien"}}, VILL=[{"slug": "bedmar", "name": "Bedmar y Garcíez", "region": "Sierra Mágina · Jaén", "cluster": "Sierra Mágina", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bedmar%2001.jpg?width=1400", "pop": "~355 (Garcíez) · 2.571 (mun.)", "house": "€10.300+", "beach": "", "net": "UNICO / 4G", "tags": ["🌿", "🔧"], "hi": {"en": "Tucked inside the Sierra Mágina Natural Park in Jaén, Bedmar y Garcíez pairs a living municipality of 2,571 with the…", "it": "Incastonato nel Parco Naturale Sierra Mágina (Jaén), Bedmar y Garcíez unisce un municipio vivo di 2.571 abitanti al m…", "es": "Enclavado en el Parque Natural Sierra Mágina (Jaén), Bedmar y Garcíez une un municipio vivo de 2.571 habitantes con e…", "de": "Im Naturpark Sierra Mágina hat der winzige Weiler Garcíez (rund 355 Einwohner) den minimalen, vertrauten Maßstab von…"}}, {"slug": "belmez", "name": "Bélmez de la Moraleda", "region": "Sierra Mágina · Jaén", "cluster": "Sierra Mágina", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A9lmez%20de%20la%20Moraleda%2024J%2001.jpg?width=1400", "pop": "~1.509", "house": "€40.000+ (ruderi €12.000)", "beach": "", "net": "UNICO / 4G", "tags": ["🎨", "📚", "🌿"], "hi": {"en": "Tucked inside the Sierra Mágina Natural Park in Jaén, Bélmez de la Moraleda is a small village (around 1,509 people)…", "it": "Immerso nel Parco Naturale Sierra Mágina, a Jaén, Bélmez de la Moraleda è un piccolo borgo (circa 1.509 abitanti) con…", "es": "En pleno Parque Natural Sierra Mágina, en Jaén, Bélmez de la Moraleda es un pueblo pequeño (en torno a 1.509 habitant…", "de": "Inmitten des Naturparks Sierra Mágina hat Bélmez de la Moraleda (rund 1.509 Einwohner) eine Anziehungskraft, die es s…"}}, {"slug": "cabra", "name": "Cabra del Santo Cristo", "region": "Sierra Mágina · Jaén", "cluster": "Sierra Mágina", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabra%20del%20Santo%20Cristo%20%28Ja%C3%A9n%2C%20Espa%C3%B1a%29.jpg?width=1400", "pop": "~1.651", "house": "€24.000+", "beach": "", "net": "fibra (parziale)", "tags": ["🎨", "📷", "🌿"], "hi": {"en": "In the Sierra Mágina (Jaén), Cabra del Santo Cristo is the twin of Larva: right next door, sharing the same instituti…", "it": "Nella Sierra Mágina (Jaén), Cabra del Santo Cristo è il gemello di Larva: vicinissimo, con la stessa rete istituziona…", "es": "En la Sierra Mágina (Jaén), Cabra del Santo Cristo es el gemelo de Larva: muy cerca, con la misma red institucional y…", "de": "In der Sierra Mágina (Jaén) ist Cabra del Santo Cristo der Zwilling von Larva: gleich nebenan gelegen, eingebunden in…"}}, {"slug": "carcheles", "name": "Cárcheles", "region": "Sierra Mágina · Jaén", "cluster": "Sierra Mágina", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Carchelejo%2024J%2001.jpg?width=1400", "pop": "~1.293", "house": "€25.500+", "beach": "", "net": "UNICO / 4G", "tags": ["🌿", "🔧"], "hi": {"en": "In the heart of the Sierra Mágina, Cárcheles is a small, close-knit community living quietly among olive groves and M…", "it": "Nel cuore della Sierra Mágina, Cárcheles è una piccola comunità unita e raccolta, che vive in tranquillità tra olivet…", "es": "En el corazón de la Sierra Mágina, Cárcheles es una pequeña comunidad unida y acogedora, que vive con tranquilidad en…", "de": "Im Herzen der Sierra Mágina liegt Cárcheles, eine kleine, eng verbundene Gemeinschaft, die ruhig zwischen Olivenhaine…"}}, {"slug": "jimena", "name": "Jimena", "region": "Sierra Mágina · Jaén", "cluster": "Sierra Mágina", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jimena%2C%20en%20Ja%C3%A9n%20%28Espa%C3%B1a%29.jpg?width=1400", "pop": "~1.234", "house": "€44.000+", "beach": "", "net": "UNICO / 4G", "tags": ["🌿", "🎨", "🔧"], "hi": {"en": "Tucked into the high Sierra Mágina beneath the peak of Pico Mágina, Jimena is the rare village in the Mágina cluster…", "it": "Incastonata nell'alta Sierra Mágina ai piedi del Pico Mágina, Jimena è il raro borgo del cluster Mágina con la popola…", "es": "Enclavada en la alta Sierra Mágina, a los pies del Pico Mágina, Jimena es el raro pueblo del clúster Mágina con pobla…", "de": "Unterhalb des Gipfels des Pico Mágina liegt Jimena, eines der seltenen Dörfer der Mágina, dessen Bevölkerung sanft wä…"}}, {"slug": "benatae", "name": "Benatae", "region": "Sierra de Segura · Jaén", "cluster": "Sierra de Segura", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Benatae%2C%20en%20Ja%C3%A9n%20%28Espa%C3%B1a%29.jpg?width=1400", "pop": "~429", "house": "da confermare", "beach": "", "net": "fibra ~84% · 4G ~98%", "tags": ["🌿", "🔧"], "hi": {"en": "Benatae is a tiny village of around 429 people in the Sierra de Segura (Jaén), the same minimal scale as Larva, set i…", "it": "Benatae è un piccolo borgo di circa 429 abitanti nella Sierra de Segura (Jaén), la stessa scala minima di Larva, imme…", "es": "Benatae es un pequeño pueblo de unos 429 habitantes en la Sierra de Segura (Jaén), la misma escala mínima que Larva,…", "de": "Vielleicht das Dorf, das Larva an Größe am nächsten kommt (~429 Einwohner): der minimale Maßstab, ideal für eine klei…"}}, {"slug": "hornos", "name": "Hornos", "region": "Sierra de Segura · Jaén", "cluster": "Sierra de Segura", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Hornos%2C%20en%20Ja%C3%A9n%20%28Espa%C3%B1a%29.jpg?width=1400", "pop": "~573", "house": "€36.000+", "beach": "", "net": "fibra ~64% · 4G ~99%", "tags": ["🎨", "🌿"], "hi": {"en": "Perched on a hilltop within the Cazorla-Segura-Las Villas Natural Park, Hornos is a Conjunto Histórico-Artístico crow…", "it": "Arroccato all'interno del Parco Naturale Cazorla-Segura-Las Villas, Hornos è un Conjunto Histórico-Artístico coronato…", "es": "Encaramado en lo alto, dentro del Parque Natural de Cazorla-Segura-Las Villas, Hornos es un Conjunto Histórico-Artíst…", "de": "Ein Dorf auf einem Hügel (historisch-künstlerisches Ensemble) mit einer Burg und Blick über den Tranco-Stausee, mitte…"}}, {"slug": "segura", "name": "Segura de la Sierra", "region": "Sierra de Segura · Jaén", "cluster": "Sierra de Segura", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/DSC00226-Segura%20de%20la%20Sierra-Jaen.jpg?width=1400", "pop": "~1.688", "house": "€16.000+", "beach": "", "net": "fibra ~64% · 4G ~99%", "tags": ["🎶", "🎨", "🌿", "🔧"], "hi": {"en": "A medieval village ranked among Spain's \"Pueblos más bonitos\" and protected as a Conjunto Histórico, Segura de la Sie…", "it": "Borgo medievale tra i \"Pueblos más bonitos de España\" e tutelato come Conjunto Histórico, Segura de la Sierra esercit…", "es": "Pueblo medieval entre los \"Pueblos más bonitos de España\" y protegido como Conjunto Histórico, Segura de la Sierra ej…", "de": "Ein mittelalterliches Dorf unter den \"Pueblos más bonitos de España\" (den schönsten Dörfern Spaniens), mit einem denk…"}}, {"slug": "torres", "name": "Torres de Albánchez", "region": "Sierra de Segura · Jaén", "cluster": "Sierra de Segura", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/JDCANO%20Torres%20Albanchez.jpg?width=1400", "pop": "~741", "house": "da confermare (economico)", "beach": "", "net": "fibra ~87% · 4G 100%", "tags": ["💻", "🔧", "🌿"], "hi": {"en": "Tucked into the Sierra de Segura with around 741 residents, Torres de Albánchez offers the same warm, human scale tha…", "it": "Immersa nella Sierra de Segura con circa 741 abitanti, Torres de Albánchez offre la stessa scala raccolta e umana che…", "es": "Enclavada en la Sierra de Segura con unos 741 habitantes, Torres de Albánchez ofrece la misma escala recogida y human…", "de": "Ein kompaktes Dorf wie Larva mit ausgezeichneter Anbindung (Glasfaser ~87 %, 4G 100 %) – ideal für Künstler und ortsu…"}}, {"slug": "castillejar", "name": "Castilléjar", "region": "Altiplano · Granada", "cluster": "Altiplano de Granada", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Castill%C3%A9jar%2C%20en%20Granada%20%28Espa%C3%B1a%29.jpg?width=1400", "pop": "~1.289", "house": "€20.000+ (case-grotta)", "beach": "", "net": "fibra (fino 600 Mb)", "tags": ["💻", "🔧", "🌿"], "hi": {"en": "Set in Granada's Altiplano (Huéscar region) where two rivers meet, Castilléjar (~1,289 inhabitants) offers calm rural…", "it": "Immerso nell'Altiplano di Granada (comarca di Huéscar), alla confluenza di due fiumi, Castilléjar (~1.289 abitanti) r…", "es": "En el Altiplano de Granada (comarca de Huéscar), en la confluencia de dos ríos, Castilléjar (~1.289 habitantes) ofrec…", "de": "Bezahlbare Höhlenhäuser, eine der besten Internetanbindungen (mehrere Anbieter mit bis zu 600 Mbit/s, ideal für Künst…"}}, {"slug": "galera", "name": "Galera", "region": "Altiplano · Granada", "cluster": "Altiplano de Granada", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/J23%20387%20Galera%2C%20H%C3%B6hlenwohnungen.jpg?width=1400", "pop": "~1.116", "house": "case-grotta €22.000+", "beach": "", "net": "fibra (Excom/Habland)", "tags": ["🎨", "🌌", "🐾"], "hi": {"en": "Tucked into Granada's Altiplano de Huéscar, Galera holds around 1,116 residents and a rare treasure: bioclimatic cave…", "it": "Incastonata nell'Altiplano de Granada (Huéscar), Galera conta circa 1.116 abitanti e custodisce un tesoro raro: le ca…", "es": "Enclavada en el Altiplano de Granada (Huéscar), Galera tiene unos 1.116 habitantes y guarda un tesoro poco común: cas…", "de": "Bioklimatische Höhlenhäuser, die archäologischen Stätten von Tútugi, ein UNESCO-Geopark und ein Sternenhimmel (Astrot…"}}, {"slug": "orce", "name": "Orce", "region": "Altiplano · Granada", "cluster": "Altiplano de Granada", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20250217%20103146%20Castillo%20Orce.jpg?width=1400", "pop": "~1.148", "house": "€45.000+ (grotta 45–52k)", "beach": "", "net": "fibra (Excom/Habland)", "tags": ["📚", "🌌"], "hi": {"en": "Orce sits on the Altiplano de Granada, hailed as the \"cradle of European prehistory\" thanks to the Venta Micena depos…", "it": "Orce si trova sull'Altiplano de Granada, celebrata come \"capitale della preistoria europea\" grazie ai giacimenti di V…", "es": "Orce se asienta en el Altiplano de Granada, reconocida como la \"capital de la prehistoria europea\" gracias a los yaci…", "de": "Die \"Hauptstadt der europäischen Vorgeschichte\" (die Fundstätten von Venta Micena, über 1,4 Millionen Jahre alt), ein…"}}, {"slug": "comares", "name": "Comares", "region": "Axarquía · Málaga", "cluster": "Axarquía", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Comares%20Panorama.jpg?width=1400", "pop": "~1.345", "house": "€25.000+", "beach": "Torre del Mar ~35–40 min", "net": "fibra/4G", "tags": ["🎨", "📚", "🌿"], "hi": {"en": "Perched at around 700 metres on a hilltop, Comares is the whitewashed \"Moorish balcony of the Axarquía,\" with sweepin…", "it": "Arroccata a circa 700 metri su una cima, Comares è il \"balcone moresco dell'Axarquía\", un borgo dalle case imbiancate…", "es": "Encaramada a unos 700 metros en lo alto de un cerro, Comares es el \"balcón moruno de la Axarquía\": un pueblo de casas…", "de": "Auf rund 700 Metern auf einer Bergkuppe thront Comares, der weiß getünchte \"maurische Balkon der Axarquía\", mit weite…"}}, {"slug": "riogordo", "name": "Riogordo", "region": "Axarquía · Málaga", "cluster": "Axarquía", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Riogordo%20%28M%C3%A1laga%29.jpg?width=1400", "pop": "~2.778", "house": "€65.000+", "beach": "Torre del Mar ~37 min", "net": "fibra/4G (da confermare)", "tags": ["🎨", "📚", "🌿"], "hi": {"en": "Riogordo is a tranquil whitewashed village in the Axarquía hills of Málaga, where everyday life still moves at a huma…", "it": "Riogordo è un tranquillo borgo dalle case bianche tra le colline dell'Axarquía, in provincia di Málaga, dove la vita…", "es": "Riogordo es un tranquilo pueblo de casas blancas en las colinas de la Axarquía, en la provincia de Málaga, donde la v…", "de": "Riogordo ist ein ruhiges, weiß getünchtes Dorf in den Hügeln der Axarquía bei Málaga, wo das Leben noch in menschlich…"}}, {"slug": "albunuelas", "name": "Albuñuelas", "region": "Valle de Lecrín · Granada", "cluster": "Valle de Lecrín", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Albu%C3%B1uelas%2C%20Granada.jpg?width=1400", "pop": "~794", "house": "€26.000+", "beach": "Salobreña ~38 min", "net": "4G (da confermare)", "tags": ["🌿", "🎨"], "hi": {"en": "In the green Valle de Lecrín in Granada, Albuñuelas is a peaceful valley village of around 794 people, woven with nat…", "it": "Nella verde Valle de Lecrín, in provincia di Granada, Albuñuelas è un tranquillo borgo di valle di circa 794 abitanti…", "es": "En el verde Valle de Lecrín, en la provincia de Granada, Albuñuelas es un pueblo tranquilo de unos 794 habitantes, te…", "de": "Im grünen Valle de Lecrín bei Granada liegt Albuñuelas, ein ruhiges Talndorf mit rund 794 Einwohnern, durchzogen von…"}}, {"slug": "elpinar", "name": "El Pinar (Pinos del Valle)", "region": "Valle de Lecrín · Granada", "cluster": "Valle de Lecrín", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Pinos%20del%20Valle%20%28Granada%29.jpg?width=1400", "pop": "~867", "house": "€22.000+", "beach": "Salobreña ~30–35 min", "net": "4G (da confermare)", "tags": ["🌿", "🎨"], "hi": {"en": "El Pinar sits on a balcony above the Béznar reservoir in the Valle de Lecrín, where olive and almond groves roll down…", "it": "El Pinar si affaccia come un balcone sul bacino di Béznar, nel Valle de Lecrín, dove gli uliveti e i mandorleti scend…", "es": "El Pinar se asoma como un balcón sobre el embalse de Béznar, en el Valle de Lecrín, donde los olivares y almendrales…", "de": "El Pinar liegt wie ein Balkon über dem Béznar-Stausee im Valle de Lecrín, wo sich Oliven- und Mandelhaine zum Wasser…"}}, {"slug": "lecrin", "name": "Lecrín", "region": "Valle de Lecrín · Granada", "cluster": "Valle de Lecrín", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Talar%C3%A1%2C%20en%20Lecr%C3%ADn%20%28Granada%29.jpg?width=1400", "pop": "~2.268", "house": "€50.000+", "beach": "Salobreña ~25–30 min", "net": "fibra/4G (da confermare)", "tags": ["🌿", "🎨", "📚"], "hi": {"en": "Lecrín sits in Granada's lemon-scented valley, the gentle \"valley of happiness,\" where citrus groves and Sierra Nevad…", "it": "Lecrín si trova nella valle dei limoni di Granada, la dolce \"valle della felicità\", dove gli agrumeti e la luce della…", "es": "Lecrín se encuentra en el valle de los limones de Granada, el dulce \"valle de la felicidad\", donde los naranjos y lim…", "de": "Lecrín liegt im zitronenduftenden Tal von Granada, dem sanften \"Tal des Glücks\", wo Zitrushaine und das Licht der Sie…"}}, {"slug": "zahara", "name": "Zahara de la Sierra", "region": "Sierra de Cádiz · Cádiz", "cluster": "Sierra de Cádiz", "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Andaluc%C3%ADa%20Zahara%20de%20la%20Sierra1%20tango7174.jpg?width=1400", "pop": "~1.371", "house": "€87.000+", "beach": "Costa de la Luz ~1h45 (+ lago)", "net": "4G (fibra da confermare)", "tags": ["🌿", "🎨", "🚴"], "hi": {"en": "Zahara de la Sierra is one of Andalusia's most beautiful \"pueblos blancos\" — a cascade of whitewashed houses clinging…", "it": "Zahara de la Sierra è uno dei \"pueblos blancos\" più belli dell'Andalusia: una cascata di case imbiancate aggrappate a…", "es": "Zahara de la Sierra es uno de los \"pueblos blancos\" más bonitos de Andalucía: una cascada de casas encaladas trepando…", "de": "Zahara de la Sierra ist eines der schönsten \"pueblos blancos\" Andalusiens — eine Kaskade weiß getünchter Häuser, die…"}}], COMS=[["🎭", "Arts & stage"], ["🌿", "Nature & animals"], ["🥘", "Kitchen & garden"], ["🚴", "Sport"], ["🏍️", "Motors"], ["🔧", "Makers"], ["💻", "Geek & tech"], ["👗", "Fashion & design"]];
+var lang='en';
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function chip(label,val){return val? '<span>'+label+' '+esc(val)+'</span>':''}
+function renderVill(){
+  var box=document.getElementById('villBox'); box.innerHTML='';
+  var clusters=[]; VILL.forEach(function(v){if(clusters.indexOf(v.cluster)<0)clusters.push(v.cluster)});
+  clusters.forEach(function(cl){
+    var items=VILL.filter(function(v){return v.cluster===cl});
+    var reg=items[0].region;
+    var h='<div class="cluster rv">'+esc(reg)+'</div><div class="vgrid">';
+    items.forEach(function(v){
+      var chips='<div class="chips">'+chip('👥',v.pop)+chip('🏠',v.house)+(v.beach?chip('🏖️',v.beach):chip('📶',v.net))+'</div>';
+      h+='<a class="vcard rv" href="borgo.html?id='+v.slug+'">'+
+        '<div class="bg" style="background-image:url(\''+v.photo+'\')"></div><div class="veil"></div>'+
+        '<span class="soon">'+D[lang].soon+'</span>'+
+        '<div class="in"><div class="reg">'+esc(v.region)+'</div><h3>'+esc(v.name)+'</h3>'+
+        '<div class="vt">'+esc(v.hi[lang])+'</div>'+chips+
+        '<span class="open"><span>'+D[lang].scopri+'</span><span class="arrow">→</span></span></div></a>';
+    });
+    h+='</div>';
+    box.insertAdjacentHTML('beforeend',h);
+  });
+  observe();
+}
+function renderComs(){
+  var c=document.getElementById('compills'); c.innerHTML='';
+  COMS.forEach(function(x){c.insertAdjacentHTML('beforeend','<a class="compill" href="registrati.html"><span class="e">'+x[0]+'</span>'+x[1]+'</a>')});
+}
+function applyLang(l){
+  if(!D[l])l='en'; lang=l; document.documentElement.lang=l;
+  try{localStorage.setItem('mp_lang',l)}catch(e){}
+  document.querySelectorAll('#lang button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});
+  document.querySelectorAll('[data-k]').forEach(function(el){var k=el.getAttribute('data-k');if(D[l][k]!=null)el.textContent=D[l][k]});
+  renderVill();
+}
+function observe(){
+  if(!window.IntersectionObserver){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv:not(.in)').forEach(function(e){io.observe(e)});
+}
+renderComs();
+document.querySelectorAll('#lang button').forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.l)})});
+(function(){var s='';try{s=localStorage.getItem('mp_lang')||''}catch(e){};if(!s){var nl=(navigator.language||'en').slice(0,2).toLowerCase();s={it:'it',es:'es',de:'de'}[nl]||'en';}applyLang(s);})();
+var nav=document.getElementById('nav');
+function onscroll(){nav.classList.toggle('solid',window.scrollY>60)}
+window.addEventListener('scroll',onscroll,{passive:true});onscroll();
+</script>
+</body>
+</html>
