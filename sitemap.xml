@@ -11,6 +11,15 @@
   <url><loc>https://tuandalucia.com/comunita.html?id=makers</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tuandalucia.com/comunita.html?id=geek</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tuandalucia.com/comunita.html?id=moda</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=bilancio</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=ritorno</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=pensione</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=tasse</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=salute</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=per-chi-no</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=gruppo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tuandalucia.com/guide.html?id=figli</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tuandalucia.com/famiglie.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tuandalucia.com/stampa.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tuandalucia.com/privacy.html</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
