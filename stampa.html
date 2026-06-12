@@ -13,45 +13,84 @@
 <link rel="canonical" href="https://tuandalucia.com/stampa.html" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c2562f'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23fbf7ee' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500..800&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
-  :root{--paper:#FFF6E8;--cream:#FFFDF6;--ink:#241A0E;--terracotta:#D7491A;--terra-deep:#A63305;--line:#EFDDBE;--dust:#6E5E4A}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:18px;-webkit-font-smoothing:antialiased}
-  h1,h2{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.01em}
-  a{color:var(--terracotta)}
-  .wrap{max-width:780px;margin:0 auto;padding:0 22px}
-  header{background:rgba(246,239,227,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
-  .head-in{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
-  .brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-size:1.3rem;text-decoration:none;color:var(--ink)}
-  .brand .dot{width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#FFE9A8 0%,#FFB527 45%,#D7491A 100%);box-shadow:0 0 0 3px rgba(255,181,39,.22),0 0 18px 3px rgba(255,181,39,.5)}
-  .hr{display:flex;align-items:center;gap:14px}
-  .home{font-size:.86rem;font-weight:600;color:var(--terracotta);text-decoration:none;white-space:nowrap}
-  .lang{display:flex;border:1px solid var(--line);border-radius:100px;overflow:hidden;background:rgba(255,255,255,.5)}
-  .lang button{border:none;background:transparent;font-family:inherit;font-size:.72rem;font-weight:700;padding:7px 9px;cursor:pointer;color:var(--dust)}
-  .lang button.on{background:var(--terracotta);color:#fff}
-  main{padding:40px 0 80px}
-  h1{font-size:clamp(1.9rem,5vw,2.6rem);margin-bottom:8px}
-  .sub{color:#5d4f42;margin-bottom:26px;font-size:1.08rem}
-  h2{font-size:1.35rem;color:var(--terra-deep);margin:34px 0 8px}
-  ul{margin:8px 0 8px 22px}
-  li{margin-bottom:7px}
-  .box{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:14px 0}
-  .small{font-size:.86rem;color:var(--dust)}
-  footer{border-top:1px solid var(--line);padding:24px 0 70px;color:var(--dust);font-size:.85rem;text-align:center}
-  footer a{color:var(--terracotta);text-decoration:none}
+/* STAMPA / PRESS KIT — Solana */
+:root{--amber:#FFB527;--sol:#F2A93B;--terra:#E8431F;--terra2:#C2380F;--ink:#23190D;--mut:#7A6A52;
+ --paper:#FFFAF1;--cream:#FFF3DF;--sand:#FBEED7;--line:#F0E2C8;--sky:#CDE8F2;
+ --sh:0 26px 60px -34px rgba(120,70,20,.28);--sh2:0 14px 34px -22px rgba(120,70,20,.22)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Hanken Grotesk",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.62;font-size:18px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Big Shoulders Display",system-ui,sans-serif;font-weight:700;letter-spacing:.005em;text-transform:uppercase;line-height:.95}
+em{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:450;text-transform:none}
+h1 em,h2 em,h3 em{color:var(--terra)}
+a{color:var(--terra)}
+::selection{background:var(--ink);color:var(--amber)}
+.wrap{max-width:840px;margin:0 auto;padding:0 26px}
+/* nav unificata */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,250,241,.85);backdrop-filter:blur(14px);border-bottom:1.5px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:14px;max-width:1180px;margin:0 auto;padding:0 26px}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:.03em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.logo{width:26px;height:26px;color:var(--terra);flex:none}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-links{display:flex;gap:22px}
+.nav-links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.93rem;opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--terra)}
+@media(max-width:880px){.nav-links{display:none}}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:99px;overflow:hidden;background:#fff}
+.lang button{border:none;background:transparent;font-family:inherit;font-size:.7rem;font-weight:800;padding:7px 10px;cursor:pointer;color:var(--mut)}
+.lang button.on{background:var(--ink);color:var(--amber)}
+.nav-cta{background:var(--terra);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;padding:10px 18px;border-radius:99px;white-space:nowrap;transition:background .2s,transform .2s}
+.nav-cta:hover{background:#ff5a2a;transform:translateY(-2px)}
+@media(max-width:560px){.nav-cta{display:none}}
+/* pagina */
+main{padding:56px 0 90px}
+.kicker{display:flex;align-items:center;gap:12px;font-size:.74rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--terra2);margin-bottom:18px}
+.kicker::before{content:"";width:30px;height:2.5px;background:var(--amber);border-radius:3px}
+h1{font-size:clamp(2.6rem,6.5vw,4.4rem);margin-bottom:14px}
+.sub{color:var(--mut);margin-bottom:34px;font-size:1.12rem;max-width:660px}
+h2{font-size:clamp(1.5rem,3vw,1.9rem);margin:44px 0 16px}
+h2::before{content:"";display:block;width:30px;height:3px;background:var(--amber);border-radius:3px;margin-bottom:12px}
+.box{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:26px 28px;margin:14px 0;box-shadow:var(--sh2)}
+main ul{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:24px 28px 24px 48px;margin:14px 0;box-shadow:var(--sh2)}
+li{margin-bottom:10px}
+li:last-child{margin-bottom:0}
+li::marker{color:var(--terra)}
+p[data-i18n="p4"]{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:26px 28px;margin:14px 0;box-shadow:var(--sh2)}
+.small{font-size:.86rem;color:var(--mut);margin-top:20px}
+/* banda contatto stampa */
+.press-band{background:linear-gradient(180deg,var(--sand),var(--cream));border:1.5px solid var(--line);border-radius:22px;padding:30px 32px 32px;margin-top:48px;box-shadow:var(--sh)}
+.press-band h2{margin:0 0 14px}
+.press-band .box{background:transparent;border:none;box-shadow:none;border-radius:0;padding:0;margin:0 0 20px}
+.btn-mail{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 26px;border-radius:99px;box-shadow:0 16px 38px -14px rgba(232,67,31,.5);transition:background .2s,transform .2s}
+.btn-mail:hover{background:#ff5a2a;transform:translateY(-2px)}
+/* footer */
+footer{background:var(--cream);color:var(--mut);padding:40px 0 60px;font-size:.9rem;border-top:1.5px solid var(--line)}
+.foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:1180px;margin:0 auto;padding:0 26px}
+footer .brand{color:var(--ink)}
+footer a{color:var(--terra);text-decoration:none;font-weight:600}
+.foot-links a{margin-left:18px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+@media(max-width:560px){.wrap{padding:0 16px}.brand{font-size:.95rem}.lang button{padding:6px 7px;font-size:.6rem}.btn-mail{font-size:.85rem;padding:12px 18px}.foot-links a{margin-left:0;margin-right:14px}}
 </style>
 </head>
 <body>
-<header><div class="wrap head-in">
-  <a class="brand" href="index.html"><span class="dot"></span>Tu Andalucía</a>
-  <div class="hr">
-    <a class="home" href="index.html" data-i18n="hb">← Home</a>
+<nav><div class="nav-in">
+  <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 56 V32 a20 20 0 0 1 40 0 V56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="27" r="8" fill="#FFB527"/><path d="M16 52 l8 -8 8 8 8 -9 8 9" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tu Andalucía</span></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="index.html#how" data-i18n="nav.how">How it works</a>
+      <a href="index.html#villages" data-i18n="nav.vil">The villages</a>
+      <a href="index.html#communities" data-i18n="nav.com">Communities</a>
+    </div>
     <div class="lang" id="lang"><button data-lang="en" class="on">EN</button><button data-lang="it">IT</button><button data-lang="es">ES</button><button data-lang="de">DE</button></div>
+    <a class="nav-cta" href="registrati.html" data-i18n="nav.join">Join</a>
   </div>
-</div></header>
+</div></nav>
 
 <main class="wrap">
+  <div class="kicker">Press &middot; Media</div>
   <h1 data-i18n="t">Press kit</h1>
   <p class="sub" data-i18n="s">For journalists and media. We answer in English, Italian, Spanish and German — and we can put you in touch with the town of Larva.</p>
 
@@ -78,12 +117,22 @@
   <h2 data-i18n="h4">Photos</h2>
   <p data-i18n="p4">Photos of the villages on this site come from Wikimedia Commons (free licences, attribution in page) and are available to media under the same licences. Original photos of Larva and of the community's first visit will be available from the open day. The hero photo (Zahara de la Sierra) is from Pexels (free licence).</p>
 
+  <section class="press-band">
   <h2 data-i18n="h5">Contact</h2>
   <div class="box"><p data-i18n="p5"><strong>Press contact:</strong> webmaster.puntorosso@gmail.com — write "PRESS" in the subject and tell us your deadline; we reply fast. Site: <a href="https://tuandalucia.com/">tuandalucia.com</a></p></div>
+  <a class="btn-mail" href="mailto:webmaster.puntorosso@gmail.com?subject=PRESS">&#9993;&nbsp;webmaster.puntorosso@gmail.com</a>
+  </section>
   <p class="small" data-i18n="note">The project is in pilot phase. We say honestly what is confirmed and what is still being verified — and we ask the same of every story about us.</p>
 </main>
 
-<footer><div class="wrap">Tu Andalucía · <a href="index.html" data-i18n="fsite">the site</a> · <a href="famiglie.html" data-i18n="ffam">for families</a> · <a href="privacy.html">privacy</a></div></footer>
+<footer><div class="foot-in">
+  <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 56 V32 a20 20 0 0 1 40 0 V56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="27" r="8" fill="#FFB527"/><path d="M16 52 l8 -8 8 8 8 -9 8 9" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tu Andalucía</span></a>
+  <div class="foot-links">
+    <a href="index.html" data-i18n="fsite">the site</a>
+    <a href="famiglie.html" data-i18n="ffam">for families</a>
+    <a href="privacy.html">privacy</a>
+  </div>
+</div></footer>
 
 <script>
 var I={
@@ -94,21 +143,21 @@ var I={
  h3:"Cosa possiamo darti",w1:"Interviste (IT/EN/ES/DE) con il fondatore del progetto.",w2:"Un'introduzione al Comune di Larva, per un commento istituzionale.",w3:"Accesso alla prima visita di gruppo / open day a Larva (posti stampa limitati — chiedi presto).",w4:"Dati di contesto sui 18 borghi candidati, con fonti.",
  h4:"Foto",p4:"Le foto dei borghi su questo sito vengono da Wikimedia Commons (licenze libere, attribuzione in pagina) e sono disponibili ai media alle stesse condizioni. Foto originali di Larva e della prima visita della comunità saranno disponibili dall'open day. La foto dell'hero (Zahara de la Sierra) è di Pexels (licenza libera).",
  h5:"Contatto",p5:"<strong>Contatto stampa:</strong> webmaster.puntorosso@gmail.com — scrivi \"PRESS\" nell'oggetto e dicci la tua deadline; rispondiamo in fretta. Sito: <a href='https://tuandalucia.com/'>tuandalucia.com</a>",
- note:"Il progetto è in fase pilota. Diciamo onestamente cosa è confermato e cosa è in verifica — e chiediamo lo stesso a ogni storia su di noi.",fsite:"il sito",ffam:"per le famiglie"},
+ note:"Il progetto è in fase pilota. Diciamo onestamente cosa è confermato e cosa è in verifica — e chiediamo lo stesso a ogni storia su di noi.",fsite:"il sito",ffam:"per le famiglie","nav.how":"Come funziona","nav.vil":"I paesi","nav.com":"Le comunità","nav.join":"Unisciti"},
  es:{hb:"← Inicio",t:"Kit de prensa",s:"Para periodistas y medios. Respondemos en español, inglés, italiano y alemán — y podemos ponerte en contacto con el Ayuntamiento de Larva.",
  h1:"La historia en un párrafo",p1:"Larva, un pueblo de ~400 habitantes en la Sierra Mágina (Jaén, Andalucía), se prepara para acoger <strong>la primera comunidad de artistas jubilados de España</strong>: músicos, técnicos de sonido y luces, road managers — gente que pasó la vida construyendo el espectáculo de los demás y llegó a la jubilación con pensiones pequeñas. No los reubican: están fundando algo, invitados por el propio pueblo. Detrás está <strong>Tu Andalucía</strong> (tuandalucia.com), un proyecto piloto que une comunidades de jubilados afines con pueblos españoles en despoblación: casas asequibles, servicios reales (en Larva: consultorio abierto 7 días, taxi de 2 € al hospital de Úbeda) y vecinos que hablan tu idioma — el del escenario.",
  h2:"Los datos clave",f1:"<strong>El modelo:</strong> comunidades por afinidad (arte y escena, naturaleza, cocina y huerto, deporte, motores, makers, geek, moda y diseño) que se mudan juntas — el antídoto contra el aislamiento que mata casi todos los sueños de jubilarse en el campo.",f2:"<strong>Edición 1:</strong> 10 hogares fundadores para la comunidad artística de Larva, por invitación, formándose ahora.",f3:"<strong>La red:</strong> 18 pueblos candidatos estudiados en Andalucía y más allá — Sierra Mágina, Sierra de Segura, Altiplano de Granada y Valle de Lecrín, Axarquía, Sierra de Cádiz — con datos verificados de sanidad, internet, precios de vivienda, playa y aeropuerto.",f4:"<strong>La economía:</strong> casas de pueblo desde ~10-25 mil € en varios pueblos candidatos; coste de vida hasta ~50% por debajo de las grandes ciudades (cifras verificadas pueblo a pueblo).",f5:"<strong>Estado:</strong> fase piloto, en diálogo con el Ayuntamiento de Larva; primer grupo en formación. Sin financiación pública, sin cuotas de entrada, sin comisión sobre las casas.",
  h3:"Qué podemos ofrecerte",w1:"Entrevistas (ES/EN/IT/DE) con el fundador del proyecto.",w2:"Una presentación al Ayuntamiento de Larva, para comentario institucional.",w3:"Acceso a la primera visita de grupo / open day en Larva (plazas de prensa limitadas — pide pronto).",w4:"Datos de contexto sobre los 18 pueblos candidatos, con fuentes.",
  h4:"Fotos",p4:"Las fotos de los pueblos en este sitio proceden de Wikimedia Commons (licencias libres, atribución en página) y están disponibles para los medios con las mismas licencias. Habrá fotos originales de Larva y de la primera visita desde el open day. La foto de portada (Zahara de la Sierra) es de Pexels (licencia libre).",
  h5:"Contacto",p5:"<strong>Contacto de prensa:</strong> webmaster.puntorosso@gmail.com — escribe \"PRESS\" en el asunto y dinos tu plazo; respondemos rápido. Web: <a href='https://tuandalucia.com/'>tuandalucia.com</a>",
- note:"El proyecto está en fase piloto. Decimos con honestidad qué está confirmado y qué se está verificando — y pedimos lo mismo a cada historia sobre nosotros.",fsite:"el sitio",ffam:"para familias"},
+ note:"El proyecto está en fase piloto. Decimos con honestidad qué está confirmado y qué se está verificando — y pedimos lo mismo a cada historia sobre nosotros.",fsite:"el sitio",ffam:"para familias","nav.how":"Cómo funciona","nav.vil":"Los pueblos","nav.com":"Comunidades","nav.join":"Únete"},
  de:{hb:"← Home",t:"Pressemappe",s:"Für Journalistinnen und Journalisten. Wir antworten auf Deutsch, Englisch, Italienisch und Spanisch — und stellen gern den Kontakt zum Rathaus von Larva her.",
  h1:"Die Geschichte in einem Absatz",p1:"Larva, ein Dorf mit ~400 Einwohnern in der Sierra Mágina (Jaén, Andalusien), bereitet sich darauf vor, <strong>Spaniens erste Gemeinschaft pensionierter Künstler</strong> aufzunehmen: Musiker, Ton- und Lichttechniker, Roadmanager — Menschen, die ihr Leben damit verbracht haben, die Show der anderen aufzubauen, und mit kleinen Renten in den Ruhestand gehen. Sie werden nicht umgesiedelt: Sie gründen etwas, eingeladen vom Dorf selbst. Dahinter steht <strong>Tu Andalucía</strong> (tuandalucia.com), ein Pilotprojekt, das Gemeinschaften gleichgesinnter Rentner mit entvölkerten spanischen Dörfern zusammenbringt: bezahlbare Häuser, echte Versorgung (in Larva: Arztpraxis 7 Tage die Woche, 2-€-Taxi zum Krankenhaus Úbeda) und Nachbarn, die deine Sprache sprechen — die der Bühne.",
  h2:"Die wichtigsten Fakten",f1:"<strong>Das Modell:</strong> Gemeinschaften nach Wahlverwandtschaft (Kunst & Bühne, Natur, Küche & Garten, Sport, Motoren, Makers, Geek, Mode & Design), die gemeinsam umziehen — das Gegenmittel zur Einsamkeit, an der die meisten Landlust-Rentenpläne scheitern.",f2:"<strong>Edition 1:</strong> 10 Gründungshaushalte für Larvas Künstlergemeinschaft, auf Einladung, in Gründung.",f3:"<strong>Das Netz:</strong> 18 recherchierte Kandidatendörfer in Andalusien und darüber hinaus — Sierra Mágina, Sierra de Segura, Granadas Altiplano und Valle de Lecrín, Axarquía, Sierra de Cádiz — mit geprüften Daten zu Gesundheit, Internet, Hauspreisen, Strand- und Flughafennähe.",f4:"<strong>Die Zahlen:</strong> Dorfhäuser ab ~10-25 Tsd. € in mehreren Kandidatendörfern; Lebenshaltungskosten bis ~50% unter den Großstädten (Dorf für Dorf geprüft).",f5:"<strong>Status:</strong> Pilotphase, im Dialog mit dem Rathaus von Larva; erste Gruppe in Gründung. Keine öffentliche Förderung, keine Beitrittsgebühren, keine Provision auf Häuser.",
  h3:"Was wir bieten können",w1:"Interviews (DE/EN/IT/ES) mit dem Gründer des Projekts.",w2:"Eine Vorstellung beim Rathaus von Larva für ein institutionelles Statement.",w3:"Zugang zum ersten Gruppenbesuch / Open Day in Larva (begrenzte Presseplätze — früh anfragen).",w4:"Hintergrunddaten zu den 18 Kandidatendörfern, mit Quellen.",
  h4:"Fotos",p4:"Die Dorffotos auf dieser Website stammen von Wikimedia Commons (freie Lizenzen, Attribution auf der Seite) und stehen Medien unter denselben Lizenzen zur Verfügung. Originalfotos aus Larva und vom ersten Besuch gibt es ab dem Open Day. Das Titelfoto (Zahara de la Sierra) stammt von Pexels (freie Lizenz).",
  h5:"Kontakt",p5:"<strong>Pressekontakt:</strong> webmaster.puntorosso@gmail.com — schreib \"PRESS\" in den Betreff und nenn uns deine Deadline; wir antworten schnell. Website: <a href='https://tuandalucia.com/'>tuandalucia.com</a>",
- note:"Das Projekt ist in der Pilotphase. Wir sagen ehrlich, was bestätigt ist und was noch geprüft wird — und bitten jede Geschichte über uns um dasselbe.",fsite:"die Website",ffam:"für Familien"}
+ note:"Das Projekt ist in der Pilotphase. Wir sagen ehrlich, was bestätigt ist und was noch geprüft wird — und bitten jede Geschichte über uns um dasselbe.",fsite:"die Website",ffam:"für Familien","nav.how":"So geht's","nav.vil":"Die Dörfer","nav.com":"Gemeinschaften","nav.join":"Mach mit"}
 };
 (function(){var EN={};document.querySelectorAll('[data-i18n]').forEach(function(el){EN[el.getAttribute('data-i18n')]=el.innerHTML});I.en=EN;})();
 function setLang(l){if(!I[l])l='en';document.documentElement.lang=l;try{localStorage.setItem('mp_lang',l)}catch(e){}

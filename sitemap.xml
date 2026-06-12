@@ -3,6 +3,16 @@
   <url><loc>https://tuandalucia.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tuandalucia.com/larva.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tuandalucia.com/registrati.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=arte</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=natura</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=cucina</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=sport</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=motori</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=makers</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=geek</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/comunita.html?id=moda</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tuandalucia.com/famiglie.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://tuandalucia.com/stampa.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://tuandalucia.com/privacy.html</loc><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tuandalucia.com/borgo.html?id=cabra</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tuandalucia.com/borgo.html?id=belmez</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
