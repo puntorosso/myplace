@@ -352,6 +352,9 @@ function initInvite(){
 
 /* ---------- invio (FormSubmit) ---------- */
 var ENDPOINT='https://formsubmit.co/ajax/webmaster.puntorosso@gmail.com';
+/* URL dell'App Web del CRM (Apps Script). Quando è valorizzato, ogni iscrizione arriva ANCHE al foglio CRM. */
+var CRM_URL='';
+function crmSend(payload){ if(!CRM_URL) return; try{ fetch(CRM_URL,{method:'POST',body:JSON.stringify(payload)}); }catch(e){} }
 function comName(){if(st.comunita==='altra'){var co=document.getElementById('comOther');return 'Suggested: '+((co&&co.value.trim())||'(unspecified)');}var d=T.en.coms[st.comunita]; return d?d[1]:st.comunita}
 function friendsStr(){var out=[];document.querySelectorAll('#friends .frow').forEach(function(r){var n=(r.querySelector('.fr-name')||{value:''}).value.trim();var c=(r.querySelector('.fr-contact')||{value:''}).value.trim();if(n||c)out.push(n+(c?' <'+c+'>':''));});return out.join('; ');}
 function buildBody(){
@@ -369,11 +372,12 @@ function invia(){
   var hp=document.getElementById('_honey'); if(hp&&hp.value)return;
   hideErrs();
   var payload={Name:val('nome'),Phone:val('tel'),Email:(val('email')||'(not given)'),
-    Village:st.borgoName+(st.waitlist?' (waiting list)':''),Community:comName(),
+    Village:st.borgoName+(st.waitlist?' (waiting list)':''),Community:comName(),CommunityKey:(st.comunita==='altra'?'altra':st.comunita),
     About:(val('motiv')||'-'),Age:(st.eta||'-'),When:(st.quando||'-'),Home:(st.tipocasa||'-'),With:(st.nucleo||'-'),
     InviteCode:(st.invito||'-'),FriendsToInvite:(friendsStr()||'-'),Newsletter:(document.getElementById('news').checked?'yes':'no'),FormLanguage:lang,
     _subject:'Tu Andalucía registration — '+val('nome')+' — '+st.borgoName,_template:'table',_captcha:'false'};
   var b=document.getElementById('btnInvia'); if(b){b.disabled=true;b.textContent='…'}
+  crmSend(payload);
   fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
     .then(function(r){return r.json()}).then(function(){showDone()})
     .catch(function(){try{window.location.href=mailtoLink()}catch(e){}showDone()});
