@@ -349,7 +349,7 @@ function initInvite(){
 /* ---------- invio (FormSubmit) ---------- */
 var ENDPOINT='https://formsubmit.co/ajax/webmaster.puntorosso@gmail.com';
 /* URL dell'App Web del CRM (Apps Script). Quando è valorizzato, ogni iscrizione arriva ANCHE al foglio CRM. */
-var CRM_URL='';
+var CRM_URL='https://script.google.com/macros/s/AKfycbx15gNAAuyUHc2LWHbTE5cyU1mWthQDBPk4EpB5rKgL-tpbcfFTgWqy9tWPEs9wPMiiyg/exec';
 function crmSend(payload){ if(!CRM_URL) return; try{ fetch(CRM_URL,{method:'POST',body:JSON.stringify(payload)}); }catch(e){} }
 function comName(){if(st.comunita==='altra'){var co=document.getElementById('comOther');return 'Suggested: '+((co&&co.value.trim())||'(unspecified)');}var d=T.en.coms[st.comunita]; return d?d[1]:st.comunita}
 function friendsStr(){var out=[];document.querySelectorAll('#friends .frow').forEach(function(r){var n=(r.querySelector('.fr-name')||{value:''}).value.trim();var c=(r.querySelector('.fr-contact')||{value:''}).value.trim();if(n||c)out.push(n+(c?' <'+c+'>':''));});return out.join('; ');}
