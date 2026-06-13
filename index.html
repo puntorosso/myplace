@@ -298,6 +298,14 @@ footer .fb{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-s
 @media(max-width:620px){
   .vcard .glass{height:auto !important;min-height:150px;padding-bottom:16px}
 }
+
+/* hero leggibile su mobile: crema piu in alto dietro il testo + alone chiaro sul testo */
+@media(max-width:768px){
+  .hero>.veil{background:linear-gradient(180deg,rgba(35,25,13,.30) 0%,rgba(35,25,13,.05) 18%,rgba(255,250,241,0) 32%,rgba(255,250,241,.94) 55%,var(--paper) 76%)}
+  .hero .disp{text-shadow:0 2px 22px rgba(255,250,241,.95),0 1px 5px rgba(255,250,241,.85)}
+  .hero .lede{text-shadow:0 1px 14px rgba(255,250,241,.92),0 1px 3px rgba(255,250,241,.8)}
+  .hero .eye{text-shadow:none}
+}
 </style>
 </head>
 <body>
