@@ -174,5 +174,6 @@ function setLang(l){if(!I[l])l='en';document.documentElement.lang=l;try{localSto
 document.querySelectorAll('#lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
 (function(){var s='';try{s=localStorage.getItem('mp_lang')||''}catch(e){};if(!s){var nl=(navigator.language||'en').slice(0,2).toLowerCase();s={it:'it',es:'es',de:'de'}[nl]||'en';}setLang(s)})();
 </script>
+<script src="assets/js/navmobile.js" defer></script>
 </body>
 </html>

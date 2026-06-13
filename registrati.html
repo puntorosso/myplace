@@ -409,5 +409,6 @@ function showDone(){
   if(dc){dc.addEventListener('click',function(){var u=inviteUrl();function ok(){dc.textContent=(T[lang]&&T[lang].done_copied)||T.en.done_copied;setTimeout(function(){dc.textContent=tr('done_copy')},2000);}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(ok,ok);}else{var t=document.createElement('textarea');t.value=u;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);ok();}});}
 })();
 </script>
+<script src="assets/js/navmobile.js" defer></script>
 </body>
 </html>

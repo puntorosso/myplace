@@ -108,5 +108,6 @@ function setLang(l){if(!I[l])l='en';document.documentElement.lang=l;try{localSto
 document.querySelectorAll('#lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
 (function(){var s='en';try{s=localStorage.getItem('mp_lang')||'en'}catch(e){};setLang(s)})();
 </script>
+<script src="assets/js/navmobile.js" defer></script>
 </body>
 </html>

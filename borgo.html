@@ -163,5 +163,6 @@ function render(){
 document.querySelectorAll('#lang button').forEach(function(b){b.addEventListener('click',function(){lang=b.dataset.lang;try{localStorage.setItem('mp_lang',lang)}catch(e){};render()})});
 (function(){try{lang=localStorage.getItem('mp_lang')||''}catch(e){};if(!lang){var nl=(navigator.language||'en').slice(0,2).toLowerCase();lang={it:'it',es:'es',de:'de'}[nl]||'en';}if(!L[lang])lang='en';render();})();
 </script>
+<script src="assets/js/navmobile.js" defer></script>
 </body>
 </html>
