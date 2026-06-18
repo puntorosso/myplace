@@ -328,11 +328,24 @@ footer .fb{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-s
 /* accento piu acceso e gioioso */
 .btn-p,.njoin{background:var(--punch)}
 .btn-p:hover,.njoin:hover{background:#ff6a3a}
-.marquee{background:var(--punch)!important}
+/* nastro elegante: banda scura con testo dorato */
+.mq{background:var(--ink)!important;border-color:rgba(255,255,255,.08)!important}
+.mq-track span{color:rgba(255,233,168,.5)!important}
+.mq-track b{color:var(--sun)!important}
+/* occhiello prezioso */
+.hero .eye{background:rgba(255,250,241,.86);border:1px solid rgba(255,181,39,.7);color:var(--terra2);box-shadow:0 10px 30px -12px rgba(232,67,31,.4);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+/* WOW: brillio dorato animato sulla 2a riga del titolo */
+.hero .l2 .w,.hero .l2{background:linear-gradient(95deg,#C2380F 0%,#E8431F 20%,#FFB527 42%,#FFF1C2 50%,#FFB527 58%,#E8431F 80%,#C2380F 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;text-shadow:none;animation:sheen 6.5s ease-in-out infinite}
+@keyframes sheen{0%{background-position:120% 0}50%{background-position:-120% 0}100%{background-position:120% 0}}
+@media(prefers-reduced-motion:reduce){.hero .l2 .w,.hero .l2{animation:none;background-position:0 0}}
+/* bottoni piu preziosi */
+.btn-p{background:linear-gradient(135deg,#FF6A3A 0%,#E8431F 58%,#C2380F 100%)!important;box-shadow:0 20px 48px -14px rgba(232,67,31,.6),inset 0 1px 0 rgba(255,255,255,.32)!important}
+.btn-p:hover{filter:brightness(1.06)}
+/* fasce gioia: scintilla dorata glamour sopra il titolo */
+.joy .in::before{content:"\2726";display:block;color:var(--sun);font-size:1.7rem;line-height:1;margin-bottom:16px;text-shadow:0 2px 18px rgba(255,181,39,.7)}
 </style>
 </head>
 <body>
-<div class="sunpath" aria-hidden="true"><svg viewBox="0 0 120 64"><path class="arc" d="M6 58 Q60 -8 114 58"/><circle class="sun" id="sunDot" cx="6" cy="58" r="7" fill="#FFB527"/></svg></div>
 <nav id="nav"><div class="wrap nav-in">
   <a class="brand" href="#top"><svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 56 V32 a20 20 0 0 1 40 0 V56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="27" r="8" fill="#FFB527"/><path d="M16 52 l8 -8 8 8 8 -9 8 9" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tu Andalucía</span></a>
   <div class="nav-right">
