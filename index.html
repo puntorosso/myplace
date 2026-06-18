@@ -344,7 +344,43 @@ footer .fb{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-s
 /* fasce gioia: scintilla dorata glamour sopra il titolo */
 .joy .in::before{content:"\2726";display:block;color:var(--sun);font-size:1.7rem;line-height:1;margin-bottom:16px;text-shadow:0 2px 18px rgba(255,181,39,.7)}
 </style>
-</head>
+<style id="euphoria">
+:root{--fuchsia:#E5277E;--cobalt:#1857D6;--sunshine:#FFC400;--coral:#FF5630;--grape:#9B2D86}
+/* occhielli/kicker vivaci */
+.kick{color:var(--fuchsia)!important}
+.kick::before{background:linear-gradient(90deg,var(--fuchsia),var(--sunshine))!important}
+/* STATS: banda tramonto vivido, testo bianco */
+.stats{background:linear-gradient(120deg,#FF7A3D 0%,#FF3D77 52%,#9B2D86 100%)!important;border-color:transparent!important}
+.stats .n{color:#fff!important;text-shadow:0 4px 24px rgba(0,0,0,.18)}
+.stats .l{color:rgba(255,255,255,.94)!important}
+.stats .kick,.stats .kick::before{color:rgba(255,255,255,.95)!important;background:rgba(255,255,255,.9)}
+/* FASCIA INTERNAZIONALE: cobalto brillante */
+.intlband{background:linear-gradient(120deg,#1857D6,#2D7DD2)!important;border-color:transparent!important}
+.intlband,.intlband *{color:#fff!important}
+/* CTA: euforia tramonto */
+.cta{background:linear-gradient(155deg,#FFB02E 0%,#FF5630 38%,#E5277E 100%)!important}
+.cta .v-t,.cta h2{color:#fff!important}
+.cta .v-p{color:rgba(255,255,255,.96)!important}
+.cta .note{color:rgba(255,255,255,.88)!important}
+.cta .kick{color:#fff!important}
+.cta .btn-p{background:#fff!important;color:#E5277E!important;box-shadow:0 20px 46px -14px rgba(0,0,0,.35)!important}
+/* sezioni chiare con tinte vive alternate (testo scuro resta leggibile) */
+.how{background:linear-gradient(180deg,#FFF7EE,#FFF0F6)!important}
+.jrny{background:linear-gradient(180deg,#FFF0F6,#EAF4FF)!important}
+.svc{background:linear-gradient(180deg,#EAF4FF,#FFF6E6)!important}
+.com{background:linear-gradient(180deg,#FFF6E6,#FFEDF4)!important}
+.gsec{background:linear-gradient(180deg,#FFEDF4,#FFF7EE)!important}
+.trust{background:linear-gradient(180deg,#FFF7EE,#EAF4FF)!important}
+/* BLOB colorati che galleggiano (atmosfera viva dietro i contenuti) */
+.vsec,.svc,.gsec,.dil{position:relative;overflow:hidden}
+.vsec>.wrap,.svc>.wrap,.gsec>.wrap{position:relative;z-index:1}
+.vsec::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(229,39,126,.16),transparent 70%);top:-160px;right:-140px;animation:floatA 16s ease-in-out infinite;pointer-events:none;z-index:0}
+.svc::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(24,87,214,.14),transparent 70%);bottom:-160px;left:-120px;animation:floatB 19s ease-in-out infinite;pointer-events:none;z-index:0}
+.gsec::before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(255,196,0,.20),transparent 70%);top:-120px;left:-100px;animation:floatA 14s ease-in-out infinite;pointer-events:none;z-index:0}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,40px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,-30px)}}
+@media(prefers-reduced-motion:reduce){.vsec::before,.svc::before,.gsec::before{animation:none}}
+</style></head>
 <body>
 <nav id="nav"><div class="wrap nav-in">
   <a class="brand" href="#top"><svg class="logo" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 56 V32 a20 20 0 0 1 40 0 V56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="27" r="8" fill="#FFB527"/><path d="M16 52 l8 -8 8 8 8 -9 8 9" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tu Andalucía</span></a>
