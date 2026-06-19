@@ -380,6 +380,19 @@ footer .fb{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-s
 @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,40px)}}
 @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,-30px)}}
 @media(prefers-reduced-motion:reduce){.vsec::before,.svc::before,.gsec::before{animation:none}}
+</style><style id="heroeuf">
+/* HERO euforico: tramonto vivido che scurisce in basso -> titolo bianco/oro leggibile + WOW */
+.hero>.veil{background:linear-gradient(180deg,rgba(15,8,30,.16) 0%,rgba(15,8,30,0) 24%,rgba(255,120,40,.20) 46%,rgba(229,39,126,.42) 70%,rgba(85,16,66,.82) 100%)!important;animation:heroGlow 9s ease-in-out infinite}
+@keyframes heroGlow{0%,100%{filter:saturate(1)}50%{filter:saturate(1.18)}}
+@media(prefers-reduced-motion:reduce){.hero>.veil{animation:none}}
+@media(max-width:768px){.hero>.veil{background:linear-gradient(180deg,rgba(15,8,30,.16) 0%,rgba(15,8,30,0) 22%,rgba(255,120,40,.22) 44%,rgba(229,39,126,.46) 66%,rgba(85,16,66,.86) 100%)!important}}
+/* titolo: 1a riga BIANCA (era nero = illeggibile), 2a riga oro brillante */
+.hero .l1,.hero .l1 .w{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:0 4px 34px rgba(40,8,40,.55),0 2px 6px rgba(40,8,40,.4)}
+.hero .lede{color:#fff!important;text-shadow:0 2px 20px rgba(40,8,40,.65)}
+/* occhiello: pillola vetro scura, testo bianco (leggibile sul tramonto) */
+.hero .eye{background:rgba(35,10,42,.55)!important;border:1px solid rgba(255,255,255,.65)!important;color:#fff!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 8px 30px -10px rgba(0,0,0,.4)}
+/* brillio oro 2a riga: piu luminoso sul fondo scuro */
+.hero .l2 .w,.hero .l2{filter:drop-shadow(0 3px 18px rgba(255,160,40,.35))}
 </style></head>
 <body>
 <nav id="nav"><div class="wrap nav-in">
