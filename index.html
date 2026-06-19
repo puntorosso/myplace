@@ -426,6 +426,100 @@ footer .fb{font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-s
 .joy .in::after{content:"\2727";position:absolute;right:6%;top:18%;color:var(--sunshine);font-size:2.2rem;opacity:.8;text-shadow:0 2px 20px rgba(255,196,0,.7);animation:twinkle 3.2s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:.35;transform:scale(.85)}50%{opacity:.95;transform:scale(1.12)}}
 @media(prefers-reduced-motion:reduce){.hero::after,.joy .in::after{animation:none}.js-reveal{opacity:1;transform:none}}
+</style><style id="quiet-luxury">
+/* ============================================================
+   QUIET LUXURY — euforia elegante per sottrazione.
+   Vince su #glam/#euphoria/#heroeuf/#heroeuf2/#wow (ultimo + !important).
+   Palette: --paper (fondo) / --ink (testo+scrim+1 fascia) / --mut (2°)
+   / --terra (UNICO accento) + foglia d'oro #C9A24B solo come filetto hero.
+   Eliminati: fuchsia, cobalto, viola, giallo-neon e ogni flood/blob/raggio.
+   ============================================================ */
+
+/* === HERO: foto luminosa + scrim ink cinematografico, titolo avorio === */
+.hero{background:#23190D!important}
+.hero::before,.hero::after{content:none!important;display:none!important;animation:none!important;background:none!important}
+.hero .bg{-webkit-mask-image:none!important;mask-image:none!important;inset:-10% 0 0 0!important;filter:saturate(1.04) contrast(1.03) brightness(.97)!important}
+.hero .veil{background:linear-gradient(180deg,
+  rgba(20,12,4,.46) 0%,
+  rgba(20,12,4,.16) 24%,
+  rgba(20,12,4,.10) 44%,
+  rgba(20,12,4,.62) 74%,
+  rgba(20,12,4,.88) 100%)!important;animation:none!important}
+/* titolo: ENTRAMBE le righe avorio pieno -> via l'oro-su-oro illeggibile */
+.hero .l1,.hero .l1 .w,
+.hero .l2,.hero .l2 .w{
+  color:#FFF7EA!important;-webkit-text-fill-color:#FFF7EA!important;
+  background:none!important;background-image:none!important;
+  -webkit-background-clip:border-box!important;background-clip:border-box!important;
+  animation:none!important;filter:none!important;
+  text-shadow:0 2px 4px rgba(12,7,2,.6),0 14px 44px rgba(12,7,2,.5)!important}
+/* la 2a riga si distingue per un FILETTO A FOGLIA D'ORO, non per il colore */
+.hero .l2{display:block!important;position:relative!important;width:-moz-fit-content;width:fit-content;max-width:100%;padding-bottom:.82em!important}
+.hero .l2::after{content:""!important;position:absolute!important;left:0;bottom:0;width:2.4em;height:3px;border-radius:2px;
+  background:linear-gradient(90deg,#C9A24B 0%,#E7C879 55%,rgba(201,162,75,0) 100%)!important;
+  opacity:0;transform:scaleX(.4);transform-origin:left center;animation:filettoIn .7s cubic-bezier(.2,.85,.25,1) 1.35s forwards}
+@keyframes filettoIn{to{opacity:.95;transform:scaleX(1)}}
+.hero .lede{color:rgba(255,247,234,.94)!important;text-shadow:0 1px 3px rgba(12,7,2,.6),0 6px 28px rgba(12,7,2,.5)!important}
+.hero .eye{background:rgba(20,12,4,.5)!important;border:1px solid rgba(255,247,234,.5)!important;color:#FFF7EA!important;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:none!important;letter-spacing:.22em!important}
+.hero .btn-p{background:var(--terra)!important;background-image:none!important;color:#FFF7EA!important;box-shadow:0 16px 40px -16px rgba(232,67,31,.5)!important}
+.hero .btn-p:hover{background:var(--terra2)!important;filter:none!important}
+.hero .btn-g{background:transparent!important;color:#FFF7EA!important;border:1.5px solid rgba(255,247,234,.7)!important}
+.hero .btn-g:hover{background:#FFF7EA!important;color:var(--ink)!important}
+@media(max-width:560px){
+  .hero .veil{background:linear-gradient(180deg,
+    rgba(20,12,4,.46) 0%,rgba(20,12,4,.14) 26%,
+    rgba(20,12,4,.16) 50%,rgba(20,12,4,.70) 74%,rgba(20,12,4,.92) 100%)!important}
+  .hero .l2{width:auto}
+  .hero .l2::after{height:2px;bottom:.02em}
+}
+
+/* === SEZIONI: solo neutri caldi alternati, ZERO arcobaleno/blob/raggi === */
+.dil,.how,.jrny,.svc,.com,.gsec,.trust,.vsec{background:var(--paper)!important;background-image:none!important}
+.jrny,.com{background:var(--cream)!important}
+.svc,.trust{background:var(--sand)!important}
+.vsec::before,.svc::before,.gsec::before,.dil::before{content:none!important;display:none!important;animation:none!important;background:none!important}
+.kick{color:var(--terra)!important;letter-spacing:.26em!important}
+.kick::before{background:var(--terra)!important;width:34px!important}
+.dil .big,.ch-t,.com .disp,.svc .disp,.vsec .disp,.gsec .disp,.trust .disp,.jrny .disp,.stats .disp{
+  background:none!important;background-image:none!important;-webkit-text-fill-color:var(--ink)!important;color:var(--ink)!important}
+em,.turn{color:var(--terra)!important;-webkit-text-fill-color:var(--terra)!important}
+.stats{background:var(--cream)!important;background-image:none!important;border-color:var(--line)!important}
+.stats .n{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;text-shadow:none!important;background:none!important}
+.stats .l{color:var(--mut)!important}
+.stats .kick{color:var(--terra)!important}.stats .kick::before{background:var(--terra)!important}
+.intlband{background:var(--cream)!important;background-image:none!important;border-color:var(--line)!important}
+.intlband,.intlband *{color:var(--ink)!important}
+.intlband .g{filter:none!important}
+/* CTA finale = unico PICCO editoriale su ink */
+.cta{background:var(--ink)!important;background-image:none!important}
+.cta .v-t,.cta h2,.cta .v-p,.cta .note,.cta .kick{color:#FFF7EA!important;-webkit-text-fill-color:#FFF7EA!important;background:none!important}
+.cta .kick{color:var(--amber)!important;-webkit-text-fill-color:var(--amber)!important}
+.cta .btn-p{background:var(--terra)!important;background-image:none!important;color:#FFF7EA!important;box-shadow:none!important}
+.cta .btn-p:hover{background:var(--terra2)!important;filter:none!important}
+/* fasce gioia: le foto sono l'unica euforia di colore, scrim NEUTRO ink */
+.joy .scrim,.joy-a .scrim,.joy-b .scrim{background:linear-gradient(180deg,
+  rgba(20,12,4,.20) 0%,rgba(20,12,4,0) 40%,rgba(20,12,4,.55) 76%,rgba(20,12,4,.84) 100%)!important}
+.joy .in::before,.joy .in::after{content:none!important;display:none!important;animation:none!important}
+.joy h2,.joy p{color:#FFF7EA!important;-webkit-text-fill-color:#FFF7EA!important}
+/* marquee chiaro su paper, stroke inchiostro, accenti terracotta */
+.mq{background:var(--paper)!important;border-color:var(--line)!important}
+.mq-track span,.mq span{color:transparent!important;-webkit-text-stroke:1.1px rgba(35,25,13,.4)!important}
+.mq-track b,.mq b{color:var(--terra)!important;-webkit-text-stroke:0!important}
+/* bottoni primari globali: terracotta piatta */
+.btn-p,.njoin,.nav-cta{background:var(--terra)!important;background-image:none!important;box-shadow:0 16px 36px -16px rgba(232,67,31,.45)!important}
+.btn-p:hover,.njoin:hover,.nav-cta:hover{background:var(--terra2)!important;filter:none!important}
+.panel::after{background:radial-gradient(circle,rgba(201,162,75,.12),transparent 70%)!important}
+
+/* === MOVIMENTO: chic = calmo. Solo reveal sobri; spento ogni kitsch === */
+.js-reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.85,.25,1)}
+.js-reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .js-reveal{opacity:1!important;transform:none!important}
+  .hero .bg{animation:none!important;transform:none!important}
+  .hero .veil,.hero::before,.hero::after{animation:none!important}
+  .hero .l2::after{animation:none!important;opacity:.95!important;transform:none!important}
+}
 </style></head>
 <body>
 <nav id="nav"><div class="wrap nav-in">
