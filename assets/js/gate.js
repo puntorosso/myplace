@@ -2,6 +2,12 @@
    NB: deterrent only, not real security: the source is public.
    To change the password: set HASH to the SHA-256 hex of the new word
    (node -e "console.log(require('crypto').createHash('sha256').update('NEWPASS').digest('hex'))"). */
+
+/* Open the site in a specific language via ?lang=  e.g. ...?lang=es (en|it|es|de).
+   Runs first on every page; sets mp_lang (the key all pages read) so the choice is
+   applied site-wide and persists. Invalid/absent values are ignored (normal detection). */
+(function(){try{var p=new URLSearchParams(location.search).get('lang');if(p){p=p.slice(0,2).toLowerCase();if(p==='en'||p==='it'||p==='es'||p==='de'){localStorage.setItem('mp_lang',p);}}}catch(e){}})();
+
 (function(){
   var KEY='ta_gate_v1';
   var HASH='5a4852b82b0e17d0d8792b2a688bf7da8252e0c3f762252f077173a0b939e484'; /* larva2026 */
