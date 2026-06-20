@@ -666,10 +666,8 @@ function initGsap(){
   safe(function(){
     gsap.from('.fear',{y:move?50:0,opacity:0,duration:.8,ease:'power2.out',stagger:.14,scrollTrigger:{trigger:'.fears',start:'top 82%'}});
   });
-  safe(function(){
-    /* entrata: solo dissolvenza, NESSUN movimento verticale -> le card restano sempre allineate (lo stagger su y le faceva apparire sfalsate) */
-    ScrollTrigger.batch('#vgrid .vcard',{start:'top 97%',onEnter:function(b){gsap.from(b,{opacity:0,duration:.5,ease:'power1.out',stagger:.05,overwrite:'auto'})}});
-  });
+  /* schede villaggi: NESSUNA animazione d'entrata -> sempre visibili e allineate.
+     (lo stagger su y le sfalsava; gsap.from{opacity} le lasciava sbiadite quando lo ScrollTrigger non completava) */
   safe(function(){
     if(move){gsap.from('.pan',{x:60,duration:.7,ease:'power2.out',stagger:.06,overwrite:'auto',scrollTrigger:{trigger:'.exp',start:'top 88%'}});}
   });
