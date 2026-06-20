@@ -40,8 +40,13 @@ a{color:var(--terra)}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,box-shadow .3s;border-bottom:1px solid transparent}
 nav.solid{background:rgba(255,250,241,.82);backdrop-filter:blur(16px) saturate(1.2);border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(120,70,20,.25)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:1.42rem;letter-spacing:.03em;color:var(--ink);text-decoration:none;text-transform:uppercase}
-.hero-zone .brand,{color:#fff}
+.brand{display:flex;align-items:center;gap:12px;font-family:"Big Shoulders Display",sans-serif;font-weight:700;font-size:1.42rem;letter-spacing:.03em;color:var(--ink);text-decoration:none;text-transform:uppercase;transition:opacity .35s ease,transform .35s ease}
+/* nome (brand) nella navbar: nascosto sopra l'hero, compare allo scroll */
+nav:not(.solid) .brand{opacity:0;transform:translateY(-3px);pointer-events:none}
+nav.solid .brand{opacity:1;transform:none}
+/* menu leggibile sopra l'hero: link bianchi quando la nav e' trasparente; tornano sage quando .solid (regola di sage.css) */
+nav:not(.solid) .nav-links a{color:#fff!important;opacity:.96;text-shadow:0 1px 12px rgba(12,18,14,.55)}
+nav:not(.solid) .nav-links a:hover{color:#fff!important;opacity:1}
 .nav-right{display:flex;align-items:center;gap:16px}
 .nav-links{display:flex;gap:24px}
 .nav-links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.94rem;opacity:.85;transition:.2s}
