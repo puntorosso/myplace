@@ -636,10 +636,10 @@ function safe(fn){try{fn()}catch(e){if(window.console)console.warn('[anim]',e)}}
 function heroIntro(){
   if(typeof gsap==='undefined')return;
   safe(function(){
-    if(REDUCED){gsap.from('.hero [data-anim],.hero .eye',{opacity:0,duration:.6,stagger:.04,overwrite:'auto'});return;}
+    if(REDUCED){gsap.from('.hero [data-anim],.hero .hero-brand',{opacity:0,duration:.6,stagger:.04,overwrite:'auto'});return;}
     gsap.from('.hero .w',{y:60,rotateZ:2,duration:1,ease:'power3.out',stagger:.06,delay:.05,overwrite:'auto'});
     gsap.from('.hero [data-anim="fade"]',{y:30,opacity:0,duration:.9,ease:'power2.out',stagger:.12,delay:.5,overwrite:'auto'});
-    gsap.from('.hero .eye',{x:-24,opacity:0,duration:.8,ease:'power2.out',overwrite:'auto'});
+    gsap.from('.hero .hero-brand',{y:-14,opacity:0,duration:.8,ease:'power2.out',overwrite:'auto'});
   });
 }
 function initGsap(){
@@ -667,7 +667,8 @@ function initGsap(){
     gsap.from('.fear',{y:move?50:0,opacity:0,duration:.8,ease:'power2.out',stagger:.14,scrollTrigger:{trigger:'.fears',start:'top 82%'}});
   });
   safe(function(){
-    if(move){ScrollTrigger.batch('#vgrid .vcard',{start:'top 94%',onEnter:function(b){gsap.from(b,{y:40,duration:.6,ease:'power2.out',stagger:.07,overwrite:'auto'})}});}
+    /* entrata: solo dissolvenza, NESSUN movimento verticale -> le card restano sempre allineate (lo stagger su y le faceva apparire sfalsate) */
+    ScrollTrigger.batch('#vgrid .vcard',{start:'top 97%',onEnter:function(b){gsap.from(b,{opacity:0,duration:.5,ease:'power1.out',stagger:.05,overwrite:'auto'})}});
   });
   safe(function(){
     if(move){gsap.from('.pan',{x:60,duration:.7,ease:'power2.out',stagger:.06,overwrite:'auto',scrollTrigger:{trigger:'.exp',start:'top 88%'}});}
