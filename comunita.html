@@ -91,7 +91,7 @@ footer a{color:var(--terra);text-decoration:none;font-weight:600}
 @media(max-width:760px){main.wrap{padding-top:60px}.sect{margin-top:54px}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
-<link rel="stylesheet" href="assets/css/sage.css?v=5" />
+<link rel="stylesheet" href="assets/css/sage.css?v=6" />
 </head>
 <body>
 <nav><div class="nav-in">
@@ -212,7 +212,7 @@ function render(){
   document.title='Tu Andalucía — '+tr(c.name);
   document.getElementById('heroimg').src=c.img;
   document.getElementById('heroimg').alt=tr(c.name);
-  var CB={arte:'6023597',natura:'7849457',cucina:'6928669',sport:'37943268',motori:'6273549',makers:'3846033',geek:'7983559',moda:'34223019'};
+  var CB={arte:'34517157',natura:'7849457',cucina:'6928669',sport:'17003917',motori:'6273549',makers:'3846033',geek:'7983559',moda:'34223019'};
   var cb=document.getElementById('cbody'); if(cb&&CB[id]){cb.style.backgroundImage="url('https://images.pexels.com/photos/"+CB[id]+"/pexels-photo-"+CB[id]+".jpeg?auto=compress&cs=tinysrgb&w=1500')";}
   var bd=document.getElementById('badge');
   bd.textContent=(c.status==='active'?t.badgeActive:t.badgeForming);

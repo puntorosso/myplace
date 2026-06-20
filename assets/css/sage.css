@@ -137,8 +137,8 @@ h1:not(.disp):not(.l1):not(.l2){font-size:clamp(2rem,5vw,3.8rem)!important}
 /* ===== FOTO DI SEZIONE: spezzano i muri di testo (specialmente su mobile) ===== */
 /* BANNER: foto larga arrotondata sotto il titolo (nessuna ristrutturazione della sezione) */
 .secban{display:block;width:100%;border-radius:18px;overflow:hidden;aspect-ratio:20/7;
-  background-size:cover;background-position:center;box-shadow:0 26px 56px -40px rgba(47,58,51,.32);margin:6px 0 32px}
-@media(max-width:760px){.secban{aspect-ratio:3/2;margin:2px 0 22px}}
+  background-size:cover;background-position:center;box-shadow:0 26px 56px -40px rgba(47,58,51,.32);margin:18px 0 34px}
+@media(max-width:760px){.secban{aspect-ratio:3/2;margin:16px 0 26px}}
 /* RIGA AFFIANCATA: foto + colonna testo a fianco (desktop), impilati con foto sopra (mobile) */
 .secrow > .wrap{display:flex;flex-direction:column;gap:26px}
 .secrow > .wrap > .secpic{width:100%;border-radius:18px;overflow:hidden;aspect-ratio:3/2;

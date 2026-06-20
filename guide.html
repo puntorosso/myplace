@@ -106,7 +106,7 @@ footer a{color:var(--terra);text-decoration:none;font-weight:600}
  a{color:#000;text-decoration:none}
 }
 </style>
-<link rel="stylesheet" href="assets/css/sage.css?v=5" />
+<link rel="stylesheet" href="assets/css/sage.css?v=6" />
 </head>
 <body>
 <nav><div class="nav-in">
@@ -264,9 +264,13 @@ function render(){
   document.getElementById('gsub').textContent=tr(g.subtitle);
   document.getElementById('backall').textContent=t.backAll;
   document.getElementById('printlbl').textContent=t.print;
-  var GIMG={bilancio:'8441854',ritorno:'7476898',pensione:'6950690',tasse:'7138891',salute:'31557715','per-chi-no':'35789880',gruppo:'8153996',figli:'8507628'};
-  var gimg=GIMG[id]?('<div class="secban" style="background-image:url(\'https://images.pexels.com/photos/'+GIMG[id]+'/pexels-photo-'+GIMG[id]+'.jpeg?auto=compress&cs=tinysrgb&w=1500\')"></div>'):'';
-  document.getElementById('gbody').innerHTML=gimg+mdRender(tr(g.md));
+  var GIMG={bilancio:'7658832',ritorno:'7476898',pensione:'6950690',tasse:'7138891',salute:'31557715','per-chi-no':'35789880',gruppo:'8153996',figli:'8507628'};
+  var GIMG2={bilancio:'34223019',ritorno:'31934038',pensione:'8972535',tasse:'8441854',salute:'7849457','per-chi-no':'8153996',gruppo:'6950690',figli:'6838583'};
+  function gban(pid){return '<div class="secban" style="background-image:url(\'https://images.pexels.com/photos/'+pid+'/pexels-photo-'+pid+'.jpeg?auto=compress&cs=tinysrgb&w=1500\')"></div>';}
+  var gimg=GIMG[id]?gban(GIMG[id]):'';
+  var html=mdRender(tr(g.md));
+  if(GIMG2[id]){var hs=html.match(/<h[23][\s>]/g); if(hs&&hs.length>=2){var mid=hs[Math.floor(hs.length/2)]; var idx=html.indexOf(mid); if(idx>0){html=html.slice(0,idx)+gban(GIMG2[id])+html.slice(idx);}}}
+  document.getElementById('gbody').innerHTML=gimg+html;
   document.getElementById('kMore').textContent=t.kMore;
   var ch=document.getElementById('gchips');ch.innerHTML='';
   ORDER.forEach(function(k){
