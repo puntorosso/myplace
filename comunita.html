@@ -121,7 +121,7 @@ footer a{color:var(--terra);text-decoration:none;font-weight:600}
 <main class="wrap" id="main">
   <p class="lede" id="intro"></p>
 
-  <div class="secban" style="background-image:url('https://images.pexels.com/photos/6838622/pexels-photo-6838622.jpeg?auto=compress&cs=tinysrgb&w=1500')"></div>
+  <div class="secban" id="cbody"></div>
 
   <section class="sect">
     <div class="kicker" id="kLife"></div>
@@ -212,6 +212,8 @@ function render(){
   document.title='Tu Andalucía — '+tr(c.name);
   document.getElementById('heroimg').src=c.img;
   document.getElementById('heroimg').alt=tr(c.name);
+  var CB={arte:'6023597',natura:'7849457',cucina:'6928669',sport:'37943268',motori:'6273549',makers:'3846033',geek:'7983559',moda:'34223019'};
+  var cb=document.getElementById('cbody'); if(cb&&CB[id]){cb.style.backgroundImage="url('https://images.pexels.com/photos/"+CB[id]+"/pexels-photo-"+CB[id]+".jpeg?auto=compress&cs=tinysrgb&w=1500')";}
   var bd=document.getElementById('badge');
   bd.textContent=(c.status==='active'?t.badgeActive:t.badgeForming);
   bd.className='badge '+(c.status==='active'?'active':'forming');

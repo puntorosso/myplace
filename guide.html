@@ -264,7 +264,9 @@ function render(){
   document.getElementById('gsub').textContent=tr(g.subtitle);
   document.getElementById('backall').textContent=t.backAll;
   document.getElementById('printlbl').textContent=t.print;
-  document.getElementById('gbody').innerHTML=mdRender(tr(g.md));
+  var GIMG={bilancio:'8441854',ritorno:'7476898',pensione:'6950690',tasse:'7138891',salute:'31557715','per-chi-no':'35789880',gruppo:'8153996',figli:'8507628'};
+  var gimg=GIMG[id]?('<div class="secban" style="background-image:url(\'https://images.pexels.com/photos/'+GIMG[id]+'/pexels-photo-'+GIMG[id]+'.jpeg?auto=compress&cs=tinysrgb&w=1500\')"></div>'):'';
+  document.getElementById('gbody').innerHTML=gimg+mdRender(tr(g.md));
   document.getElementById('kMore').textContent=t.kMore;
   var ch=document.getElementById('gchips');ch.innerHTML='';
   ORDER.forEach(function(k){
